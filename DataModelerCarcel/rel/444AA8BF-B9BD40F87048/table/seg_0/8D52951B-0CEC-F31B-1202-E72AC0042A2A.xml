@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8D52951B-0CEC-F31B-1202-E72AC0042A2A" name="COMPRA">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RECLUSOS_NIF" id="7297E1E3-322F-CED6-1CA3-6B8DB616F56A">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A9078FF-AD7F-E154-8806-CDB275235D02" referredColumn="EBE06282-0357-4C45-0F47-C40887C6A582"/>
+</associations>
+</Column>
+<Column name="Producto_ID_PRODUCTO" id="39AE79F8-EB93-C026-B38B-D836668409FD">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="549440C1-56E2-AD8B-BCBF-1FCC7EE52A4B" referredColumn="D2D7CDC5-E508-169A-D786-CB224E2F12AD"/>
+</associations>
+</Column>
+<Column name="FECHA_DE_COMPRA" id="EEE11E87-40B9-CB69-B71B-ED3ECDC4B78D">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>FAA5A8C6-AC50-24D9-0395-7341D9D4EE10</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="534D5A54-8FEE-8564-B2D9-7F630060E85E" name="COMPRA_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7297E1E3-322F-CED6-1CA3-6B8DB616F56A"/>
+<colUsage columnID="39AE79F8-EB93-C026-B38B-D836668409FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7B175581-D53D-B0B8-3E84-A6CB14A8DB10" name="COMPRA_RECLUSOS_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>C3EB9C22-630F-C655-0C42-644023098408</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7297E1E3-322F-CED6-1CA3-6B8DB616F56A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60E72CA4-230B-0084-E1F5-2D2DC581F4B6" name="COMPRA_Producto_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>C3EB9C22-630F-C655-0C42-644023098408</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39AE79F8-EB93-C026-B38B-D836668409FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

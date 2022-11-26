@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="27F9FBCF-08AF-1A87-7923-649DE98682C8" name="PERSONA">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>59767B7F-5D3B-EC7C-C928-994E159247DE</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="9A9AF593-5A22-AEE9-3809-05EB6087FA42">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>B6319357-C597-9B9A-ED91-D186FAD5CF39</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUM_SS" id="FD4D7846-6E1E-4FA5-DC4B-00A4EC946138">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>8761DED5-4BDF-041A-EF99-688FED49F4B1</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="59F5AE3F-19D9-C081-96A4-FDC451436EAD">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>FD3C97EB-8BF4-3B6C-8DDF-4C1E7F443C5F</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APELLIDOS" id="FFFBE385-9B09-F9F5-BFA3-0243B35DFF70">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>3A06AACD-99F0-FC22-9DFF-1067B1DAA803</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="2EA6CF15-90F4-7A8C-BF66-DFBABBB34BD9">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>AA2AB066-96F8-8BAF-F460-852F4DF5DAEE</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="91A75CEC-0A58-F0CC-599F-56D8DDCCCCFD" name="PERSONA_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>10A514C3-3B89-DC10-8A4C-3410EC83C6DA</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A9AF593-5A22-AEE9-3809-05EB6087FA42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C4E68F51-1C34-0C2E-E807-437073BC8405" name="PERSONA_NUM_SS_UN">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>AA81CD2F-5022-9E83-749D-61E7B8B83345</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD4D7846-6E1E-4FA5-DC4B-00A4EC946138"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

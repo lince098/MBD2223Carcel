@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="COMPRA" directorySegmentName="seg_0" id="C3EB9C22-630F-C655-0C42-644023098408">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:22:07 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<sourcePk>6859437B-FB3C-3C1C-5C8F-7798BC45F342</sourcePk>
+<targetPk>D89477DD-C340-5911-B299-C602B1C1E176</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>53C84C2A-B026-72DF-EBA5-0075BCD91FC6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>456E36E7-44E8-7EB7-521A-93A7FF13E185</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="FECHA DE COMPRA" id="FAA5A8C6-AC50-24D9-0395-7341D9D4EE10">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:22:33 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

@@ -15,18 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="NIF" id="E7369D12-D457-45DE-E95D-8213E34F5F0C">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:02:17 UTC</createdTime>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="NIS" id="E499F2CD-27DA-FBA9-790E-F901A84CDC74">
 <createdBy>crist</createdBy>
 <createdTime>2022-11-26 10:02:11 UTC</createdTime>
@@ -63,7 +51,7 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NIF1" id="D9AD3E6F-6AE6-4446-8C43-13DAA6927752">
+<Attribute name="NIF" id="D9AD3E6F-6AE6-4446-8C43-13DAA6927752">
 <createdBy>crist</createdBy>
 <createdTime>2022-11-26 10:13:59 UTC</createdTime>
 <generatorID>08F934F4-2F08-1FD6-0499-7206D34A472B</generatorID>
@@ -80,22 +68,22 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="2288D3F2-9DD6-B026-2A8A-BBD978D05C0F" name="RECLUSOS_PK">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:07:19 UTC</createdTime>
+<identifier id="6859437B-FB3C-3C1C-5C8F-7798BC45F342" name="RECLUSO_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:21:18 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>E7369D12-D457-45DE-E95D-8213E34F5F0C</newElementsIDs>
+<newElementsIDs>D9AD3E6F-6AE6-4446-8C43-13DAA6927752</newElementsIDs>
 <usedAttributes>
-<attributeRef>E7369D12-D457-45DE-E95D-8213E34F5F0C</attributeRef>
+<attributeRef>D9AD3E6F-6AE6-4446-8C43-13DAA6927752</attributeRef>
 </usedAttributes>
 </identifier>
-<identifier id="8FAA21E8-DCFA-6428-AFD8-C8D7A68FAF8F" name="RECLUSOS_NIS_UK">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:09:55 UTC</createdTime>
+<identifier id="7DBBF6FB-790F-CAD5-3618-42D2BE48380F" name="RECLUSO_NIS_UK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:21:46 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>

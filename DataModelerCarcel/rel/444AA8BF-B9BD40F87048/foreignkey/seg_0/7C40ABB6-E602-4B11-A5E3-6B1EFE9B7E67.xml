@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7C40ABB6-E602-4B11-A5E3-6B1EFE9B7E67" containerWithKeyObject="3067ED5E-3C32-6879-3DA5-B652C9EC1A6B" localFKIndex="8A336985-A14B-8CBD-95FC-3F36D1E30D0D" name="CELDA_MODULO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
+<generatorID>DED8A36F-F385-0D0F-969A-9E207DA30597</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<referredTableLongName>MODULO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0F231960-AD7B-1896-1B8F-9408E19B7771</referredTableID>
+<keyObject>E361762F-168C-F0CA-EDF0-A0CDA21B79FF</keyObject>
+<referredKeyID>E361762F-168C-F0CA-EDF0-A0CDA21B79FF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_MODULO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

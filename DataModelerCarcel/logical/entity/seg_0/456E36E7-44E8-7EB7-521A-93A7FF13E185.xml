@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DD1046D9-C659-72FD-B8AA-20ACAD7DC958" name="TURNOS">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:10:33 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="456E36E7-44E8-7EB7-521A-93A7FF13E185" name="Producto">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:15:07 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_TURNO" id="E588E3BD-1A46-21BD-1B3F-FFC671FB8D2B">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:10:38 UTC</createdTime>
+<Attribute name="ID_PRODUCTO" id="3080715D-E836-A114-8432-B8B57E0ED8CE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:16:16 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -27,61 +27,58 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ENTRADA" id="0F0EE493-9722-88B8-AE27-C8CD8A607AE6">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:10:43 UTC</createdTime>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="SALIDA" id="714317AC-60E0-F05B-774E-948072EBE507">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:11:12 UTC</createdTime>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="NIF" id="7FBB9412-519E-C91A-418C-99D1DFE833D7">
+<Attribute name="PRECIO" id="8F506139-C596-4D48-6923-62B40812EA20">
 <createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-26 11:02:43 UTC</createdTime>
-<generatorID>36717B48-C69A-373B-2BB1-97E27E03DC9E</generatorID>
+<createdTime>2022-11-26 11:16:42 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
-<referedAttribute>34C3D09E-6591-D750-1718-E34AE073EEC7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE" id="10FB147C-B7B3-224D-3450-589ECF1C5A71">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:16:57 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>9</dataTypeSize>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_CARCEL" id="BC3969B5-B4B7-5A98-ACE5-479A9E54F349">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:19:00 UTC</createdTime>
+<generatorID>5120F678-ED83-95FE-3CA0-D4B0D920871C</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<referedAttribute>6BD48096-11AD-3EC9-BB03-BB77FFFDC893</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="7044907D-5983-1D0A-217B-C4DFE44CC692" name="TURNO_PK">
+<identifier id="D89477DD-C340-5911-B299-C602B1C1E176" name="PRODUCTO_PK">
 <createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-26 11:03:05 UTC</createdTime>
+<createdTime>2022-11-26 11:17:45 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>E588E3BD-1A46-21BD-1B3F-FFC671FB8D2B,36717B48-C69A-373B-2BB1-97E27E03DC9E,7FBB9412-519E-C91A-418C-99D1DFE833D7</newElementsIDs>
+<newElementsIDs>3080715D-E836-A114-8432-B8B57E0ED8CE</newElementsIDs>
 <usedAttributes>
-<attributeRef>E588E3BD-1A46-21BD-1B3F-FFC671FB8D2B</attributeRef>
-<attributeRef>7FBB9412-519E-C91A-418C-99D1DFE833D7</attributeRef>
-<attributeRef>7FBB9412-519E-C91A-418C-99D1DFE833D7</attributeRef>
+<attributeRef>3080715D-E836-A114-8432-B8B57E0ED8CE</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

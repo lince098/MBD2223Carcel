@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="TURNOS_EMPLEADO" directorySegmentName="seg_0" id="36717B48-C69A-373B-2BB1-97E27E03DC9E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:02:43 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<sourcePk>7AC959D4-BCBA-4C21-4BDB-5D3302AE2083</sourcePk>
+<targetPk>7044907D-5983-1D0A-217B-C4DFE44CC692</targetPk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E1F41411-2429-9A8B-2B2B-B3C023669343</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DD1046D9-C659-72FD-B8AA-20ACAD7DC958</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

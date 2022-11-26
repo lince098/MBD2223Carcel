@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="20E2D318-ED67-D422-8372-455D0A9B821E" name="ZONA_ACTIVIDADES">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8B1219B7-4EA8-7E0D-54C3-A23CBC9519FD" name="ZONA_ACTIVIDADES">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
 <generatorID>8FBD2E2F-DF8F-1E0C-9E60-3AE8B5E748DC</generatorID>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID" id="712C9D45-6357-00E0-F4FD-40F3F7537CFA">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<Column name="ID_ZONA" id="E3DADBA2-9CDC-D661-D242-B176807E7F3F">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
 <generatorID>20BD4AC3-4DD4-42AB-E3D4-BDE11A682D60</generatorID>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CARCEL_COD_CARCEL" id="00344A96-1D65-4DAA-EF33-0D59F476B500">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<Column name="CARCEL_COD_CARCEL" id="A8F88630-D73F-6E5F-C973-64024CBA0BD8">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
 <generatorID>CF2B277E-58D8-154E-129D-D2FD3F5E8BB9</generatorID>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,32 +31,32 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="E51B7B75-9EF4-3572-7DC2-D6250F43743E" referredColumn="C4CC4C3E-B4EE-7A60-513B-D5E47E1A1FAD"/>
+<colAssociation fkAssociation="E7FB0EF3-1F12-0C49-92A6-9C8259A54EF0" referredColumn="EA57D656-B305-01BA-69FE-DC8FAFF2C8B5"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="275D5219-3319-886C-BE20-98D3B745CAB5" name="ZONA_ACTIVIDADES_PK">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<ind_PK_UK id="0608DD63-D237-388C-E7D1-C0D8C8621F13" name="ZONA_ACTIVIDADES_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
 <generatorID>E22E435E-51D0-EFF8-3FCB-9C7785F54E84</generatorID>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="712C9D45-6357-00E0-F4FD-40F3F7537CFA"/>
+<colUsage columnID="E3DADBA2-9CDC-D661-D242-B176807E7F3F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="3135BD64-39DB-A894-88A2-E36AD5548C9C" name="ZONA_ACTIVIDADES_CARCEL_FK">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<ind_PK_UK id="93F666B5-FCA1-7D78-A6EA-965E077E6E48" name="ZONA_ACTIVIDADES_CARCEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:24:27 UTC</createdTime>
 <generatorID>95444357-1DEB-5134-759F-FBE3651FE467</generatorID>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="00344A96-1D65-4DAA-EF33-0D59F476B500"/>
+<colUsage columnID="A8F88630-D73F-6E5F-C973-64024CBA0BD8"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

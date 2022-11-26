@@ -15,19 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="NIF" id="87B376BE-080A-A5BD-B197-5335518EE8F8">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 09:55:39 UTC</createdTime>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>9</dataTypeSize>
-<ownDataTypeParameters>9,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="TELEFONO" id="1A89B4F7-029E-BFD9-2F39-7C8FCA0E50F3">
 <createdBy>crist</createdBy>
 <createdTime>2022-11-26 09:55:48 UTC</createdTime>
@@ -76,7 +63,7 @@
 <logicalDatatype>LOGDT021</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NIF1" id="34C3D09E-6591-D750-1718-E34AE073EEC7">
+<Attribute name="NIF" id="34C3D09E-6591-D750-1718-E34AE073EEC7">
 <createdBy>crist</createdBy>
 <createdTime>2022-11-26 10:17:10 UTC</createdTime>
 <generatorID>093BF62F-905D-05B5-65A1-2EBAE8389D67</generatorID>
@@ -93,17 +80,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="33DEB548-62F1-5394-B95A-881C5AC7B2F9" name="EMPLEADO_PK">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 09:58:03 UTC</createdTime>
+<identifier id="7AC959D4-BCBA-4C21-4BDB-5D3302AE2083" name="EMPLEADO PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-26 11:02:10 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>87B376BE-080A-A5BD-B197-5335518EE8F8</newElementsIDs>
 <usedAttributes>
-<attributeRef>87B376BE-080A-A5BD-B197-5335518EE8F8</attributeRef>
+<attributeRef>34C3D09E-6591-D750-1718-E34AE073EEC7</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
