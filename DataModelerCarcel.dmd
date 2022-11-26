@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="DataModelerCarcel" id="DD05B7C5-BDCD-B7A4-7393-C549E1AE7EC0" version="3.5">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:03:39 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>DD05B7C5-BDCD-B7A4-7393-C549E1AE7EC0</designId>
+</OSDM_Design>

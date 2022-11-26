@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CF60A6AE-7553-B688-5569-D49684A12D90" name="PERSONA">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:44:38 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NUM_SS" id="61E6FCA1-4A93-3C29-A31C-6AE459CE5ECC">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:44:48 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NIF" id="73EAB96E-E889-DBB2-523C-22709E3C6778">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:45:32 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE" id="378A3EEA-C89C-7D78-6320-50BFA26F566B">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:46:55 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="APELLIDOS" id="ECF09E64-591A-B5AC-BD5D-3BA1FE8804E3">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:47:14 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EMAIL" id="85A97EF7-E9CE-28C6-B6DE-0F7F0874935D">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:47:58 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FB4BDA45-D237-93B1-2C1C-C61D9ECDA4CD" name="PERSONA_PK1">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:48:28 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>61E6FCA1-4A93-3C29-A31C-6AE459CE5ECC</newElementsIDs>
+<usedAttributes>
+<attributeRef>61E6FCA1-4A93-3C29-A31C-6AE459CE5ECC</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="1E95386D-65C9-7EFC-831F-65D710B29E0E" name="PERSONA_NIF_UK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:49:46 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<newElementsIDs>73EAB96E-E889-DBB2-523C-22709E3C6778</newElementsIDs>
+<usedAttributes>
+<attributeRef>73EAB96E-E889-DBB2-523C-22709E3C6778</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

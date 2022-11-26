@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="TIENE_PERMISO" directorySegmentName="seg_0" id="95F6A328-3618-4AA0-8D2D-36043BA1CB5A">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:41:19 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<sourcePk>FB4BDA45-D237-93B1-2C1C-C61D9ECDA4CD</sourcePk>
+<targetPk>E22E435E-51D0-EFF8-3FCB-9C7785F54E84</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>468DDF1D-3187-892F-0CD9-F21874F09ECA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8FBD2E2F-DF8F-1E0C-9E60-3AE8B5E748DC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

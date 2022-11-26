@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CDA90FAC-49F2-56B3-B05B-475FE78095D1" name="MODULO">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:11:56 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_MODULO" id="7C883645-A4E6-295E-87DD-C82467BFF840">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:12:34 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COD_CARCEL" id="4F0F7402-A114-86A4-03B8-9A6296183645">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:15:59 UTC</createdTime>
+<generatorID>AE48C97E-0165-3D46-A298-3FF4190DC2D6</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<referedAttribute>1FD9960E-D051-53E1-E2F9-25AFBDDCB102</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO_MODULO" id="620D25B3-2105-2025-E7B8-54BCB58C0C69">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:21:10 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<listOfValues>
+<valueDef value="aislamiento" description=""/>
+<valueDef value="ingreso" description=""/>
+<valueDef value="internos" description=""/>
+</listOfValues>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="68B7A9A3-39B7-DCB7-CB90-B63D206857E5" name="Modulo_PK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:12:51 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>7C883645-A4E6-295E-87DD-C82467BFF840</newElementsIDs>
+<usedAttributes>
+<attributeRef>7C883645-A4E6-295E-87DD-C82467BFF840</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="468DDF1D-3187-892F-0CD9-F21874F09ECA" name="RECLUSOS">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:37:42 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>CF60A6AE-7553-B688-5569-D49684A12D90</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NIS" id="B44D75C4-D469-23C2-3635-DF5CF8EEA74B">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:38:23 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA_FIN_CONDENA" id="A7D35C92-41FB-BF83-DF99-610F72A4AF95">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:37:49 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA_INICIO_CONDENA" id="39FFFD98-74B9-B332-A21D-7807D009E4C9">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:40:04 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID" id="FF460378-B30A-3032-224C-5F39380F389A">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:42:54 UTC</createdTime>
+<generatorID>164968E7-2E59-1C38-426F-24EE4CEFFD5D</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<referedAttribute>B0E3B46C-E098-B7F5-6800-790543E41BC3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="03940B08-42AB-0244-8D70-2121A82D0567" name="RECLUSOS_PK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:40:23 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<deprecated>true</deprecated>
+<newElementsIDs>B44D75C4-D469-23C2-3635-DF5CF8EEA74B</newElementsIDs>
+<usedAttributes>
+<attributeRef>B44D75C4-D469-23C2-3635-DF5CF8EEA74B</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="62B12377-BAA9-65CD-435C-1083974E3359" name="RECLUSO_NIS_UK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 08:55:36 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<deprecated>true</deprecated>
+<newElementsIDs>B44D75C4-D469-23C2-3635-DF5CF8EEA74B</newElementsIDs>
+<usedAttributes>
+<attributeRef>B44D75C4-D469-23C2-3635-DF5CF8EEA74B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
