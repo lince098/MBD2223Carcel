@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID" id="B0E3B46C-E098-B7F5-6800-790543E41BC3">
+<Attribute name="ID_CELDA" id="B0E3B46C-E098-B7F5-6800-790543E41BC3">
 <createdBy>crist</createdBy>
 <createdTime>2022-11-26 08:26:29 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
@@ -71,8 +71,9 @@
 <createdBy>crist</createdBy>
 <createdTime>2022-11-26 08:29:35 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <newElementsIDs>B0E3B46C-E098-B7F5-6800-790543E41BC3</newElementsIDs>

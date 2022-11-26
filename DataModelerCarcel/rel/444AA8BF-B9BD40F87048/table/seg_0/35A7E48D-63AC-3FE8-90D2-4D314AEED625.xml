@@ -1,0 +1,226 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="35A7E48D-63AC-3FE8-90D2-4D314AEED625" name="PERSONA">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<generatorID>CF60A6AE-7553-B688-5569-D49684A12D90</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NUM_SS" id="89DC0988-96E9-BDB5-2BD6-E15F26BC96C6">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<generatorID>61E6FCA1-4A93-3C29-A31C-6AE459CE5ECC</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NIF" id="6BB81A47-D524-0F8C-912C-643720F02543">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<generatorID>73EAB96E-E889-DBB2-523C-22709E3C6778</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="06EFD55D-5540-9F33-58D8-489117B6B0C0">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<generatorID>378A3EEA-C89C-7D78-6320-50BFA26F566B</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APELLIDOS" id="9DBFAA51-4490-2428-2861-4E2428C86023">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<generatorID>ECF09E64-591A-B5AC-BD5D-3BA1FE8804E3</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="85E20B57-F6FF-631A-E4D5-D798B2F5C4B5">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<generatorID>85A97EF7-E9CE-28C6-B6DE-0F7F0874935D</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NIS" id="7F307FD4-B6A0-FACF-8A69-4D7EE72C3948">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>B44D75C4-D469-23C2-3635-DF5CF8EEA74B</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_FIN_CONDENA" id="C07C197C-1E37-F2BE-4253-7CAD5616E157">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>A7D35C92-41FB-BF83-DF99-610F72A4AF95</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_INICIO_CONDENA" id="5EADD24F-19F6-5BC5-5D34-E433095B17B9">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>39FFFD98-74B9-B332-A21D-7807D009E4C9</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CELDA_ID" id="B0D65A78-9E57-3D08-AD23-AB4E7493FFF4">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>FF460378-B30A-3032-224C-5F39380F389A</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B3126F17-1AF8-6897-8C9E-6798A1116B00" referredColumn="B0E60CB0-7008-F11A-BA12-78DE7E8E0CBC"/>
+</associations>
+</Column>
+<Column name="TELEFONO" id="43C68487-69E1-3DFD-E400-10605CF50841">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>4D118FCA-2768-49CB-14C6-8D91108D072A</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EURO_HORA" id="6E97AC4B-7280-43F5-6930-3E3C914FE88E">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>52474B9B-520D-E48F-907B-4E58B0A2D3FB</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EURO_H_EXTRAS" id="43058D50-3F5D-9D63-9B2B-40496651DE2F">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>0BDFF5C3-D19D-5D83-8A4B-F86485B0A60D</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EURO_H_NOCHE" id="74C80A1A-3137-6D89-C6D9-341F85933EDA">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>63FE374C-8A0F-EBA3-EFD6-D690F73FBA39</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CCB7D98F-A1BE-2DFF-0956-3D3404E34EB3" name="PERSONA_PKv2">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<generatorID>1E95386D-65C9-7EFC-831F-65D710B29E0E</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BB81A47-D524-0F8C-912C-643720F02543"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5D08086C-09D5-DD3C-34CE-AA208C76F66F" name="PERSONA_PK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:07:46 UTC</createdTime>
+<generatorID>FB4BDA45-D237-93B1-2C1C-C61D9ECDA4CD</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="89DC0988-96E9-BDB5-2BD6-E15F26BC96C6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FCB473B3-C545-51E5-2280-51843F8F0739" name="PERSONA_NIS_UN">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>62B12377-BAA9-65CD-435C-1083974E3359</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F307FD4-B6A0-FACF-8A69-4D7EE72C3948"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2F02C9DA-36E6-A0DA-6BBE-CC21FB2623C0" name="PERSONA_PKv1">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>EF274DAC-4704-CEA5-B14F-8ECFA6C241BD</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="07F099BA-E048-3F1B-938E-842C4E42BDCD" name="PERSONA_CELDA_FK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>164968E7-2E59-1C38-426F-24EE4CEFFD5D</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0D65A78-9E57-3D08-AD23-AB4E7493FFF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

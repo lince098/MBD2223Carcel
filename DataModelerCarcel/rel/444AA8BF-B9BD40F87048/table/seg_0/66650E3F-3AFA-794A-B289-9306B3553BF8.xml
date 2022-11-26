@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="66650E3F-3AFA-794A-B289-9306B3553BF8" name="TURNOS">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>E5630874-ABC2-F029-3C61-65BF08DBE3CE</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_TURNO" id="3B01A8C8-CD39-059E-A5A9-859F6F5BCD65">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>3F809701-69F4-23F2-E7D6-EFD3B446A607</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENTRADA" id="747E4DC9-DC1E-D189-A1F0-3B224CBCACE6">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>2CBD0827-541F-D663-BF3D-D579E18F5E92</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALIDA" id="274B1F5F-3435-1EA6-6BC6-F2FA58231359">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>3E98817C-ECB5-7D37-4D16-0DA28A0FABAF</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="462A4E28-4FF5-68CB-325C-1F6D9B38F781" name="TURNOS_PK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>CF56BDD6-1FED-D4D6-F785-F26BC608B5D2</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B01A8C8-CD39-059E-A5A9-859F6F5BCD65"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="172606E1-D6C1-87B4-3B51-78CF4BA1DF79" name="TURNOS_PERSONA_FK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>4243B048-B98E-DB22-33F8-CD0351EA641B</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

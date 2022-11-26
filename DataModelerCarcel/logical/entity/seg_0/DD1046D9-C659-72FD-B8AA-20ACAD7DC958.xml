@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8FBD2E2F-DF8F-1E0C-9E60-3AE8B5E748DC" name="ZONA_ACTIVIDADES">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DD1046D9-C659-72FD-B8AA-20ACAD7DC958" name="TURNOS">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:32:39 UTC</createdTime>
+<createdTime>2022-11-26 10:10:33 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_ZONA" id="20BD4AC3-4DD4-42AB-E3D4-BDE11A682D60">
+<Attribute name="ID_TURNO" id="E588E3BD-1A46-21BD-1B3F-FFC671FB8D2B">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:32:49 UTC</createdTime>
+<createdTime>2022-11-26 10:10:38 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -27,35 +27,30 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="COD_CARCEL" id="CF2B277E-58D8-154E-129D-D2FD3F5E8BB9">
+<Attribute name="ENTRADA" id="0F0EE493-9722-88B8-AE27-C8CD8A607AE6">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:35:48 UTC</createdTime>
-<generatorID>95444357-1DEB-5134-759F-FBE3651FE467</generatorID>
+<createdTime>2022-11-26 10:10:43 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
-<referedAttribute>1FD9960E-D051-53E1-E2F9-25AFBDDCB102</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SALIDA" id="714317AC-60E0-F05B-774E-948072EBE507">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 10:11:12 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
-<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="E22E435E-51D0-EFF8-3FCB-9C7785F54E84" name="ZONAS_ACTIVIDADES_PK">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:35:28 UTC</createdTime>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
-</engineerTo>
-<pk>true</pk>
-<newElementsIDs>20BD4AC3-4DD4-42AB-E3D4-BDE11A682D60</newElementsIDs>
-<usedAttributes>
-<attributeRef>20BD4AC3-4DD4-42AB-E3D4-BDE11A682D60</attributeRef>
-</usedAttributes>
-</identifier>
-</identifiers>
 </Entity>

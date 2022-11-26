@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CF60A6AE-7553-B688-5569-D49684A12D90" name="PERSONA">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="59767B7F-5D3B-EC7C-C928-994E159247DE" name="PERSONA">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:44:38 UTC</createdTime>
+<createdTime>2022-11-26 09:48:22 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -15,21 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="NUM_SS" id="61E6FCA1-4A93-3C29-A31C-6AE459CE5ECC">
+<Attribute name="NIF" id="B6319357-C597-9B9A-ED91-D186FAD5CF39">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:44:48 UTC</createdTime>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="NIF" id="73EAB96E-E889-DBB2-523C-22709E3C6778">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:45:32 UTC</createdTime>
+<createdTime>2022-11-26 09:48:44 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -40,9 +28,23 @@
 <dataTypeSize>9</dataTypeSize>
 <ownDataTypeParameters>9,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NOMBRE" id="378A3EEA-C89C-7D78-6320-50BFA26F566B">
+<Attribute name="NUM_SS" id="8761DED5-4BDF-041A-EF99-688FED49F4B1">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:46:55 UTC</createdTime>
+<createdTime>2022-11-26 09:48:57 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE" id="FD3C97EB-8BF4-3B6C-8DDF-4C1E7F443C5F">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:51:25 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -53,9 +55,9 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="APELLIDOS" id="ECF09E64-591A-B5AC-BD5D-3BA1FE8804E3">
+<Attribute name="APELLIDOS" id="3A06AACD-99F0-FC22-9DFF-1067B1DAA803">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:47:14 UTC</createdTime>
+<createdTime>2022-11-26 09:51:45 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -66,9 +68,9 @@
 <dataTypeSize>60</dataTypeSize>
 <ownDataTypeParameters>60,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="EMAIL" id="85A97EF7-E9CE-28C6-B6DE-0F7F0874935D">
+<Attribute name="EMAIL" id="AA2AB066-96F8-8BAF-F460-852F4DF5DAEE">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:47:58 UTC</createdTime>
+<createdTime>2022-11-26 09:52:08 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
@@ -81,29 +83,29 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="FB4BDA45-D237-93B1-2C1C-C61D9ECDA4CD" name="PERSONA_PK1">
+<identifier id="10A514C3-3B89-DC10-8A4C-3410EC83C6DA" name="PERSONA_PK">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:48:28 UTC</createdTime>
+<createdTime>2022-11-26 09:53:01 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>61E6FCA1-4A93-3C29-A31C-6AE459CE5ECC</newElementsIDs>
+<newElementsIDs>B6319357-C597-9B9A-ED91-D186FAD5CF39</newElementsIDs>
 <usedAttributes>
-<attributeRef>61E6FCA1-4A93-3C29-A31C-6AE459CE5ECC</attributeRef>
+<attributeRef>B6319357-C597-9B9A-ED91-D186FAD5CF39</attributeRef>
 </usedAttributes>
 </identifier>
-<identifier id="1E95386D-65C9-7EFC-831F-65D710B29E0E" name="PERSONA_NIF_UK">
+<identifier id="AA81CD2F-5022-9E83-749D-61E7B8B83345" name="PERSONA_SS_UK">
 <createdBy>crist</createdBy>
-<createdTime>2022-11-26 08:49:46 UTC</createdTime>
+<createdTime>2022-11-26 09:53:33 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
-<newElementsIDs>73EAB96E-E889-DBB2-523C-22709E3C6778</newElementsIDs>
+<newElementsIDs>8761DED5-4BDF-041A-EF99-688FED49F4B1</newElementsIDs>
 <usedAttributes>
-<attributeRef>73EAB96E-E889-DBB2-523C-22709E3C6778</attributeRef>
+<attributeRef>8761DED5-4BDF-041A-EF99-688FED49F4B1</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

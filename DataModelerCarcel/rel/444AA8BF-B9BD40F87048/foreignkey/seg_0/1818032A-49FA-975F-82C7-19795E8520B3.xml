@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1818032A-49FA-975F-82C7-19795E8520B3" containerWithKeyObject="66650E3F-3AFA-794A-B289-9306B3553BF8" localFKIndex="172606E1-D6C1-87B4-3B51-78CF4BA1DF79" name="TURNOS_PERSONA_FK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-26 09:30:23 UTC</createdTime>
+<generatorID>4243B048-B98E-DB22-33F8-CD0351EA641B</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<referredTableLongName>PERSONA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>35A7E48D-63AC-3FE8-90D2-4D314AEED625</referredTableID>
+<keyObject>2F02C9DA-36E6-A0DA-6BBE-CC21FB2623C0</keyObject>
+<referredKeyID>2F02C9DA-36E6-A0DA-6BBE-CC21FB2623C0</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
