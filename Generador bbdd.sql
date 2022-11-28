@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 22.2.0.165.1149
---   en:        2022-11-28 13:55:04 CET
+--   en:        2022-11-28 16:34:30 CET
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -64,7 +64,8 @@ CREATE TABLE empleado (
     euros_hora         FLOAT NOT NULL,
     euros_horas_extras FLOAT NOT NULL,
     euros_horas_noche  FLOAT NOT NULL,
-    persona_nif        VARCHAR2(9) NOT NULL
+    persona_nif        VARCHAR2(9) NOT NULL,
+    carcel_cod_carcel  INTEGER NOT NULL
 );
 
 ALTER TABLE empleado ADD CONSTRAINT empleado_pk PRIMARY KEY ( persona_nif );
@@ -185,6 +186,10 @@ ALTER TABLE economato
         REFERENCES carcel ( cod_carcel );
 
 ALTER TABLE empleado
+    ADD CONSTRAINT empleado_carcel_fk FOREIGN KEY ( carcel_cod_carcel )
+        REFERENCES carcel ( cod_carcel );
+
+ALTER TABLE empleado
     ADD CONSTRAINT empleado_persona_fk FOREIGN KEY ( persona_nif )
         REFERENCES persona ( nif );
 
@@ -231,7 +236,7 @@ ALTER TABLE zona_de_visitas
 -- 
 -- CREATE TABLE                            19
 -- CREATE INDEX                             0
--- ALTER TABLE                             33
+-- ALTER TABLE                             34
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0
