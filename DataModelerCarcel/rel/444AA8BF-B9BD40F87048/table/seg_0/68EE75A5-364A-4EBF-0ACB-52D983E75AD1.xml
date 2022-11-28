@@ -61,11 +61,26 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>9</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="0DF9D8EB-BD4A-4516-9F4A-F730956A61AB" referredColumn="9A9AF593-5A22-AEE9-3809-05EB6087FA42"/>
+</associations>
+</Column>
+<Column name="CARCEL_COD_CARCEL" id="7631DA8C-C09F-F536-6F6C-FB25BA40BCE7">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-28 15:33:59 UTC</createdTime>
+<generatorID>20A25E96-7CF5-1849-CE7A-3605A02D5202</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3FB0728D-8679-2938-5AE3-E8CA8ED774C4" referredColumn="EA57D656-B305-01BA-69FE-DC8FAFF2C8B5"/>
 </associations>
 </Column>
 </columns>
@@ -91,6 +106,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="E7FA6C8A-3DB9-76E6-CF66-AF5DD2A91B8A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B04F53FC-0BF9-E513-D639-D6C55B482BED" name="EMPLEADO_CARCEL_FK">
+<createdBy>crist</createdBy>
+<createdTime>2022-11-28 15:33:59 UTC</createdTime>
+<generatorID>4555615B-44BD-92DA-C314-89B18F4A590A</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7631DA8C-C09F-F536-6F6C-FB25BA40BCE7"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
