@@ -50,11 +50,26 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>9</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="722B7F61-61DC-780E-7A80-1CE6BE307358" referredColumn="9A9AF593-5A22-AEE9-3809-05EB6087FA42"/>
+</associations>
+</Column>
+<Column name="CELDA_ID_CELDA" id="A6CFFCB5-EA17-E22B-71D7-85D80C6C37BC">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>D4AE6662-537E-3639-A322-755D4E395D77</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4BBBDA63-D87D-737A-D54B-62EEF1965137" referredColumn="F505D3E2-2217-41C9-F6D3-1BE856D53840"/>
 </associations>
 </Column>
 </columns>
@@ -91,6 +106,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="EBE06282-0357-4C45-0F47-C40887C6A582"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DC41D69-9D34-9E71-97EE-F2505F26E845" name="RECLUSOS_CELDA_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>628DCCA3-D437-1C4D-45B1-D30897B91A01</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6CFFCB5-EA17-E22B-71D7-85D80C6C37BC"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

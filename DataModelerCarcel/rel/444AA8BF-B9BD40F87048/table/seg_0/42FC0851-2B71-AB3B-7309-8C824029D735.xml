@@ -23,6 +23,44 @@
 <colAssociation fkAssociation="4149C158-E3D3-03D6-F582-5D7C8CA27E86" referredColumn="EA57D656-B305-01BA-69FE-DC8FAFF2C8B5"/>
 </associations>
 </Column>
+<Column name="HORA_APERTURA" id="3F11EC85-5730-B1BF-B13E-37E9EA79F3CB">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>1CE23C30-DF5E-D6C6-C6DC-227B32FD9F26</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HORA_CIERRE" id="8597D7B9-964B-5346-B30B-920E4405BEA3">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>EA7F05C4-E1AB-4878-1975-6737829FDFB8</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIF" id="E18F7599-2A82-E9C1-80BD-76C011C25144">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>585BECC0-CA6F-EE8E-D621-CDA92868360C</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="CC07555D-96F1-05BE-73DF-D3FFA56F3B17" name="Economato_PK">
@@ -35,6 +73,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="38A7B0BE-ED97-848A-5402-737EA90DD2FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2713D7E3-A782-F850-F0D3-89BAF51A0C0D" name="Economato_CIF_UN">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>595CBB96-FCB2-3165-779D-0A4BD7227E0D</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E18F7599-2A82-E9C1-80BD-76C011C25144"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="18C42A70-8087-82CB-31EF-73703DC3BDA2" name="Economato_CARCEL_FK">

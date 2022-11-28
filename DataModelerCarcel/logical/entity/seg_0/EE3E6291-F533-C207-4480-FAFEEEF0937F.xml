@@ -29,6 +29,47 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="HORA_APERTURA" id="1CE23C30-DF5E-D6C6-C6DC-227B32FD9F26">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:25:28 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="HORA_CIERRE" id="EA7F05C4-E1AB-4878-1975-6737829FDFB8">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:27:01 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CIF" id="585BECC0-CA6F-EE8E-D621-CDA92868360C">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:27:44 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A92CCCC7-E681-724C-EE2C-D14A1C39FFD4" name="Economato PK">
@@ -41,6 +82,18 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>6BD48096-11AD-3EC9-BB03-BB77FFFDC893</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="595CBB96-FCB2-3165-779D-0A4BD7227E0D" name="ECONOMATO_CIF_UK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:29:46 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<newElementsIDs>585BECC0-CA6F-EE8E-D621-CDA92868360C</newElementsIDs>
+<usedAttributes>
+<attributeRef>585BECC0-CA6F-EE8E-D621-CDA92868360C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

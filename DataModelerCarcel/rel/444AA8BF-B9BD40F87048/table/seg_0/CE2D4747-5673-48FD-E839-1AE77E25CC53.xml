@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CE2D4747-5673-48FD-E839-1AE77E25CC53" name="ZONA_DE_VISITAS">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>249CF47C-E163-540A-4A0F-0EBE91B3C473</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ZONA_ACTIVIDADES_ID_ZONA" id="824A0852-A80F-BE5B-A1F6-C39451F378F8">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>29940EE8-EFB6-3EA0-3A76-FC853C81CC64</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9532A4F6-6070-6A2C-AE94-D13A49F73E98" referredColumn="E3DADBA2-9CDC-D661-D242-B176807E7F3F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="101EAA1D-D0DB-DF17-1573-0E2B41CA1AA9" name="ZONA_DE_VISITAS_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>671DA90A-2C0F-B128-4017-8B0501798035</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="824A0852-A80F-BE5B-A1F6-C39451F378F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3261896-D20C-0C99-94C5-A96B8AAC89DC" name="ZONA_DE_VISITAS_ZONA_ACTIVIDADES_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:54:08 UTC</createdTime>
+<generatorID>AA97509E-AE19-81DD-BB2C-2E777EDECB92</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="824A0852-A80F-BE5B-A1F6-C39451F378F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

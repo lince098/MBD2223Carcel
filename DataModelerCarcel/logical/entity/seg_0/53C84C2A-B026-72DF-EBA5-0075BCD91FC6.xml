@@ -64,6 +64,20 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_CELDA" id="D4AE6662-537E-3639-A322-755D4E395D77">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:31:02 UTC</createdTime>
+<generatorID>628DCCA3-D437-1C4D-45B1-D30897B91A01</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<referedAttribute>B0E3B46C-E098-B7F5-6800-790543E41BC3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -76,7 +90,7 @@
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>D9AD3E6F-6AE6-4446-8C43-13DAA6927752</newElementsIDs>
+<newElementsIDs>08F934F4-2F08-1FD6-0499-7206D34A472B</newElementsIDs>
 <usedAttributes>
 <attributeRef>D9AD3E6F-6AE6-4446-8C43-13DAA6927752</attributeRef>
 </usedAttributes>

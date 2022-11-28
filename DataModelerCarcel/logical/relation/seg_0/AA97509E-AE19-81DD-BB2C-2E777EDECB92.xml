@@ -1,19 +1,19 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SUBTIPO_RECLUSOS" directorySegmentName="seg_0" id="08F934F4-2F08-1FD6-0499-7206D34A472B">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:13:59 UTC</createdTime>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SUBTIPO_ZONA_VISITAS" directorySegmentName="seg_0" id="AA97509E-AE19-81DD-BB2C-2E777EDECB92">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-28 12:42:05 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
-<sourcePk>10A514C3-3B89-DC10-8A4C-3410EC83C6DA</sourcePk>
+<sourcePk>E22E435E-51D0-EFF8-3FCB-9C7785F54E84</sourcePk>
 <identifying>true</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
-<sourceEntity>59767B7F-5D3B-EC7C-C928-994E159247DE</sourceEntity>
+<sourceEntity>8FBD2E2F-DF8F-1E0C-9E60-3AE8B5E748DC</sourceEntity>
 <targetCardinalityString>1</targetCardinalityString>
-<targetEntity>53C84C2A-B026-72DF-EBA5-0075BCD91FC6</targetEntity>
+<targetEntity>249CF47C-E163-540A-4A0F-0EBE91B3C473</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 </Relation>
