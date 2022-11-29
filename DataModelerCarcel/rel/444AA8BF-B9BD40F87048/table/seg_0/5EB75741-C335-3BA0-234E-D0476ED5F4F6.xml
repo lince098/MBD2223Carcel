@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5EB75741-C335-3BA0-234E-D0476ED5F4F6" name="Limpiador">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>3E3314D0-11D2-0717-D562-EE0E4AAB3C11</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="F4F945A9-2DA0-A8C3-32B0-25929086A1E3">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>F1645589-4F88-7044-5D64-E606D0506028</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6AC98A73-477F-331C-510F-A14250D890FF" referredColumn="DBAD16C1-2083-4042-BF94-13946C2AEDBF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EC1DA844-7F54-833B-2FDF-78EE6F5F3366" name="Limpiador_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>487EAB9D-761F-B466-B33F-608F25D69C0E</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4F945A9-2DA0-A8C3-32B0-25929086A1E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A5D38AB1-60AC-FC58-D9D4-C72F08C1148E" name="Limpiador_EMPLEADO_O_RECLUSO_VOLUNTARIO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>B3B3AE6B-37F0-3560-F57B-0C498F60007F</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4F945A9-2DA0-A8C3-32B0-25929086A1E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="35CCE56B-4C14-46A0-E9D3-3D327E790C9D" name="FKArc_4">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<mandatory>false</mandatory>
+<reverseArc>true</reverseArc>
+<table>70C38540-1B76-E6F4-A48C-457508EEBD5B</table>
+<fkeys>
+<fkeyID>6E873A6D-1B94-8C97-3E2F-B073D6D1BD29</fkeyID>
+<fkeyID>3E8D7FED-3779-ABF2-1C11-53DC9B1FDC75</fkeyID>
+<fkeyID>42D995CB-B956-4CD7-D96B-8177A755512D</fkeyID>
+</fkeys>
+</FKArc>

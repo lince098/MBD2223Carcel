@@ -52,15 +52,15 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NIF" id="7FBB9412-519E-C91A-418C-99D1DFE833D7">
+<Attribute name="NIF" id="5568E6E8-B955-7D13-2CB9-247BA2DDF9D5">
 <createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-26 11:02:43 UTC</createdTime>
-<generatorID>36717B48-C69A-373B-2BB1-97E27E03DC9E</generatorID>
+<createdTime>2022-11-29 17:49:41 UTC</createdTime>
+<generatorID>D7B2E3EB-F010-FE85-CCE3-7FB69470C60D</generatorID>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
 <item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
-<referedAttribute>34C3D09E-6591-D750-1718-E34AE073EEC7</referedAttribute>
+<referedAttribute>B6319357-C597-9B9A-ED91-D186FAD5CF39</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -73,15 +73,14 @@
 <createdBy>Zaloon098</createdBy>
 <createdTime>2022-11-26 11:03:05 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>E588E3BD-1A46-21BD-1B3F-FFC671FB8D2B,36717B48-C69A-373B-2BB1-97E27E03DC9E,7FBB9412-519E-C91A-418C-99D1DFE833D7</newElementsIDs>
+<newElementsIDs>E588E3BD-1A46-21BD-1B3F-FFC671FB8D2B</newElementsIDs>
 <usedAttributes>
 <attributeRef>E588E3BD-1A46-21BD-1B3F-FFC671FB8D2B</attributeRef>
-<attributeRef>7FBB9412-519E-C91A-418C-99D1DFE833D7</attributeRef>
-<attributeRef>7FBB9412-519E-C91A-418C-99D1DFE833D7</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

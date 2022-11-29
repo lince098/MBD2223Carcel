@@ -11,6 +11,7 @@
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
 <growthPercent>0</growthPercent>
 <growthType>Year</growthType>
+<hierarchicalParent>18C5B635-731C-5FDB-48B8-1EA36C6DE22D</hierarchicalParent>
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>

@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="104B34AD-4FA5-E172-06B1-7D9539F5A1DB" name="CARCEL">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>4874A324-CA6D-2998-B5D7-A6526C460E75</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COD_CARCEL" id="7EFE2472-D1D6-61D3-90E4-AB2270523994">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>1FD9960E-D051-53E1-E2F9-25AFBDDCB102</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="B8F5416B-F591-08C8-B0FF-4889466B7382">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>B2A4A051-660A-A43B-756F-2BBD6B0E4533</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="BCEBDD84-99C5-BDF5-6A99-9F889E1095C7">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>73BDDB03-0950-C602-D46C-A0326F3412F2</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TELEFONO" id="3BE670B5-1973-EBAD-9672-FD8E998DA456">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>67D40824-8B62-67BA-D4A6-D2DF588FC7D4</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIRECCION" id="EC4A4BCC-4140-DA1A-7AAB-FC6D0A3FB21C">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>263E301D-669C-E69C-E5F2-982D96D1A1E9</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA0A11F7-2FFD-54D6-FE69-AEF3D1E56EB8" name="CARCEL_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>185B5687-09A0-0218-7034-62C23C5288DD</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7EFE2472-D1D6-61D3-90E4-AB2270523994"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

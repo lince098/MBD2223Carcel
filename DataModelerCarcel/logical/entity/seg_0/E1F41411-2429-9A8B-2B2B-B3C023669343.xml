@@ -11,6 +11,7 @@
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
 <growthPercent>0</growthPercent>
 <growthType>Year</growthType>
+<hierarchicalParent>59767B7F-5D3B-EC7C-C928-994E159247DE</hierarchicalParent>
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
@@ -63,21 +64,6 @@
 <logicalDatatype>LOGDT021</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NIF" id="34C3D09E-6591-D750-1718-E34AE073EEC7">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:17:10 UTC</createdTime>
-<generatorID>093BF62F-905D-05B5-65A1-2EBAE8389D67</generatorID>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<referedAttribute>B6319357-C597-9B9A-ED91-D186FAD5CF39</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>9</dataTypeSize>
-<ownDataTypeParameters>9,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="COD_CARCEL" id="20A25E96-7CF5-1849-CE7A-3605A02D5202">
 <createdBy>Zaloon098</createdBy>
 <createdTime>2022-11-28 13:11:41 UTC</createdTime>
@@ -92,20 +78,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-</attributes>
-<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="7AC959D4-BCBA-4C21-4BDB-5D3302AE2083" name="EMPLEADO PK">
+<Attribute name="NIF" id="67633043-249D-15BF-76B8-1986648B6FDB">
 <createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-26 11:02:10 UTC</createdTime>
+<createdTime>2022-11-29 17:58:40 UTC</createdTime>
+<generatorID>29A1005B-E47B-C262-2B31-3394F64F522E</generatorID>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
 </engineerTo>
-<pk>true</pk>
-<usedAttributes>
-<attributeRef>34C3D09E-6591-D750-1718-E34AE073EEC7</attributeRef>
-</usedAttributes>
-</identifier>
-</identifiers>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>B6319357-C597-9B9A-ED91-D186FAD5CF39</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
 </Entity>

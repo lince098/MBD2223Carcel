@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0689928B-D0CA-2A8D-B63C-8608B24A91C9" name="MODULO">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>CDA90FAC-49F2-56B3-B05B-475FE78095D1</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_MODULO" id="931CCCAB-F372-3A2F-C437-237191FC1093">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>7C883645-A4E6-295E-87DD-C82467BFF840</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARCEL_COD_CARCEL" id="5F1DFA82-43FE-4B2D-DD54-86A6963D6697">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>4F0F7402-A114-86A4-03B8-9A6296183645</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="49E8DCBA-CAC0-4FDD-B10B-FF05086C6AE3" referredColumn="7EFE2472-D1D6-61D3-90E4-AB2270523994"/>
+</associations>
+</Column>
+<Column name="TIPO_MODULO" id="238E8C56-34CF-D52D-5B5F-57BC2CD0B4A9">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>620D25B3-2105-2025-E7B8-54BCB58C0C69</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<listOfValues>
+<valueDef value="aislamiento" description=""/>
+<valueDef value="ingreso" description=""/>
+<valueDef value="internos" description=""/>
+</listOfValues>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="79E5A8AC-D41F-AF86-EC45-2CB08102DDC2" name="MODULO_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>68B7A9A3-39B7-DCB7-CB90-B63D206857E5</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="931CCCAB-F372-3A2F-C437-237191FC1093"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="95997D37-0CE9-E3E9-9D2D-1FEEE737DC40" name="MODULO_CARCEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>AE48C97E-0165-3D46-A298-3FF4190DC2D6</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5F1DFA82-43FE-4B2D-DD54-86A6963D6697"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

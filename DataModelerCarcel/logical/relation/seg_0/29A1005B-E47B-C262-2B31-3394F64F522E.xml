@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="DIRIGE_A" directorySegmentName="seg_0" id="29A1005B-E47B-C262-2B31-3394F64F522E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 17:58:40 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<targetPk>10A514C3-3B89-DC10-8A4C-3410EC83C6DA</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E1F41411-2429-9A8B-2B2B-B3C023669343</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E1F41411-2429-9A8B-2B2B-B3C023669343</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

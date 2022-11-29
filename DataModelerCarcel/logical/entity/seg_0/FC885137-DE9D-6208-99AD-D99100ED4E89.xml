@@ -3,8 +3,9 @@
 <createdBy>Zaloon098</createdBy>
 <createdTime>2022-11-28 12:46:13 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,4 +15,35 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NIF" id="C8F5FAF6-5664-82CE-1A75-204AACFA703E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:07:38 UTC</createdTime>
+<generatorID>17D1B02B-D934-2FFE-5209-E49606D5DE61</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<referedAttribute>B6319357-C597-9B9A-ED91-D186FAD5CF39</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="696467B4-D440-3DC6-9014-E2C5A68B1530" name="GUARDIA PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:07:38 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C8F5FAF6-5664-82CE-1A75-204AACFA703E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

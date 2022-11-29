@@ -41,21 +41,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NIF" id="8B889A04-7C89-F65B-4C74-6F0814D4F753">
-<createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-28 12:33:16 UTC</createdTime>
-<generatorID>17E3E667-9888-D2B9-429E-7473087D7298</generatorID>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<referedAttribute>D9AD3E6F-6AE6-4446-8C43-13DAA6927752</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>9</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="AFORO_MAX" id="9187041F-E740-C1F2-8152-3D4D2A9CB451">
 <createdBy>Zaloon098</createdBy>
 <createdTime>2022-11-28 12:35:34 UTC</createdTime>
@@ -67,6 +52,24 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO" id="BC741243-85BF-D885-BD38-765CA999D0B4">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 17:31:56 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<listOfValues>
+<valueDef value="BIBLIOTECA" description=""/>
+<valueDef value="GIMNASIO" description=""/>
+<valueDef value="VISITA" description=""/>
+</listOfValues>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

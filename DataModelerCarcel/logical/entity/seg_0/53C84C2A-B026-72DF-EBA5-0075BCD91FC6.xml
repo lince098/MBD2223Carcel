@@ -11,6 +11,7 @@
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
 <growthPercent>0</growthPercent>
 <growthType>Year</growthType>
+<hierarchicalParent>59767B7F-5D3B-EC7C-C928-994E159247DE</hierarchicalParent>
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
@@ -51,21 +52,6 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NIF" id="D9AD3E6F-6AE6-4446-8C43-13DAA6927752">
-<createdBy>crist</createdBy>
-<createdTime>2022-11-26 10:13:59 UTC</createdTime>
-<generatorID>08F934F4-2F08-1FD6-0499-7206D34A472B</generatorID>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<referedAttribute>B6319357-C597-9B9A-ED91-D186FAD5CF39</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>9</dataTypeSize>
-<ownDataTypeParameters>9,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="ID_CELDA" id="D4AE6662-537E-3639-A322-755D4E395D77">
 <createdBy>Zaloon098</createdBy>
 <createdTime>2022-11-28 12:31:02 UTC</createdTime>
@@ -82,25 +68,13 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="6859437B-FB3C-3C1C-5C8F-7798BC45F342" name="RECLUSO_PK">
-<createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-26 11:21:18 UTC</createdTime>
-<ownerDesignName>DataModelerCarcel</ownerDesignName>
-<engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
-</engineerTo>
-<pk>true</pk>
-<newElementsIDs>08F934F4-2F08-1FD6-0499-7206D34A472B</newElementsIDs>
-<usedAttributes>
-<attributeRef>D9AD3E6F-6AE6-4446-8C43-13DAA6927752</attributeRef>
-</usedAttributes>
-</identifier>
 <identifier id="7DBBF6FB-790F-CAD5-3618-42D2BE48380F" name="RECLUSO_NIS_UK">
 <createdBy>Zaloon098</createdBy>
 <createdTime>2022-11-26 11:21:46 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
 </engineerTo>
 <newElementsIDs>E499F2CD-27DA-FBA9-790E-F901A84CDC74</newElementsIDs>
 <usedAttributes>

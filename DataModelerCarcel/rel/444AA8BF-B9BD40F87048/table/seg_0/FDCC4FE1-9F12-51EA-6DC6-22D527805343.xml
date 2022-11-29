@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FDCC4FE1-9F12-51EA-6DC6-22D527805343" name="VISITANTE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>E667205D-E134-2205-0AD3-9C5381CB2991</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="6CBF06F8-4051-A6EC-6639-73CE70E06DD9">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>B6319357-C597-9B9A-ED91-D186FAD5CF39</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3E8D7FED-3779-ABF2-1C11-53DC9B1FDC75" referredColumn="D1B02A9A-8FA1-B343-9F15-12FFDE8A8D24"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B63C04C1-2904-1DF9-D8FB-8CF6B9579F2C" name="VISITANTE_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>10A514C3-3B89-DC10-8A4C-3410EC83C6DA</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6CBF06F8-4051-A6EC-6639-73CE70E06DD9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FF2EEE46-2493-3E60-F951-694678424548" name="VISITANTE_PERSONA_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>710943A4-C91B-FC87-3129-00538B4B6032</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6CBF06F8-4051-A6EC-6639-73CE70E06DD9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="565145C4-4D1E-3538-8048-679EA99492CD" containerWithKeyObject="CC443C8C-DB3B-7DAA-3234-41B176CAFD54" localFKIndex="702D99C0-D356-7B04-C7E9-AD976935EADD" name="RECLUSO_PERMISO_ZONA_ZONA_ACTIVIDADES_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-11-29 18:08:59 UTC</createdTime>
+<generatorID>AC427755-6034-32EC-766C-714F2A399FB5</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<referredTableLongName>ZONA_ACTIVIDADES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B47F83D9-693A-A2D3-5B45-3D897C3EFC09</referredTableID>
+<keyObject>C5D3B061-1A48-216A-098D-6113FD5863F3</keyObject>
+<referredKeyID>C5D3B061-1A48-216A-098D-6113FD5863F3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_ZONA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
