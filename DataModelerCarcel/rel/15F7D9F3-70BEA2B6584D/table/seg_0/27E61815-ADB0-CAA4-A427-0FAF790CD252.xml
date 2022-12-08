@@ -68,6 +68,18 @@
 <colAssociation fkAssociation="7B28C740-37C8-F676-48F2-16EB85FE8078" referredColumn="84C439CF-8931-1336-29DC-4356D2C8C71E"/>
 </associations>
 </Column>
+<Column name="COD_CARCEL" id="AFA62617-B9DD-8C63-9C30-AC28F3881A70">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 10:17:16 UTC</createdTime>
+<generatorID>B2447B60-576B-C3BB-48C4-D368A85B93A3</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="B38E6684-9CFD-204C-77CB-2342D613559A" name="PRODUCTO_PK">
