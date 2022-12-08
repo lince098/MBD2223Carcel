@@ -17,12 +17,23 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>9</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="D07B0E46-8410-1C6E-283A-8527D506CF3C" referredColumn="F3BB18B6-A85F-BCE7-7FA1-4637DC7530FD"/>
 </associations>
+</Column>
+<Column name="NUM_PLACA" id="D1FACF65-244D-939A-884E-1D17A8D64BD4">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 10:50:31 UTC</createdTime>
+<generatorID>6FEC24BC-131D-A928-013B-15B6CD4DC438</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -36,6 +47,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="AA1C7C70-2767-4DFF-1872-18214CF543B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A35D420E-B727-510F-E3FF-BAB66743A333" name="GUARDIA_NUM_PLACA_UN">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 10:50:31 UTC</createdTime>
+<generatorID>2CC0CD7F-3854-6F2D-065B-AF9FA6869115</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1FACF65-244D-939A-884E-1D17A8D64BD4"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="7CF1D53A-1029-85D4-1C05-84B1536E7800" name="GUARDIA_EMPLEADO_FK">

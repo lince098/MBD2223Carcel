@@ -80,6 +80,18 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="COD_CARCEL1" id="ABD98760-35CC-C88F-E19B-8A7B946239AA">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 10:50:31 UTC</createdTime>
+<generatorID>C981E59A-C823-5A6F-120B-25F091076B4E</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="B38E6684-9CFD-204C-77CB-2342D613559A" name="PRODUCTO_PK">

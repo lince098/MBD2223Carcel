@@ -30,6 +30,18 @@
 <dataTypeSize>9</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="NUM_PLACA" id="6FEC24BC-131D-A928-013B-15B6CD4DC438">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 10:49:05 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="696467B4-D440-3DC6-9014-E2C5A68B1530" name="GUARDIA PK">
@@ -44,6 +56,15 @@
 <usedAttributes>
 <attributeRef>752242A7-F882-6429-534F-DB048877CE43</attributeRef>
 </usedAttributes>
+</identifier>
+<identifier id="2CC0CD7F-3854-6F2D-065B-AF9FA6869115" name="GUARDIA_NUM_PLACA_UK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 10:49:20 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
+</engineerTo>
+<newElementsIDs>6FEC24BC-131D-A928-013B-15B6CD4DC438</newElementsIDs>
 </identifier>
 </identifiers>
 </Entity>
