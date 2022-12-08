@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="27E61815-ADB0-CAA4-A427-0FAF790CD252" name="PRODUCTO">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>456E36E7-44E8-7EB7-521A-93A7FF13E185</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PRODUCTO" id="203B5888-BF0A-8FDF-36BE-D90903F89C94">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>3080715D-E836-A114-8432-B8B57E0ED8CE</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO" id="DB0F2E88-11C9-6BCD-A5DB-DFAECE143F0E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>8F506139-C596-4D48-6923-62B40812EA20</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="957BCBF9-F0A9-A972-9CE3-77A5CAF6E908">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>10FB147C-B7B3-224D-3450-589ECF1C5A71</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STOCK" id="BCA6F559-403D-B928-D2C0-FA59DF540F39">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>46C98034-4812-5E06-C450-6E263BCFF037</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ECONOMATO_CARCEL_COD_CARCEL" id="51F7C724-B63E-30A5-1BA7-CEB716C63571">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>12D1308D-0057-7815-0C0F-8B80B6369C48</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7B28C740-37C8-F676-48F2-16EB85FE8078" referredColumn="84C439CF-8931-1336-29DC-4356D2C8C71E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B38E6684-9CFD-204C-77CB-2342D613559A" name="PRODUCTO_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>D89477DD-C340-5911-B299-C602B1C1E176</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="203B5888-BF0A-8FDF-36BE-D90903F89C94"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7BCB412F-7A7B-D9BF-DA89-3E1CEC8C805F" name="PRODUCTO_ECONOMATO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>5120F678-ED83-95FE-3CA0-D4B0D920871C</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51F7C724-B63E-30A5-1BA7-CEB716C63571"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

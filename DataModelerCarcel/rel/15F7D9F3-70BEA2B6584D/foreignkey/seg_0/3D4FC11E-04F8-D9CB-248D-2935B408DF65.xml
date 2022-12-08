@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3D4FC11E-04F8-D9CB-248D-2935B408DF65" containerWithKeyObject="0E176C8C-C88A-A5F3-233D-4BE8D7783117" localFKIndex="E336C082-BB58-5F1A-3799-4E6830E36B70" name="COCINERO_SUBCONTRATA_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>E7EA2D3A-1A30-0BDB-D8F7-BC942ECC18A4</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<referredTableLongName>SUBCONTRATA_EMPLEADO</referredTableLongName>
+<arc>04480A2E-E1F1-BA37-4479-C3F5B9C3087A</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AB4B17F0-6145-95F3-CC13-EA04F6833226</referredTableID>
+<keyObject>8EC60A53-2F66-4F10-953C-9632F6D3690B</keyObject>
+<referredKeyID>8EC60A53-2F66-4F10-953C-9632F6D3690B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>NIF</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

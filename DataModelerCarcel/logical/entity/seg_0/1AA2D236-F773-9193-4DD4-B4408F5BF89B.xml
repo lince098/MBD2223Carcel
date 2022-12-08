@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1AA2D236-F773-9193-4DD4-B4408F5BF89B" name="PROVEEDOR">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1AA2D236-F773-9193-4DD4-B4408F5BF89B" name="EMPRESA_EXTERNA">
 <createdBy>Zaloon098</createdBy>
 <createdTime>2022-11-29 18:56:43 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>

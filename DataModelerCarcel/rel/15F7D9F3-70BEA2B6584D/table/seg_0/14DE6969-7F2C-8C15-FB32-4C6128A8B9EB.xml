@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="14DE6969-7F2C-8C15-FB32-4C6128A8B9EB" name="MEDICO">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>74CDB629-9D8E-4D46-13C6-80716BE013B9</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NUM_COLEGIADO_MEDICO" id="CDC2B760-9A2D-A8C9-63DA-9870BAAF7DA4">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>1724D010-D65A-EB31-F900-16A120C439FD</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMPLEADO_PERSONA_NIF" id="27874BF0-0F77-5824-0423-FC23AE0C33B6">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>C8A93B46-ACF5-9477-5801-13B9E551F8EF</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A0640D45-EBDB-2626-AFA4-CBCDB4F6B451" referredColumn="F3BB18B6-A85F-BCE7-7FA1-4637DC7530FD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EAEE0D96-FC12-6BCC-3505-B382C44104DE" name="MEDICO_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>45A80878-93DF-5FA8-31AB-42FDB4AF9070</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CDC2B760-9A2D-A8C9-63DA-9870BAAF7DA4"/>
+<colUsage columnID="27874BF0-0F77-5824-0423-FC23AE0C33B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0BDDD0E7-EA22-ADCE-FC36-28426EBEE64C" name="MEDICO__IDX">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>9541DD30-5972-39F2-7140-B7FE43AE3C6D</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="27874BF0-0F77-5824-0423-FC23AE0C33B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="47708977-B5AC-AC2B-9E95-48B85871B6AD" name="MEDICO_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>9541DD30-5972-39F2-7140-B7FE43AE3C6D</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27874BF0-0F77-5824-0423-FC23AE0C33B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="38A48FD5-52F5-3169-934A-A40F2DCFE073" name="PROVEE_ECONOMATO">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EMPRESA_EXTERNA_CIF" id="9A958DCC-B2C8-BFEF-78A7-117F57E281D1">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="733EA974-4830-5A5E-111F-1F9BDB3BF89C" referredColumn="41485F72-4472-02AB-5D7F-0F681D8C481A"/>
+</associations>
+</Column>
+<Column name="ECONOMATO_COD_CARCEL" id="9B578822-4FE5-469D-8B22-E5B05CC55E3C">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74F7ED5B-0EAE-F39D-DD87-52EEC8A27302" referredColumn="84C439CF-8931-1336-29DC-4356D2C8C71E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="180D495A-A46E-BDF4-EA6F-E4692B8FD3A7" name="PROVEE_ECONOMATO_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A958DCC-B2C8-BFEF-78A7-117F57E281D1"/>
+<colUsage columnID="9B578822-4FE5-469D-8B22-E5B05CC55E3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2FA100B5-6BA7-1F5E-0CE6-91977981E03C" name="PROVEE_ECONOMATO_EMPRESA_EXTERNA_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>FE308501-270C-BADE-81AA-5420AD9A9676</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A958DCC-B2C8-BFEF-78A7-117F57E281D1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F1703B3D-66F4-1D4E-8003-EC068084DB6D" name="PROVEE_ECONOMATO_ECONOMATO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>FE308501-270C-BADE-81AA-5420AD9A9676</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B578822-4FE5-469D-8B22-E5B05CC55E3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -4,7 +4,7 @@
 <createdTime>2022-11-26 10:10:33 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2022-11-26 10:10:38 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,7 +32,7 @@
 <createdTime>2022-11-26 10:10:43 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -44,7 +44,7 @@
 <createdTime>2022-11-26 10:11:12 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -52,20 +52,20 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NIF" id="5568E6E8-B955-7D13-2CB9-247BA2DDF9D5">
+<Attribute name="NIF" id="C8E43E27-FA34-0EBA-F625-69295D376FE9">
 <createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-29 17:49:41 UTC</createdTime>
+<createdTime>2022-12-08 09:32:56 UTC</createdTime>
 <generatorID>D7B2E3EB-F010-FE85-CCE3-7FB69470C60D</generatorID>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
-<referedAttribute>B6319357-C597-9B9A-ED91-D186FAD5CF39</referedAttribute>
+<referedAttribute>F8CF4539-DD7F-D6CF-171D-EADF54210E3B</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>9</dataTypeSize>
-<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -75,7 +75,7 @@
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <newElementsIDs>E588E3BD-1A46-21BD-1B3F-FFC671FB8D2B</newElementsIDs>

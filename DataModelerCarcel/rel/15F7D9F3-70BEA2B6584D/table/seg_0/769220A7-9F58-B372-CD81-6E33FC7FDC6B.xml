@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="769220A7-9F58-B372-CD81-6E33FC7FDC6B" name="SUBCONTRATA">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>185B2469-8B05-A938-7552-541B86741BF0</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EMPRESA_EXTERNA_CIF" id="9EB470B3-FCD7-6CAE-116F-543F9A0318C4">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>172450DD-0485-729B-91F0-BCDF5B79E092</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="24BF0F64-56B7-8D86-29AE-8FD3CB4D4363" referredColumn="41485F72-4472-02AB-5D7F-0F681D8C481A"/>
+</associations>
+</Column>
+<Column name="EMPLEADO_PERSONA_NIF" id="8EDF28DE-0C32-4CD3-3B05-9A33767764F4">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>634EA0DF-80A4-4CB4-F814-CC22FE9C9285</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="36D690CC-9532-BD4C-BE72-9FD5F7A5782D" referredColumn="F3BB18B6-A85F-BCE7-7FA1-4637DC7530FD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A892DCF7-4297-7EEC-591A-37966E609C4A" name="SUBCONTRATA_PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>60995F08-E5EA-1617-9CA0-4EA87784401C</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8EDF28DE-0C32-4CD3-3B05-9A33767764F4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F8A3B007-7787-B9B0-CA50-089310F1B54D" name="SUBCONTRATA_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>6DAE28EE-1A9D-949B-4736-4E5887FC833B</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8EDF28DE-0C32-4CD3-3B05-9A33767764F4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8AAFA219-79D9-64DF-FBDE-6AAFCAD2776B" name="SUBCONTRATA_EMPRESA_EXTERNA_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>69646628-96FC-5F8C-4771-C30C89470716</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9EB470B3-FCD7-6CAE-116F-543F9A0318C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

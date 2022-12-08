@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2BF9A845-826F-8B10-D9F6-6CB4EBDF9A0E" containerWithKeyObject="E5DA1CF2-17F4-1580-AB69-2E3BE50DF2C7" localFKIndex="E69ED894-3915-CAF5-D2F6-E71F93CFFC2E" name="ECONOMATO_CARCEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>611529EC-AC82-15D8-1553-9BE76E6FE5C4</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<referredTableLongName>CARCEL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CD72562D-E5CE-DB94-27F0-29D163873B85</referredTableID>
+<keyObject>399E90A1-1325-9FC8-5B5A-72D4723EF251</keyObject>
+<referredKeyID>399E90A1-1325-9FC8-5B5A-72D4723EF251</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>COD_CARCEL</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

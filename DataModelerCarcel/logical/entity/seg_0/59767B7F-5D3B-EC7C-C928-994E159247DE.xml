@@ -4,7 +4,7 @@
 <createdTime>2022-11-26 09:48:22 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2022-11-26 09:48:44 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +33,7 @@
 <createdTime>2022-11-26 09:48:57 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,7 +47,7 @@
 <createdTime>2022-11-26 09:51:25 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -60,7 +60,7 @@
 <createdTime>2022-11-26 09:51:45 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -73,13 +73,25 @@
 <createdTime>2022-11-26 09:52:08 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA_NACIMIENTO" id="2ED9B24A-51CE-59FE-F13A-386CB8468ECA">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 08:47:44 UTC</createdTime>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -89,7 +101,7 @@
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <newElementsIDs>B6319357-C597-9B9A-ED91-D186FAD5CF39</newElementsIDs>
@@ -103,7 +115,7 @@
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="false"/>
 </engineerTo>
 <newElementsIDs>8761DED5-4BDF-041A-EF99-688FED49F4B1</newElementsIDs>
 <usedAttributes>

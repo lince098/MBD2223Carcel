@@ -3,9 +3,8 @@
 <createdBy>Zaloon098</createdBy>
 <createdTime>2022-11-28 12:45:57 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="false"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -16,15 +15,27 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="NIF" id="26FC4670-E783-1CC7-0692-1E4C62413CEA">
+<Attribute name="NUM_COLEGIADO_MEDICO" id="1724D010-D65A-EB31-F900-16A120C439FD">
 <createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-29 18:07:12 UTC</createdTime>
-<generatorID>B9C49976-0E6F-E037-F3F1-61BC3BD705AF</generatorID>
+<createdTime>2022-12-08 08:42:50 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
 </engineerTo>
-<referedAttribute>B6319357-C597-9B9A-ED91-D186FAD5CF39</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NIF" id="C8A93B46-ACF5-9477-5801-13B9E551F8EF">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:33:20 UTC</createdTime>
+<generatorID>9541DD30-5972-39F2-7140-B7FE43AE3C6D</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<engineerTo>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="true"/>
+</engineerTo>
+<referedAttribute>F8CF4539-DD7F-D6CF-171D-EADF54210E3B</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -33,16 +44,19 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="93EEC136-408E-8620-0919-204C4DD5D2B7" name="MEDICO PK">
+<identifier id="45A80878-93DF-5FA8-31AB-42FDB4AF9070" name="NUM_COLEGIADO_UK">
 <createdBy>Zaloon098</createdBy>
-<createdTime>2022-11-29 18:07:12 UTC</createdTime>
+<createdTime>2022-12-08 08:43:45 UTC</createdTime>
 <ownerDesignName>DataModelerCarcel</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="444AA8BF-4BB0-6604-CCDD-B9BD40F87048" value="true"/>
+<item key="15F7D9F3-7349-B371-8CFE-70BEA2B6584D" value="false"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>1724D010-D65A-EB31-F900-16A120C439FD,9541DD30-5972-39F2-7140-B7FE43AE3C6D</newElementsIDs>
 <usedAttributes>
-<attributeRef>26FC4670-E783-1CC7-0692-1E4C62413CEA</attributeRef>
+<attributeRef>1724D010-D65A-EB31-F900-16A120C439FD</attributeRef>
+<attributeRef>C8A93B46-ACF5-9477-5801-13B9E551F8EF</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

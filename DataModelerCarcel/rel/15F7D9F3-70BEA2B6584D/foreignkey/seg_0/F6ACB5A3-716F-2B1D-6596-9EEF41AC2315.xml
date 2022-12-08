@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F6ACB5A3-716F-2B1D-6596-9EEF41AC2315" containerWithKeyObject="1066947C-9543-A48D-FE32-8C160D27E6FD" localFKIndex="D62E4FC0-0AE7-C63F-4BA0-54F34547150B" name="RECLUSO_CELDA_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-08 09:34:00 UTC</createdTime>
+<generatorID>628DCCA3-D437-1C4D-45B1-D30897B91A01</generatorID>
+<ownerDesignName>DataModelerCarcel</ownerDesignName>
+<referredTableLongName>CELDA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FD9A8964-0A93-56BD-B935-F0BF63D031F2</referredTableID>
+<keyObject>D38AD9D1-D87D-F1D0-C6E4-BB66B5486757</keyObject>
+<referredKeyID>D38AD9D1-D87D-F1D0-C6E4-BB66B5486757</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_CELDA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
