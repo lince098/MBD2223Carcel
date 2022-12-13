@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4FAC34BB-1B5D-4AA7-54EE-E4B78D2D52B4" name="EMPRESA EXTERNA">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>1CCC13FE-506C-98F6-A1EF-C4FEF4F79BC5</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CIF" id="5270CEC2-F650-07B3-D79A-323EC6C2474D">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>1C892B05-4CBA-EECD-57B7-CD71E5098D66</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE" id="A0F2D28A-74AF-A059-0BA2-20B982C375B7">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>928FE6C1-790E-74A4-D4DA-B6AF57BC65D4</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DIRECCION FISICA" id="6C3DD2F4-5B33-185B-F31D-487529FA1878">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>23453DB5-B7F6-B91F-1C46-332171623226</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="430DAEC0-8005-3310-BFC2-AE1FEFB3DCB7" name="EMPRESA EXTERNA PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>0E8056AE-75CC-049E-9BB9-9B4D05534413</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5270CEC2-F650-07B3-D79A-323EC6C2474D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

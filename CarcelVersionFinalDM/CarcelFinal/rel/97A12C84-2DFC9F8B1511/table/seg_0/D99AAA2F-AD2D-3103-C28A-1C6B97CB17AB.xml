@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D99AAA2F-AD2D-3103-C28A-1C6B97CB17AB" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="CELDA">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>CELDA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="OCUPANTES_MAX" id="2735741F-BA39-6D87-A517-8207FEF31932">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>CELDA</sourceObjSchema>
+<sourceObjName>OCUPANTES_MAX</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_CELDA" id="880AEA9B-30CC-3F94-FCF1-C54DB33B274E">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>CELDA</sourceObjSchema>
+<sourceObjName>ID_CELDA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PLANTA" id="B64D72E6-3430-29EA-5BE8-B5F241799E72">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>CELDA</sourceObjSchema>
+<sourceObjName>PLANTA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_MODULO" id="11867CCB-E4FE-F05F-12E3-655996FF728A">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>CELDA</sourceObjSchema>
+<sourceObjName>ID_MODULO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3B84EFA1-B57E-8AF2-A766-E7787E32D091" referredColumn="6E428D58-7686-73C9-54A2-FE0281A94A2E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8DA8079A-C583-182B-702A-5C00A6D69A19" name="CELDA_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>CELDA_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="880AEA9B-30CC-3F94-FCF1-C54DB33B274E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7A438AF0-4E40-A5DC-F1D1-41ED13C5A7DA" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="CELDA_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>CELDA_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="880AEA9B-30CC-3F94-FCF1-C54DB33B274E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="12FFE555-066C-C2C0-EA2D-5711F524893B" name="CELDA_MODULO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11867CCB-E4FE-F05F-12E3-655996FF728A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

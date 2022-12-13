@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0ED4A0DB-CD57-3A3C-4A7E-4D2C5448473A" name="DELITOS">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>176732DD-EAFA-C900-0D6F-C58E65C81558</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NIF" id="171909FD-1D09-5016-2307-32F9105A28B1">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>18860D53-EB2B-DA11-5269-ADDC1567D301</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<referedAttribute>301CAD48-6F3E-057E-44C8-3C559D7881D5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO DELITO" id="A2EA57C2-517B-98DC-8656-94C8628ADDA1">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>24CB4482-591C-1FC5-6F75-E85C5B4F2042</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<referedAttribute>0ED67128-1C07-BE54-FF77-47771992C4C6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID" id="50A17AC6-590D-071E-36E6-D61CC1F32C18">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>9911BB63-1F9B-BB38-68AA-6756098897C0</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MESES CONDENA" id="B4C13561-39E7-E2D3-E437-A564FD78F5B7">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>F759815C-51C4-5ACE-2B0E-3F0B28C4C251</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA DELITO" id="5EA0E50D-13D9-7ED2-AFC5-05464F490391">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>C54E8D71-0CB9-D289-6901-4B4A6DDA97ED</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="167ECDC0-A758-7434-5FB3-46552DB6D54C" name="DELITOS PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>09449BF3-A472-0FA0-AE02-CC1ED0937CEC</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>171909FD-1D09-5016-2307-32F9105A28B1</attributeRef>
+<attributeRef>A2EA57C2-517B-98DC-8656-94C8628ADDA1</attributeRef>
+<attributeRef>50A17AC6-590D-071E-36E6-D61CC1F32C18</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

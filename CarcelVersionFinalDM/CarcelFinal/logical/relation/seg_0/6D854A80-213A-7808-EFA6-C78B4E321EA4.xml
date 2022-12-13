@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="MEDICO_EMPLEADO_FK" directorySegmentName="seg_0" id="6D854A80-213A-7808-EFA6-C78B4E321EA4">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>F632C6CE-A314-AC85-1606-1A5332CE72F8</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<sourcePk>E8D5109E-CF43-CE83-AC5C-BA329735272C</sourcePk>
+<dominantRole>7E792934-E2C9-62C3-422C-58478FABDDD1</dominantRole>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7E792934-E2C9-62C3-422C-58478FABDDD1</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>3217A486-F5A0-27CF-405E-DEE7802BC253</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

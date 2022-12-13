@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="830EB6A2-E06D-6F54-4DDB-6F28B1C41EE4" name="ECONOMATO">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>445BBF14-BBBC-6C92-900A-049DB2BCAA4B</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COD CARCEL" id="1E4A579D-6544-615B-3DCC-7D5985DEC14C">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>31D853CB-D95F-3169-411C-8DF130B7B6F5</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<referedAttribute>2153E0E0-78F1-FC1D-F0F5-35A1DBC7A689</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="HORA APERTURA" id="262DC693-AF55-7318-CBEF-5BBA99BB04D5">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>278E3BD7-AF1A-5682-E96D-71ABE55145C6</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="HORA CIERRE" id="B33F76BF-530F-D590-ED38-96DD289CB5F1">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>07C4ADF4-694D-A5E9-1609-92A9F663426F</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1BBB1E6E-7F08-2638-B551-DD31EBAC0890" name="ECONOMATO PK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>525D6C8F-42B1-16AB-BDB9-F90A015FC741</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1E4A579D-6544-615B-3DCC-7D5985DEC14C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="COCINERO" directorySegmentName="seg_0" id="C84439E2-A0C9-953C-72AE-A7EC488A11C7">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>AEE000DC-CDB6-3B21-3A52-2F1ABD79CB26</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NIF" id="888C9BA8-5600-2EF9-B75E-8E12CF1757A6">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="COCINERO_PK" id="3AAA9314-F1AB-C320-1E9C-95369C6B730E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="COCINERO_SUB_EMPLEADO_FK" id="3B9321DE-65F2-7F7A-C62B-8CF2DA228E28">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="COCINERO_PK" id="3C5E24E0-AA05-C518-7F1C-E32FF0F648B6">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+<existingIndex>3AAA9314-F1AB-C320-1E9C-95369C6B730E</existingIndex>
+<indexSegment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

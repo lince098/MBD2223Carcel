@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6AD15618-C31F-91EB-0167-FBCBC1C1E19A" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="TURNO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>TURNO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_TURNO" id="F0570FE7-707B-52D7-48C9-E1FB832C8F7F">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>TURNO</sourceObjSchema>
+<sourceObjName>ID_TURNO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENTRADA" id="5CB71F1E-FFE3-5E24-1E17-DE434A6FF8E2">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>TURNO</sourceObjSchema>
+<sourceObjName>ENTRADA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALIDA" id="285464B7-7C0E-42CC-3A8E-AD21FCC4C43C">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>TURNO</sourceObjSchema>
+<sourceObjName>SALIDA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NIF" id="8EC0E40A-8978-A346-A9A3-2B3C74A5D778">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>TURNO</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0D6041BD-EF11-2BCF-755E-AB35D28B6B74" referredColumn="D5CC6C06-9813-3050-E19F-98F319B1CC0F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E7CBD8FC-48C2-D0D4-2469-0C1B6443BD28" name="TURNO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>TURNO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0570FE7-707B-52D7-48C9-E1FB832C8F7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A0B05145-EA01-C589-40C2-3CEB24EA57C2" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="TURNO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>TURNO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0570FE7-707B-52D7-48C9-E1FB832C8F7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79D4F543-6D27-4068-F6B7-C8D19BCDD573" name="TURNO_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8EC0E40A-8978-A346-A9A3-2B3C74A5D778"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="LIMPIADOR" directorySegmentName="seg_0" id="9FC74FD2-DB5D-4893-D7BC-C4FFD8A24F62">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>AEE000DC-CDB6-3B21-3A52-2F1ABD79CB26</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NIF" id="82225619-BA8B-2E88-7E9C-9A2AC465ADB1">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LIMPIADOR_PK" id="37A1999B-8F1F-3062-B727-520BD422967E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="LIMPIADOR_SUB_EMPLEADO_FK" id="5878EC3A-FB9F-2FA7-56EB-408BC1D10BFF">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="LIMPIADOR_PK" id="B1E22DCB-092C-690B-FA19-60AF6DE3372B">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+<existingIndex>37A1999B-8F1F-3062-B727-520BD422967E</existingIndex>
+<indexSegment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,366 +1,2529 @@
--- Generado por Oracle SQL Developer Data Modeler 22.2.0.165.1149
---   en:        2022-12-08 10:50:08 CET
---   sitio:      Oracle Database 11g
---   tipo:      Oracle Database 11g
-
-
-
--- predefined type, no DDL - MDSYS.SDO_GEOMETRY
-
--- predefined type, no DDL - XMLTYPE
-
-CREATE TABLE carcel (
-    cod_carcel INTEGER NOT NULL,
-    nombre     VARCHAR2(20) NOT NULL,
-    email      VARCHAR2(30) NOT NULL,
-    telefono   INTEGER NOT NULL,
-    direccion  VARCHAR2(30) NOT NULL
-);
-
-ALTER TABLE carcel ADD CONSTRAINT carcel_pk PRIMARY KEY ( cod_carcel );
-
-CREATE TABLE celda (
-    ocupantes_max    INTEGER NOT NULL,
-    id_celda         INTEGER NOT NULL,
-    planta           INTEGER NOT NULL,
-    modulo_id_modulo INTEGER NOT NULL
-);
-
-ALTER TABLE celda ADD CONSTRAINT celda_pk PRIMARY KEY ( id_celda );
-
-CREATE TABLE cocinero (
-    nif VARCHAR2(9) NOT NULL
-);
-
-ALTER TABLE cocinero ADD CONSTRAINT cocinero_pk PRIMARY KEY ( nif );
-
-CREATE TABLE compra (
-    recluso_nif          VARCHAR2(9) NOT NULL,
-    producto_id_producto INTEGER NOT NULL,
-    fecha_de_compra      DATE NOT NULL,
-    cantidad             INTEGER NOT NULL
-);
-
-ALTER TABLE compra ADD CONSTRAINT compra_pk PRIMARY KEY ( recluso_nif,
-                                                          producto_id_producto );
-
-CREATE TABLE economato (
-    carcel_cod_carcel INTEGER NOT NULL,
-    hora_apertura     VARCHAR2(8),
-    hora_cierre       VARCHAR2(8)
-);
-
-ALTER TABLE economato ADD CONSTRAINT economato_pk PRIMARY KEY ( carcel_cod_carcel );
-
-CREATE TABLE empleado (
-    telefono             INTEGER NOT NULL,
-    euros_hora           FLOAT NOT NULL,
-    euros_horas_extras   FLOAT NOT NULL,
-    euros_horas_noche    FLOAT NOT NULL,
-    carcel_cod_carcel    INTEGER NOT NULL,
-    fecha_contratacion   DATE NOT NULL,
-    persona_nif          VARCHAR2(9) NOT NULL,
-    empleado_persona_nif VARCHAR2(9)
-);
-
-ALTER TABLE empleado ADD CONSTRAINT empleado_pk PRIMARY KEY ( persona_nif );
-
-CREATE TABLE empresa_externa (
-    cif              VARCHAR2(9) NOT NULL,
-    nombre           VARCHAR2(30) NOT NULL,
-    direccion_fisica VARCHAR2(30)
-);
-
-ALTER TABLE empresa_externa ADD CONSTRAINT empresa_externa_pk PRIMARY KEY ( cif );
-
-CREATE TABLE guardia (
-    empleado_persona_nif VARCHAR2(9) NOT NULL
-);
-
-ALTER TABLE guardia ADD CONSTRAINT guardia_pk PRIMARY KEY ( empleado_persona_nif );
-
-CREATE TABLE limpiador (
-    nif VARCHAR2(9) NOT NULL
-);
-
-ALTER TABLE limpiador ADD CONSTRAINT limpiador_pk PRIMARY KEY ( nif );
-
-CREATE TABLE medico (
-    num_colegiado_medico INTEGER NOT NULL,
-    empleado_persona_nif VARCHAR2(9) NOT NULL
-);
-
-CREATE UNIQUE INDEX medico__idx ON
-    medico (
-        empleado_persona_nif
-    ASC );
-
-ALTER TABLE medico ADD CONSTRAINT medico_pk PRIMARY KEY ( num_colegiado_medico,
-                                                          empleado_persona_nif );
-
-CREATE TABLE modulo (
-    id_modulo         INTEGER NOT NULL,
-    carcel_cod_carcel INTEGER NOT NULL,
-    tipo_modulo       VARCHAR2(11) NOT NULL
-);
-
-ALTER TABLE modulo
-    ADD CHECK ( tipo_modulo IN ( 'aislamiento', 'ingreso', 'internos' ) );
-
-ALTER TABLE modulo ADD CONSTRAINT modulo_pk PRIMARY KEY ( id_modulo );
-
-CREATE TABLE persona (
-    nif              VARCHAR2(9) NOT NULL,
-    num_ss           VARCHAR2(12),
-    nombre           VARCHAR2(30) NOT NULL,
-    apellidos        VARCHAR2(60) NOT NULL,
-    email            VARCHAR2(30) NOT NULL,
-    fecha_nacimiento DATE NOT NULL
-);
-
-ALTER TABLE persona ADD CONSTRAINT persona_pk PRIMARY KEY ( nif );
-
-ALTER TABLE persona ADD CONSTRAINT persona_num_ss_un UNIQUE ( num_ss );
-
-CREATE TABLE producto (
-    id_producto                 INTEGER NOT NULL,
-    precio                      FLOAT NOT NULL,
-    nombre                      VARCHAR2(20) NOT NULL,
-    stock                       INTEGER NOT NULL,
-    economato_carcel_cod_carcel INTEGER NOT NULL
-);
-
-ALTER TABLE producto ADD CONSTRAINT producto_pk PRIMARY KEY ( id_producto );
-
-CREATE TABLE provee_economato (
-    empresa_externa_cif  VARCHAR2(9) NOT NULL,
-    economato_cod_carcel INTEGER NOT NULL
-);
-
-ALTER TABLE provee_economato ADD CONSTRAINT provee_economato_pk PRIMARY KEY ( empresa_externa_cif,
-                                                                              economato_cod_carcel );
-
-CREATE TABLE recluso (
-    nif                  VARCHAR2(9) NOT NULL,
-    nis                  INTEGER NOT NULL,
-    fecha_inicio_condena DATE NOT NULL,
-    fecha_fin_condena    DATE NOT NULL,
-    celda_id_celda       INTEGER NOT NULL
-);
-
-ALTER TABLE recluso ADD CONSTRAINT recluso_pk PRIMARY KEY ( nif );
-
-ALTER TABLE recluso ADD CONSTRAINT recluso_nis_un UNIQUE ( nis );
-
-CREATE TABLE recluso_permiso_zona (
-    recluso_nif              VARCHAR2(9) NOT NULL,
-    zona_actividades_id_zona INTEGER NOT NULL
-);
-
-ALTER TABLE recluso_permiso_zona ADD CONSTRAINT recluso_permiso_zona_pk PRIMARY KEY ( recluso_nif,
-                                                                                      zona_actividades_id_zona );
-
-CREATE TABLE subcontrata (
-    empresa_externa_cif  VARCHAR2(9) NOT NULL,
-    empleado_persona_nif VARCHAR2(9) NOT NULL
-);
-
-ALTER TABLE subcontrata ADD CONSTRAINT subcontrata_pk PRIMARY KEY ( empleado_persona_nif );
-
-CREATE TABLE subcontrata_empleado (
-    nif VARCHAR2(9) NOT NULL
-);
-
-ALTER TABLE subcontrata_empleado ADD CONSTRAINT subcontrata_empleado_pk PRIMARY KEY ( nif );
-
-CREATE TABLE turno (
-    id_turno             INTEGER NOT NULL,
-    entrada              DATE NOT NULL,
-    salida               DATE,
-    empleado_persona_nif VARCHAR2(9) NOT NULL
-);
-
-ALTER TABLE turno ADD CONSTRAINT turno_pk PRIMARY KEY ( id_turno );
-
-CREATE TABLE visita (
-    recluso_nif       VARCHAR2(9) NOT NULL,
-    visitante_nif     VARCHAR2(9) NOT NULL,
-    fecha_hora_visita DATE NOT NULL
-);
-
-ALTER TABLE visita ADD CONSTRAINT visita_pk PRIMARY KEY ( recluso_nif,
-                                                          visitante_nif );
-
-CREATE TABLE visitante (
-    nif VARCHAR2(9) NOT NULL
-);
-
-ALTER TABLE visitante ADD CONSTRAINT visitante_pk PRIMARY KEY ( nif );
-
-CREATE TABLE zona_actividades (
-    id_zona           INTEGER NOT NULL,
-    carcel_cod_carcel INTEGER NOT NULL,
-    aforo_max         INTEGER NOT NULL,
-    tipo              VARCHAR2(10) NOT NULL
-);
-
-ALTER TABLE zona_actividades
-    ADD CHECK ( tipo IN ( 'BIBLIOTECA', 'GIMNASIO', 'VISITA' ) );
-
-ALTER TABLE zona_actividades ADD CONSTRAINT zona_actividades_pk PRIMARY KEY ( id_zona );
-
-ALTER TABLE celda
-    ADD CONSTRAINT celda_modulo_fk FOREIGN KEY ( modulo_id_modulo )
-        REFERENCES modulo ( id_modulo );
-
-
-ALTER TABLE cocinero
-    ADD CONSTRAINT cocinero_sub_empleado_fk FOREIGN KEY ( nif )
-        REFERENCES subcontrata_empleado ( nif );
-
-ALTER TABLE compra
-    ADD CONSTRAINT compra_producto_fk FOREIGN KEY ( producto_id_producto )
-        REFERENCES producto ( id_producto );
-
-ALTER TABLE compra
-    ADD CONSTRAINT compra_recluso_fk FOREIGN KEY ( recluso_nif )
-        REFERENCES recluso ( nif );
-
-ALTER TABLE economato
-    ADD CONSTRAINT economato_carcel_fk FOREIGN KEY ( carcel_cod_carcel )
-        REFERENCES carcel ( cod_carcel );
-
-ALTER TABLE empleado
-    ADD CONSTRAINT empleado_carcel_fk FOREIGN KEY ( carcel_cod_carcel )
-        REFERENCES carcel ( cod_carcel );
-
-ALTER TABLE empleado
-    ADD CONSTRAINT empleado_empleado_fk FOREIGN KEY ( empleado_persona_nif )
-        REFERENCES empleado ( persona_nif );
-
-ALTER TABLE empleado
-    ADD CONSTRAINT empleado_persona_fk FOREIGN KEY ( persona_nif )
-        REFERENCES persona ( nif );
-
-ALTER TABLE guardia
-    ADD CONSTRAINT guardia_empleado_fk FOREIGN KEY ( empleado_persona_nif )
-        REFERENCES empleado ( persona_nif );
-
-
-ALTER TABLE limpiador
-    ADD CONSTRAINT limpiador_sub_empleado_fk FOREIGN KEY ( nif )
-        REFERENCES subcontrata_empleado ( nif );
-
-ALTER TABLE medico
-    ADD CONSTRAINT medico_empleado_fk FOREIGN KEY ( empleado_persona_nif )
-        REFERENCES empleado ( persona_nif );
-
-ALTER TABLE modulo
-    ADD CONSTRAINT modulo_carcel_fk FOREIGN KEY ( carcel_cod_carcel )
-        REFERENCES carcel ( cod_carcel );
-
-ALTER TABLE producto
-    ADD CONSTRAINT producto_economato_fk FOREIGN KEY ( economato_carcel_cod_carcel )
-        REFERENCES economato ( carcel_cod_carcel );
-
-ALTER TABLE provee_economato
-    ADD CONSTRAINT provee_economato_economato_fk FOREIGN KEY ( economato_cod_carcel )
-        REFERENCES economato ( carcel_cod_carcel );
-
- 
-ALTER TABLE provee_economato
-    ADD CONSTRAINT prove_econ_emp_externa_fk FOREIGN KEY ( empresa_externa_cif )
-        REFERENCES empresa_externa ( cif );
-
-ALTER TABLE recluso
-    ADD CONSTRAINT recluso_celda_fk FOREIGN KEY ( celda_id_celda )
-        REFERENCES celda ( id_celda );
-
- 
-ALTER TABLE recluso_permiso_zona
-    ADD CONSTRAINT recl_perm_zona_recl_fk FOREIGN KEY ( recluso_nif )
-        REFERENCES recluso ( nif );
-
- 
-ALTER TABLE recluso_permiso_zona
-    ADD CONSTRAINT recl_perm_zona_activ_fk FOREIGN KEY ( zona_actividades_id_zona )
-        REFERENCES zona_actividades ( id_zona );
-
-ALTER TABLE recluso
-    ADD CONSTRAINT recluso_persona_fk FOREIGN KEY ( nif )
-        REFERENCES persona ( nif );
-
-ALTER TABLE subcontrata
-    ADD CONSTRAINT subcontrata_empleado_fk FOREIGN KEY ( empleado_persona_nif )
-        REFERENCES empleado ( persona_nif );
-
-ALTER TABLE subcontrata
-    ADD CONSTRAINT subcontrata_empresa_externa_fk FOREIGN KEY ( empresa_externa_cif )
-        REFERENCES empresa_externa ( cif );
-
-ALTER TABLE turno
-    ADD CONSTRAINT turno_empleado_fk FOREIGN KEY ( empleado_persona_nif )
-        REFERENCES empleado ( persona_nif );
-
-ALTER TABLE visita
-    ADD CONSTRAINT visita_recluso_fk FOREIGN KEY ( recluso_nif )
-        REFERENCES recluso ( nif );
-
-ALTER TABLE visita
-    ADD CONSTRAINT visita_visitante_fk FOREIGN KEY ( visitante_nif )
-        REFERENCES visitante ( nif );
-
-ALTER TABLE visitante
-    ADD CONSTRAINT visitante_persona_fk FOREIGN KEY ( nif )
-        REFERENCES persona ( nif );
-
-ALTER TABLE zona_actividades
-    ADD CONSTRAINT zona_actividades_carcel_fk FOREIGN KEY ( carcel_cod_carcel )
-        REFERENCES carcel ( cod_carcel );
-
-
-
-
-
--- Informe de Resumen de Oracle SQL Developer Data Modeler: 
--- 
--- CREATE TABLE                            22
--- CREATE INDEX                             1
--- ALTER TABLE                             52
--- CREATE VIEW                              0
--- ALTER VIEW                               0
--- CREATE PACKAGE                           0
--- CREATE PACKAGE BODY                      0
--- CREATE PROCEDURE                         0
--- CREATE FUNCTION                          0
--- CREATE TRIGGER                           0
--- ALTER TRIGGER                            0
--- CREATE COLLECTION TYPE                   0
--- CREATE STRUCTURED TYPE                   0
--- CREATE STRUCTURED TYPE BODY              0
--- CREATE CLUSTER                           0
--- CREATE CONTEXT                           0
--- CREATE DATABASE                          0
--- CREATE DIMENSION                         0
--- CREATE DIRECTORY                         0
--- CREATE DISK GROUP                        0
--- CREATE ROLE                              0
--- CREATE ROLLBACK SEGMENT                  0
--- CREATE SEQUENCE                          0
--- CREATE MATERIALIZED VIEW                 0
--- CREATE MATERIALIZED VIEW LOG             0
--- CREATE SYNONYM                           0
--- CREATE TABLESPACE                        0
--- CREATE USER                              0
--- 
--- DROP TABLESPACE                          0
--- DROP DATABASE                            0
--- 
--- REDACTION POLICY                         0
--- 
--- ORDS DROP SCHEMA                         0
--- ORDS ENABLE SCHEMA                       0
--- ORDS ENABLE OBJECT                       0
--- 
--- ERRORS                                   9
--- WARNINGS                                 0
+--------------------------------------------------------
+-- Archivo creado  - martes-diciembre-13-2022   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence AUDIT_TABLE_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "UBD3707"."AUDIT_TABLE_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 61 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence DELITOS_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "UBD3707"."DELITOS_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence TIPO_DELITO_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "UBD3707"."TIPO_DELITO_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Table AUDIT_TABLE
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."AUDIT_TABLE" 
+   (	"ID" NUMBER, 
+	"USUARIO" VARCHAR2(20 BYTE), 
+	"TIPO" VARCHAR2(20 BYTE), 
+	"TABLA" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."AUDIT_TABLE" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."AUDIT_TABLE" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."AUDIT_TABLE" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."AUDIT_TABLE" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."AUDIT_TABLE" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."AUDIT_TABLE" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."AUDIT_TABLE" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."AUDIT_TABLE" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table CARCEL
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."CARCEL" 
+   (	"COD_CARCEL" NUMBER(*,0), 
+	"NOMBRE" VARCHAR2(20 BYTE), 
+	"EMAIL" VARCHAR2(30 BYTE), 
+	"TELEFONO" NUMBER(*,0), 
+	"DIRECCION" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT INSERT ON "UBD3707"."CARCEL" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."CARCEL" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."CARCEL" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."CARCEL" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."CARCEL" TO "UBD3722";
+  GRANT DELETE ON "UBD3707"."CARCEL" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."CARCEL" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."CARCEL" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table CELDA
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."CELDA" 
+   (	"OCUPANTES_MAX" NUMBER(*,0), 
+	"ID_CELDA" NUMBER(*,0), 
+	"PLANTA" NUMBER(*,0), 
+	"ID_MODULO" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."CELDA" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."CELDA" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."CELDA" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."CELDA" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."CELDA" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."CELDA" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."CELDA" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."CELDA" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table COCINERO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."COCINERO" 
+   (	"NIF" VARCHAR2(9 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."COCINERO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."COCINERO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."COCINERO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."COCINERO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."COCINERO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."COCINERO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."COCINERO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."COCINERO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table COMPRA
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."COMPRA" 
+   (	"RECLUSO_NIF" VARCHAR2(9 BYTE), 
+	"ID_PRODUCTO" NUMBER(*,0), 
+	"FECHA_DE_COMPRA" DATE, 
+	"CANTIDAD" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."COMPRA" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."COMPRA" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."COMPRA" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."COMPRA" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."COMPRA" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."COMPRA" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."COMPRA" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."COMPRA" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table DELITOS
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."DELITOS" 
+   (	"NIF" VARCHAR2(9 BYTE), 
+	"TIPO_DELITO" NUMBER, 
+	"ID" NUMBER, 
+	"MESES_CONDENA" NUMBER, 
+	"FECHA_DELITO" DATE
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+--------------------------------------------------------
+--  DDL for Table ECONOMATO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."ECONOMATO" 
+   (	"COD_CARCEL" NUMBER(*,0), 
+	"HORA_APERTURA" VARCHAR2(8 BYTE), 
+	"HORA_CIERRE" VARCHAR2(8 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."ECONOMATO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."ECONOMATO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."ECONOMATO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."ECONOMATO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."ECONOMATO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."ECONOMATO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."ECONOMATO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."ECONOMATO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table EMPLEADO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."EMPLEADO" 
+   (	"TELEFONO" NUMBER(*,0), 
+	"EUROS_HORA" FLOAT(126), 
+	"EUROS_HORAS_EXTRAS" FLOAT(126), 
+	"EUROS_HORAS_NOCHE" FLOAT(126), 
+	"CARCEL_COD_CARCEL" NUMBER(*,0), 
+	"FECHA_CONTRATACION" DATE, 
+	"NIF" VARCHAR2(9 BYTE), 
+	"DIRIGIDO_POR" VARCHAR2(9 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."EMPLEADO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."EMPLEADO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."EMPLEADO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."EMPLEADO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."EMPLEADO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."EMPLEADO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."EMPLEADO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."EMPLEADO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table EMPRESA_EXTERNA
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."EMPRESA_EXTERNA" 
+   (	"CIF" VARCHAR2(9 BYTE), 
+	"NOMBRE" VARCHAR2(30 BYTE), 
+	"DIRECCION_FISICA" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."EMPRESA_EXTERNA" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."EMPRESA_EXTERNA" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."EMPRESA_EXTERNA" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."EMPRESA_EXTERNA" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."EMPRESA_EXTERNA" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."EMPRESA_EXTERNA" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."EMPRESA_EXTERNA" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."EMPRESA_EXTERNA" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table GUARDIA
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."GUARDIA" 
+   (	"NIF" VARCHAR2(9 BYTE), 
+	"NUM_PLACA" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."GUARDIA" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."GUARDIA" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."GUARDIA" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."GUARDIA" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."GUARDIA" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."GUARDIA" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."GUARDIA" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."GUARDIA" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table INGRESO_EGRESO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."INGRESO_EGRESO" 
+   (	"NIF" VARCHAR2(9 BYTE), 
+	"COD_CARCEL" NUMBER, 
+	"FECHA_ENTRADA" DATE, 
+	"FECHA_SALIDA" DATE
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+--------------------------------------------------------
+--  DDL for Table LIMPIADOR
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."LIMPIADOR" 
+   (	"NIF" VARCHAR2(9 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."LIMPIADOR" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."LIMPIADOR" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."LIMPIADOR" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."LIMPIADOR" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."LIMPIADOR" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."LIMPIADOR" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."LIMPIADOR" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."LIMPIADOR" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table MEDICO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."MEDICO" 
+   (	"NUM_COLEGIADO_MEDICO" NUMBER(*,0), 
+	"NIF" VARCHAR2(9 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."MEDICO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."MEDICO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."MEDICO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."MEDICO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."MEDICO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."MEDICO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."MEDICO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."MEDICO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table MODULO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."MODULO" 
+   (	"ID_MODULO" NUMBER(*,0), 
+	"COD_CARCEL" NUMBER(*,0), 
+	"TIPO_MODULO" VARCHAR2(11 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."MODULO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."MODULO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."MODULO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."MODULO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."MODULO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."MODULO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."MODULO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."MODULO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table PERSONA
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."PERSONA" 
+   (	"NIF" VARCHAR2(9 BYTE), 
+	"NUM_SS" VARCHAR2(12 BYTE), 
+	"NOMBRE" VARCHAR2(30 BYTE), 
+	"APELLIDOS" VARCHAR2(60 BYTE), 
+	"EMAIL" VARCHAR2(30 BYTE), 
+	"FECHA_NACIMIENTO" DATE
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."PERSONA" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."PERSONA" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."PERSONA" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."PERSONA" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."PERSONA" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."PERSONA" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."PERSONA" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."PERSONA" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table PRODUCTO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."PRODUCTO" 
+   (	"ID_PRODUCTO" NUMBER(*,0), 
+	"PRECIO" FLOAT(126), 
+	"NOMBRE" VARCHAR2(20 BYTE), 
+	"STOCK" NUMBER(*,0), 
+	"ID_ECONOMATO" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."PRODUCTO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."PRODUCTO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."PRODUCTO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."PRODUCTO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."PRODUCTO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."PRODUCTO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."PRODUCTO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."PRODUCTO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table PROVEE_ECONOMATO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."PROVEE_ECONOMATO" 
+   (	"CIF" VARCHAR2(9 BYTE), 
+	"ID_ECONOMATO" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."PROVEE_ECONOMATO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."PROVEE_ECONOMATO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."PROVEE_ECONOMATO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."PROVEE_ECONOMATO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."PROVEE_ECONOMATO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."PROVEE_ECONOMATO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."PROVEE_ECONOMATO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."PROVEE_ECONOMATO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table RECLUSO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."RECLUSO" 
+   (	"NIF" VARCHAR2(9 BYTE), 
+	"NIS" NUMBER(*,0), 
+	"FECHA_INICIO_CONDENA" DATE, 
+	"FECHA_FIN_CONDENA" DATE, 
+	"ID_CELDA" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."RECLUSO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."RECLUSO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."RECLUSO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."RECLUSO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."RECLUSO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."RECLUSO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."RECLUSO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."RECLUSO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table RECLUSO_PERMISO_ZONA
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."RECLUSO_PERMISO_ZONA" 
+   (	"RECLUSO_NIF" VARCHAR2(9 BYTE), 
+	"ID_ZONA" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."RECLUSO_PERMISO_ZONA" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."RECLUSO_PERMISO_ZONA" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."RECLUSO_PERMISO_ZONA" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."RECLUSO_PERMISO_ZONA" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."RECLUSO_PERMISO_ZONA" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."RECLUSO_PERMISO_ZONA" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."RECLUSO_PERMISO_ZONA" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."RECLUSO_PERMISO_ZONA" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table SUBCONTRATA
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."SUBCONTRATA" 
+   (	"CIF_EMPRESA_EXTERNA" VARCHAR2(9 BYTE), 
+	"NIF" VARCHAR2(9 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."SUBCONTRATA" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."SUBCONTRATA" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."SUBCONTRATA" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."SUBCONTRATA" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."SUBCONTRATA" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."SUBCONTRATA" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."SUBCONTRATA" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."SUBCONTRATA" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table SUBCONTRATA_VOLUNTARIO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."SUBCONTRATA_VOLUNTARIO" 
+   (	"NIF" VARCHAR2(9 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table TIPO_DELITO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."TIPO_DELITO" 
+   (	"ID" NUMBER, 
+	"NOMBRE" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+--------------------------------------------------------
+--  DDL for Table TURNO
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."TURNO" 
+   (	"ID_TURNO" NUMBER(*,0), 
+	"ENTRADA" DATE, 
+	"SALIDA" DATE, 
+	"NIF" VARCHAR2(9 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."TURNO" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."TURNO" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."TURNO" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."TURNO" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."TURNO" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."TURNO" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."TURNO" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."TURNO" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table VISITA
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."VISITA" 
+   (	"NIF_RECLUSO" VARCHAR2(9 BYTE), 
+	"NIF_VISITANTE" VARCHAR2(9 BYTE), 
+	"FECHA_HORA_VISITA" DATE
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."VISITA" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."VISITA" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."VISITA" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."VISITA" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."VISITA" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."VISITA" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."VISITA" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."VISITA" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table VISITANTE
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."VISITANTE" 
+   (	"NIF" VARCHAR2(9 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."VISITANTE" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."VISITANTE" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."VISITANTE" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."VISITANTE" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."VISITANTE" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."VISITANTE" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."VISITANTE" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."VISITANTE" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Table ZONA_ACTIVIDADES
+--------------------------------------------------------
+
+  CREATE TABLE "UBD3707"."ZONA_ACTIVIDADES" 
+   (	"ID_ZONA" NUMBER(*,0), 
+	"COD_CARCEL" NUMBER(*,0), 
+	"AFORO_MAX" NUMBER(*,0), 
+	"TIPO" VARCHAR2(10 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TS_ALUMNOS"   NO INMEMORY ;
+  GRANT DELETE ON "UBD3707"."ZONA_ACTIVIDADES" TO "UBD3710";
+  GRANT INSERT ON "UBD3707"."ZONA_ACTIVIDADES" TO "UBD3710";
+  GRANT SELECT ON "UBD3707"."ZONA_ACTIVIDADES" TO "UBD3710";
+  GRANT UPDATE ON "UBD3707"."ZONA_ACTIVIDADES" TO "UBD3710";
+  GRANT DELETE ON "UBD3707"."ZONA_ACTIVIDADES" TO "UBD3722";
+  GRANT INSERT ON "UBD3707"."ZONA_ACTIVIDADES" TO "UBD3722";
+  GRANT SELECT ON "UBD3707"."ZONA_ACTIVIDADES" TO "UBD3722";
+  GRANT UPDATE ON "UBD3707"."ZONA_ACTIVIDADES" TO "UBD3722";
+--------------------------------------------------------
+--  DDL for Index CARCEL_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."CARCEL_PK" ON "UBD3707"."CARCEL" ("COD_CARCEL") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index CELDA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."CELDA_PK" ON "UBD3707"."CELDA" ("ID_CELDA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index COCINERO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."COCINERO_PK" ON "UBD3707"."COCINERO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index COMPRA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."COMPRA_PK" ON "UBD3707"."COMPRA" ("RECLUSO_NIF", "ID_PRODUCTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index DELITOS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."DELITOS_PK" ON "UBD3707"."DELITOS" ("NIF", "TIPO_DELITO", "ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index ECONOMATO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."ECONOMATO_PK" ON "UBD3707"."ECONOMATO" ("COD_CARCEL") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index EMPLEADO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."EMPLEADO_PK" ON "UBD3707"."EMPLEADO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index EMPRESA_EXTERNA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."EMPRESA_EXTERNA_PK" ON "UBD3707"."EMPRESA_EXTERNA" ("CIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index ENTIDAD_DEBIL_PRUEBA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."ENTIDAD_DEBIL_PRUEBA_PK" ON "UBD3707"."ENTIDAD_DEBIL_PRUEBA" ("COLUMN1") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index GUARDIA_NUM_PLACA_UK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."GUARDIA_NUM_PLACA_UK" ON "UBD3707"."GUARDIA" ("NUM_PLACA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index GUARDIA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."GUARDIA_PK" ON "UBD3707"."GUARDIA" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index INGRESO_EGRESO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."INGRESO_EGRESO_PK" ON "UBD3707"."INGRESO_EGRESO" ("NIF", "COD_CARCEL", "FECHA_ENTRADA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index LIMPIADOR_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."LIMPIADOR_PK" ON "UBD3707"."LIMPIADOR" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index MEDICO__IDX
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."MEDICO__IDX" ON "UBD3707"."MEDICO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index MEDICO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."MEDICO_PK" ON "UBD3707"."MEDICO" ("NUM_COLEGIADO_MEDICO", "NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index MODULO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."MODULO_PK" ON "UBD3707"."MODULO" ("ID_MODULO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PERSONA_NUM_SS_UN
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PERSONA_NUM_SS_UN" ON "UBD3707"."PERSONA" ("NUM_SS") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PERSONA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PERSONA_PK" ON "UBD3707"."PERSONA" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PRODUCTO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PRODUCTO_PK" ON "UBD3707"."PRODUCTO" ("ID_PRODUCTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PROVEE_ECONOMATO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PROVEE_ECONOMATO_PK" ON "UBD3707"."PROVEE_ECONOMATO" ("CIF", "ID_ECONOMATO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PRUEBA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PRUEBA_PK" ON "UBD3707"."PRUEBA" ("COLUMN1") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index RECLUSO_NIS_UN
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."RECLUSO_NIS_UN" ON "UBD3707"."RECLUSO" ("NIS") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index RECLUSO_PERMISO_ZONA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."RECLUSO_PERMISO_ZONA_PK" ON "UBD3707"."RECLUSO_PERMISO_ZONA" ("RECLUSO_NIF", "ID_ZONA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index RECLUSO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."RECLUSO_PK" ON "UBD3707"."RECLUSO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index SUBCONTRATA_EMPLEADO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."SUBCONTRATA_EMPLEADO_PK" ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index SUBCONTRATA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."SUBCONTRATA_PK" ON "UBD3707"."SUBCONTRATA" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index TABLE1_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."TABLE1_PK" ON "UBD3707"."AUDIT_TABLE" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index TIPO_DELITO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."TIPO_DELITO_PK" ON "UBD3707"."TIPO_DELITO" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index TURNO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."TURNO_PK" ON "UBD3707"."TURNO" ("ID_TURNO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index VISITANTE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."VISITANTE_PK" ON "UBD3707"."VISITANTE" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index VISITA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."VISITA_PK" ON "UBD3707"."VISITA" ("NIF_RECLUSO", "NIF_VISITANTE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index ZONA_ACTIVIDADES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."ZONA_ACTIVIDADES_PK" ON "UBD3707"."ZONA_ACTIVIDADES" ("ID_ZONA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index TABLE1_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."TABLE1_PK" ON "UBD3707"."AUDIT_TABLE" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index CARCEL_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."CARCEL_PK" ON "UBD3707"."CARCEL" ("COD_CARCEL") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index CELDA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."CELDA_PK" ON "UBD3707"."CELDA" ("ID_CELDA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index COCINERO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."COCINERO_PK" ON "UBD3707"."COCINERO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index COMPRA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."COMPRA_PK" ON "UBD3707"."COMPRA" ("RECLUSO_NIF", "ID_PRODUCTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index DELITOS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."DELITOS_PK" ON "UBD3707"."DELITOS" ("NIF", "TIPO_DELITO", "ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index ECONOMATO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."ECONOMATO_PK" ON "UBD3707"."ECONOMATO" ("COD_CARCEL") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index EMPLEADO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."EMPLEADO_PK" ON "UBD3707"."EMPLEADO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index EMPRESA_EXTERNA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."EMPRESA_EXTERNA_PK" ON "UBD3707"."EMPRESA_EXTERNA" ("CIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index GUARDIA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."GUARDIA_PK" ON "UBD3707"."GUARDIA" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index GUARDIA_NUM_PLACA_UK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."GUARDIA_NUM_PLACA_UK" ON "UBD3707"."GUARDIA" ("NUM_PLACA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index INGRESO_EGRESO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."INGRESO_EGRESO_PK" ON "UBD3707"."INGRESO_EGRESO" ("NIF", "COD_CARCEL", "FECHA_ENTRADA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index LIMPIADOR_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."LIMPIADOR_PK" ON "UBD3707"."LIMPIADOR" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index MEDICO__IDX
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."MEDICO__IDX" ON "UBD3707"."MEDICO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index MEDICO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."MEDICO_PK" ON "UBD3707"."MEDICO" ("NUM_COLEGIADO_MEDICO", "NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index MODULO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."MODULO_PK" ON "UBD3707"."MODULO" ("ID_MODULO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PERSONA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PERSONA_PK" ON "UBD3707"."PERSONA" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PERSONA_NUM_SS_UN
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PERSONA_NUM_SS_UN" ON "UBD3707"."PERSONA" ("NUM_SS") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PRODUCTO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PRODUCTO_PK" ON "UBD3707"."PRODUCTO" ("ID_PRODUCTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index PROVEE_ECONOMATO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."PROVEE_ECONOMATO_PK" ON "UBD3707"."PROVEE_ECONOMATO" ("CIF", "ID_ECONOMATO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index RECLUSO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."RECLUSO_PK" ON "UBD3707"."RECLUSO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index RECLUSO_NIS_UN
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."RECLUSO_NIS_UN" ON "UBD3707"."RECLUSO" ("NIS") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index RECLUSO_PERMISO_ZONA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."RECLUSO_PERMISO_ZONA_PK" ON "UBD3707"."RECLUSO_PERMISO_ZONA" ("RECLUSO_NIF", "ID_ZONA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index SUBCONTRATA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."SUBCONTRATA_PK" ON "UBD3707"."SUBCONTRATA" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index SUBCONTRATA_EMPLEADO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."SUBCONTRATA_EMPLEADO_PK" ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index TIPO_DELITO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."TIPO_DELITO_PK" ON "UBD3707"."TIPO_DELITO" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index TURNO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."TURNO_PK" ON "UBD3707"."TURNO" ("ID_TURNO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index VISITA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."VISITA_PK" ON "UBD3707"."VISITA" ("NIF_RECLUSO", "NIF_VISITANTE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index VISITANTE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."VISITANTE_PK" ON "UBD3707"."VISITANTE" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Index ZONA_ACTIVIDADES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UBD3707"."ZONA_ACTIVIDADES_PK" ON "UBD3707"."ZONA_ACTIVIDADES" ("ID_ZONA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" ;
+--------------------------------------------------------
+--  DDL for Trigger AUDIT_TABLE_TRG
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."AUDIT_TABLE_TRG" 
+BEFORE INSERT ON AUDIT_TABLE 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT AUDIT_TABLE_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "UBD3707"."AUDIT_TABLE_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger DELITOS_TRG
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."DELITOS_TRG" 
+BEFORE INSERT ON DELITOS 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT DELITOS_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "UBD3707"."DELITOS_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_CARCEL
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_CARCEL" 
+AFTER DELETE OR INSERT OR UPDATE ON CARCEL 
+declare table_name varchar(30) := 'CARCEL';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_CARCEL" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_CELDA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_CELDA" 
+AFTER DELETE OR INSERT OR UPDATE ON CELDA 
+declare table_name varchar(30) := 'CELDA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_CELDA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_COCINERO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_COCINERO" 
+AFTER DELETE OR INSERT OR UPDATE ON COCINERO 
+declare table_name varchar(30) := 'COCINERO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_COCINERO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_COMPRA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_COMPRA" 
+AFTER DELETE OR INSERT OR UPDATE ON COMPRA 
+declare table_name varchar(30) := 'COMPRA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_COMPRA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_DELITOS
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_DELITOS" 
+AFTER DELETE OR INSERT OR UPDATE ON DELITOS 
+declare table_name varchar(30) := 'DELITOS';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_DELITOS" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_ECONOMATO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_ECONOMATO" 
+AFTER DELETE OR INSERT OR UPDATE ON ECONOMATO 
+declare table_name varchar(30) := 'ECONOMATO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_ECONOMATO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_EMPLEADO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_EMPLEADO" 
+AFTER DELETE OR INSERT OR UPDATE ON EMPLEADO 
+declare table_name varchar(30) := 'EMPLEADO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_EMPLEADO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_EMPRESA_EXTERNA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_EMPRESA_EXTERNA" 
+AFTER DELETE OR INSERT OR UPDATE ON EMPRESA_EXTERNA 
+declare table_name varchar(30) := 'EMPRESA_EXTERNA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_EMPRESA_EXTERNA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_ENTIDAD_DEBIL_PRUEBA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_ENTIDAD_DEBIL_PRUEBA" 
+AFTER DELETE OR INSERT OR UPDATE ON ENTIDAD_DEBIL_PRUEBA 
+declare table_name varchar(30) := 'ENTIDAD_DEBIL_PRUEBA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_ENTIDAD_DEBIL_PRUEBA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_GUARDIA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_GUARDIA" 
+AFTER DELETE OR INSERT OR UPDATE ON GUARDIA 
+declare table_name varchar(30) := 'GUARDIA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_GUARDIA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_INGRESO_EGRESO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_INGRESO_EGRESO" 
+AFTER DELETE OR INSERT OR UPDATE ON INGRESO_EGRESO 
+declare table_name varchar(30) := 'INGRESO_EGRESO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_INGRESO_EGRESO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_LIMPIADOR
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_LIMPIADOR" 
+AFTER DELETE OR INSERT OR UPDATE ON LIMPIADOR
+declare table_name varchar(30) := 'LIMPIADOR';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_LIMPIADOR" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_MEDICO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_MEDICO" 
+AFTER DELETE OR INSERT OR UPDATE ON MEDICO
+declare table_name varchar(30) := 'MEDICO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_MEDICO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_MODULO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_MODULO" 
+AFTER DELETE OR INSERT OR UPDATE ON MODULO
+declare table_name varchar(30) := 'MODULO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_MODULO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_PERSONA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_PERSONA" 
+AFTER DELETE OR INSERT OR UPDATE ON PERSONA
+declare table_name varchar(30) := 'PERSONA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_PERSONA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_PRODUCTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_PRODUCTO" 
+AFTER DELETE OR INSERT OR UPDATE ON PRODUCTO
+declare table_name varchar(30) := 'PRODUCTO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_PRODUCTO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_PROVEE_ECONOMATO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_PROVEE_ECONOMATO" 
+AFTER DELETE OR INSERT OR UPDATE ON PROVEE_ECONOMATO
+declare table_name varchar(30) := 'PROVEE_ECONOMATO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_PROVEE_ECONOMATO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_PRUEBA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_PRUEBA" 
+AFTER DELETE OR INSERT OR UPDATE ON PRUEBA
+declare table_name varchar(30) := 'PRUEBA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_PRUEBA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_RECLUSO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_RECLUSO" 
+AFTER DELETE OR INSERT OR UPDATE ON RECLUSO
+declare table_name varchar(30) := 'RECLUSO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_RECLUSO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_RECLUSO_PERMISO_ZONA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_RECLUSO_PERMISO_ZONA" 
+AFTER DELETE OR INSERT OR UPDATE ON RECLUSO_PERMISO_ZONA
+declare table_name varchar(30) := 'RECLUSO_PERMISO_ZONA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_RECLUSO_PERMISO_ZONA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_SUBCONTRATA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_SUBCONTRATA" 
+AFTER DELETE OR INSERT OR UPDATE ON SUBCONTRATA
+declare table_name varchar(30) := 'SUBCONTRATA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_SUBCONTRATA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_SUBCONTRATA_VOLUNTARIO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_SUBCONTRATA_VOLUNTARIO" 
+AFTER DELETE OR INSERT OR UPDATE ON SUBCONTRATA_VOLUNTARIO
+declare table_name varchar(30) := 'SUBCONTRATA_VOLUNTARIO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_SUBCONTRATA_VOLUNTARIO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_TIPO_DELITO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_TIPO_DELITO" 
+AFTER DELETE OR INSERT OR UPDATE ON TIPO_DELITO
+declare table_name varchar(30) := 'TIPO_DELITO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_TIPO_DELITO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_TURNO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_TURNO" 
+AFTER DELETE OR INSERT OR UPDATE ON TURNO
+declare table_name varchar(30) := 'TURNO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_TURNO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_VISITA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_VISITA" 
+AFTER DELETE OR INSERT OR UPDATE ON VISITA
+declare table_name varchar(30) := 'VISITA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_VISITA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_VISITANTE
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_VISITANTE" 
+AFTER DELETE OR INSERT OR UPDATE ON VISITANTE
+declare table_name varchar(30) := 'VISITANTE';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_VISITANTE" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_ZONA_ACTIVIDADES
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_ZONA_ACTIVIDADES" 
+AFTER DELETE OR INSERT OR UPDATE ON ZONA_ACTIVIDADES
+declare table_name varchar(30) := 'ZONA_ACTIVIDADES';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_ZONA_ACTIVIDADES" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TIPO_DELITO_TRG
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."TIPO_DELITO_TRG" 
+BEFORE INSERT ON TIPO_DELITO 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT TIPO_DELITO_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "UBD3707"."TIPO_DELITO_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger AUDIT_TABLE_TRG
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."AUDIT_TABLE_TRG" 
+BEFORE INSERT ON AUDIT_TABLE 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT AUDIT_TABLE_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "UBD3707"."AUDIT_TABLE_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_CARCEL
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_CARCEL" 
+AFTER DELETE OR INSERT OR UPDATE ON CARCEL 
+declare table_name varchar(30) := 'CARCEL';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_CARCEL" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_CELDA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_CELDA" 
+AFTER DELETE OR INSERT OR UPDATE ON CELDA 
+declare table_name varchar(30) := 'CELDA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_CELDA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_COCINERO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_COCINERO" 
+AFTER DELETE OR INSERT OR UPDATE ON COCINERO 
+declare table_name varchar(30) := 'COCINERO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_COCINERO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_COMPRA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_COMPRA" 
+AFTER DELETE OR INSERT OR UPDATE ON COMPRA 
+declare table_name varchar(30) := 'COMPRA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_COMPRA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger DELITOS_TRG
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."DELITOS_TRG" 
+BEFORE INSERT ON DELITOS 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT DELITOS_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "UBD3707"."DELITOS_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_DELITOS
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_DELITOS" 
+AFTER DELETE OR INSERT OR UPDATE ON DELITOS 
+declare table_name varchar(30) := 'DELITOS';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_DELITOS" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_ECONOMATO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_ECONOMATO" 
+AFTER DELETE OR INSERT OR UPDATE ON ECONOMATO 
+declare table_name varchar(30) := 'ECONOMATO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_ECONOMATO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_EMPLEADO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_EMPLEADO" 
+AFTER DELETE OR INSERT OR UPDATE ON EMPLEADO 
+declare table_name varchar(30) := 'EMPLEADO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_EMPLEADO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_EMPRESA_EXTERNA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_EMPRESA_EXTERNA" 
+AFTER DELETE OR INSERT OR UPDATE ON EMPRESA_EXTERNA 
+declare table_name varchar(30) := 'EMPRESA_EXTERNA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_EMPRESA_EXTERNA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_GUARDIA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_GUARDIA" 
+AFTER DELETE OR INSERT OR UPDATE ON GUARDIA 
+declare table_name varchar(30) := 'GUARDIA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_GUARDIA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_INGRESO_EGRESO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_INGRESO_EGRESO" 
+AFTER DELETE OR INSERT OR UPDATE ON INGRESO_EGRESO 
+declare table_name varchar(30) := 'INGRESO_EGRESO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_INGRESO_EGRESO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_LIMPIADOR
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_LIMPIADOR" 
+AFTER DELETE OR INSERT OR UPDATE ON LIMPIADOR
+declare table_name varchar(30) := 'LIMPIADOR';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_LIMPIADOR" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_MEDICO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_MEDICO" 
+AFTER DELETE OR INSERT OR UPDATE ON MEDICO
+declare table_name varchar(30) := 'MEDICO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_MEDICO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_MODULO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_MODULO" 
+AFTER DELETE OR INSERT OR UPDATE ON MODULO
+declare table_name varchar(30) := 'MODULO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_MODULO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_PERSONA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_PERSONA" 
+AFTER DELETE OR INSERT OR UPDATE ON PERSONA
+declare table_name varchar(30) := 'PERSONA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_PERSONA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_PRODUCTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_PRODUCTO" 
+AFTER DELETE OR INSERT OR UPDATE ON PRODUCTO
+declare table_name varchar(30) := 'PRODUCTO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_PRODUCTO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_PROVEE_ECONOMATO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_PROVEE_ECONOMATO" 
+AFTER DELETE OR INSERT OR UPDATE ON PROVEE_ECONOMATO
+declare table_name varchar(30) := 'PROVEE_ECONOMATO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_PROVEE_ECONOMATO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_RECLUSO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_RECLUSO" 
+AFTER DELETE OR INSERT OR UPDATE ON RECLUSO
+declare table_name varchar(30) := 'RECLUSO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_RECLUSO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_RECLUSO_PERMISO_ZONA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_RECLUSO_PERMISO_ZONA" 
+AFTER DELETE OR INSERT OR UPDATE ON RECLUSO_PERMISO_ZONA
+declare table_name varchar(30) := 'RECLUSO_PERMISO_ZONA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_RECLUSO_PERMISO_ZONA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_SUBCONTRATA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_SUBCONTRATA" 
+AFTER DELETE OR INSERT OR UPDATE ON SUBCONTRATA
+declare table_name varchar(30) := 'SUBCONTRATA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_SUBCONTRATA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_SUBCONTRATA_VOLUNTARIO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_SUBCONTRATA_VOLUNTARIO" 
+AFTER DELETE OR INSERT OR UPDATE ON SUBCONTRATA_VOLUNTARIO
+declare table_name varchar(30) := 'SUBCONTRATA_VOLUNTARIO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_SUBCONTRATA_VOLUNTARIO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TIPO_DELITO_TRG
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."TIPO_DELITO_TRG" 
+BEFORE INSERT ON TIPO_DELITO 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT TIPO_DELITO_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "UBD3707"."TIPO_DELITO_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_TIPO_DELITO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_TIPO_DELITO" 
+AFTER DELETE OR INSERT OR UPDATE ON TIPO_DELITO
+declare table_name varchar(30) := 'TIPO_DELITO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_TIPO_DELITO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_TURNO
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_TURNO" 
+AFTER DELETE OR INSERT OR UPDATE ON TURNO
+declare table_name varchar(30) := 'TURNO';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_TURNO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_VISITA
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_VISITA" 
+AFTER DELETE OR INSERT OR UPDATE ON VISITA
+declare table_name varchar(30) := 'VISITA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_VISITA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_VISITANTE
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_VISITANTE" 
+AFTER DELETE OR INSERT OR UPDATE ON VISITANTE
+declare table_name varchar(30) := 'VISITANTE';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_VISITANTE" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger REGISTRO_AUDIT_ZONA_ACTIVIDADES
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "UBD3707"."REGISTRO_AUDIT_ZONA_ACTIVIDADES" 
+AFTER DELETE OR INSERT OR UPDATE ON ZONA_ACTIVIDADES
+declare table_name varchar(30) := 'ZONA_ACTIVIDADES';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;
+/
+ALTER TRIGGER "UBD3707"."REGISTRO_AUDIT_ZONA_ACTIVIDADES" ENABLE;
+--------------------------------------------------------
+--  Constraints for Table AUDIT_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."AUDIT_TABLE" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."AUDIT_TABLE" MODIFY ("USUARIO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."AUDIT_TABLE" MODIFY ("TIPO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."AUDIT_TABLE" MODIFY ("TABLA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."AUDIT_TABLE" ADD CONSTRAINT "TABLE1_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table CARCEL
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."CARCEL" ADD CONSTRAINT "CARCEL_PK" PRIMARY KEY ("COD_CARCEL")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."CARCEL" MODIFY ("COD_CARCEL" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."CARCEL" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."CARCEL" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."CARCEL" MODIFY ("TELEFONO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."CARCEL" MODIFY ("DIRECCION" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table CELDA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."CELDA" ADD CONSTRAINT "CELDA_PK" PRIMARY KEY ("ID_CELDA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."CELDA" MODIFY ("OCUPANTES_MAX" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."CELDA" MODIFY ("ID_CELDA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."CELDA" MODIFY ("PLANTA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."CELDA" MODIFY ("ID_MODULO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table COCINERO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."COCINERO" ADD CONSTRAINT "COCINERO_PK" PRIMARY KEY ("NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."COCINERO" MODIFY ("NIF" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table COMPRA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."COMPRA" ADD CONSTRAINT "COMPRA_PK" PRIMARY KEY ("RECLUSO_NIF", "ID_PRODUCTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."COMPRA" MODIFY ("RECLUSO_NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."COMPRA" MODIFY ("ID_PRODUCTO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."COMPRA" MODIFY ("FECHA_DE_COMPRA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."COMPRA" MODIFY ("CANTIDAD" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table DELITOS
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."DELITOS" ADD CONSTRAINT "DELITOS_PK" PRIMARY KEY ("NIF", "TIPO_DELITO", "ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."DELITOS" MODIFY ("NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."DELITOS" MODIFY ("TIPO_DELITO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."DELITOS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."DELITOS" MODIFY ("MESES_CONDENA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."DELITOS" MODIFY ("FECHA_DELITO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ECONOMATO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."ECONOMATO" ADD CONSTRAINT "ECONOMATO_PK" PRIMARY KEY ("COD_CARCEL")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."ECONOMATO" MODIFY ("COD_CARCEL" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table EMPLEADO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."EMPLEADO" ADD CONSTRAINT "EMPLEADO_PK" PRIMARY KEY ("NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."EMPLEADO" MODIFY ("TELEFONO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."EMPLEADO" MODIFY ("EUROS_HORA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."EMPLEADO" MODIFY ("EUROS_HORAS_EXTRAS" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."EMPLEADO" MODIFY ("EUROS_HORAS_NOCHE" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."EMPLEADO" MODIFY ("CARCEL_COD_CARCEL" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."EMPLEADO" MODIFY ("FECHA_CONTRATACION" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."EMPLEADO" MODIFY ("NIF" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table EMPRESA_EXTERNA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."EMPRESA_EXTERNA" ADD CONSTRAINT "EMPRESA_EXTERNA_PK" PRIMARY KEY ("CIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."EMPRESA_EXTERNA" MODIFY ("CIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."EMPRESA_EXTERNA" MODIFY ("NOMBRE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table GUARDIA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."GUARDIA" ADD CONSTRAINT "GUARDIA_NUM_PLACA_UK" UNIQUE ("NUM_PLACA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."GUARDIA" ADD CONSTRAINT "GUARDIA_PK" PRIMARY KEY ("NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."GUARDIA" MODIFY ("NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."GUARDIA" MODIFY ("NUM_PLACA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table INGRESO_EGRESO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."INGRESO_EGRESO" ADD CONSTRAINT "INGRESO_EGRESO_PK" PRIMARY KEY ("NIF", "COD_CARCEL", "FECHA_ENTRADA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."INGRESO_EGRESO" MODIFY ("NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."INGRESO_EGRESO" MODIFY ("COD_CARCEL" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."INGRESO_EGRESO" MODIFY ("FECHA_ENTRADA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table LIMPIADOR
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."LIMPIADOR" ADD CONSTRAINT "LIMPIADOR_PK" PRIMARY KEY ("NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."LIMPIADOR" MODIFY ("NIF" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MEDICO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."MEDICO" ADD CONSTRAINT "MEDICO_PK" PRIMARY KEY ("NUM_COLEGIADO_MEDICO", "NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."MEDICO" MODIFY ("NUM_COLEGIADO_MEDICO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."MEDICO" MODIFY ("NIF" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MODULO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."MODULO" ADD CONSTRAINT "MODULO_PK" PRIMARY KEY ("ID_MODULO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."MODULO" MODIFY ("ID_MODULO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."MODULO" MODIFY ("COD_CARCEL" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."MODULO" MODIFY ("TIPO_MODULO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."MODULO" ADD CHECK ( tipo_modulo IN ( 'aislamiento', 'ingreso', 'internos' ) ) ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PERSONA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."PERSONA" ADD CONSTRAINT "PERSONA_NUM_SS_UN" UNIQUE ("NUM_SS")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."PERSONA" ADD CONSTRAINT "PERSONA_PK" PRIMARY KEY ("NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."PERSONA" MODIFY ("NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PERSONA" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PERSONA" MODIFY ("APELLIDOS" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PERSONA" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PERSONA" MODIFY ("FECHA_NACIMIENTO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PRODUCTO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."PRODUCTO" ADD CONSTRAINT "PRODUCTO_PK" PRIMARY KEY ("ID_PRODUCTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."PRODUCTO" MODIFY ("ID_PRODUCTO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PRODUCTO" MODIFY ("PRECIO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PRODUCTO" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PRODUCTO" MODIFY ("STOCK" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PRODUCTO" MODIFY ("ID_ECONOMATO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PROVEE_ECONOMATO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."PROVEE_ECONOMATO" ADD CONSTRAINT "PROVEE_ECONOMATO_PK" PRIMARY KEY ("CIF", "ID_ECONOMATO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."PROVEE_ECONOMATO" MODIFY ("CIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."PROVEE_ECONOMATO" MODIFY ("ID_ECONOMATO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table RECLUSO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."RECLUSO" ADD CONSTRAINT "RECLUSO_NIS_UN" UNIQUE ("NIS")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."RECLUSO" ADD CONSTRAINT "RECLUSO_PK" PRIMARY KEY ("NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."RECLUSO" MODIFY ("NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."RECLUSO" MODIFY ("NIS" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."RECLUSO" MODIFY ("FECHA_INICIO_CONDENA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."RECLUSO" MODIFY ("FECHA_FIN_CONDENA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."RECLUSO" MODIFY ("ID_CELDA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table RECLUSO_PERMISO_ZONA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."RECLUSO_PERMISO_ZONA" ADD CONSTRAINT "RECLUSO_PERMISO_ZONA_PK" PRIMARY KEY ("RECLUSO_NIF", "ID_ZONA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."RECLUSO_PERMISO_ZONA" MODIFY ("RECLUSO_NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."RECLUSO_PERMISO_ZONA" MODIFY ("ID_ZONA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SUBCONTRATA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."SUBCONTRATA" ADD CONSTRAINT "SUBCONTRATA_PK" PRIMARY KEY ("NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+  ALTER TABLE "UBD3707"."SUBCONTRATA" MODIFY ("CIF_EMPRESA_EXTERNA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."SUBCONTRATA" MODIFY ("NIF" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SUBCONTRATA_VOLUNTARIO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."SUBCONTRATA_VOLUNTARIO" ADD CONSTRAINT "SUBCONTRATA_VOLUNTARIO_PK" PRIMARY KEY ("NIF")
+  USING INDEX (CREATE UNIQUE INDEX "UBD3707"."SUBCONTRATA_EMPLEADO_PK" ON "UBD3707"."SUBCONTRATA_VOLUNTARIO" ("NIF") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS" )  ENABLE;
+  ALTER TABLE "UBD3707"."SUBCONTRATA_VOLUNTARIO" MODIFY ("NIF" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TIPO_DELITO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."TIPO_DELITO" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."TIPO_DELITO" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."TIPO_DELITO" ADD CONSTRAINT "TIPO_DELITO_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TURNO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."TURNO" MODIFY ("ID_TURNO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."TURNO" MODIFY ("ENTRADA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."TURNO" MODIFY ("NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."TURNO" ADD CONSTRAINT "TURNO_PK" PRIMARY KEY ("ID_TURNO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VISITA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."VISITA" MODIFY ("NIF_RECLUSO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."VISITA" MODIFY ("NIF_VISITANTE" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."VISITA" MODIFY ("FECHA_HORA_VISITA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."VISITA" ADD CONSTRAINT "VISITA_PK" PRIMARY KEY ("NIF_RECLUSO", "NIF_VISITANTE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VISITANTE
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."VISITANTE" MODIFY ("NIF" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."VISITANTE" ADD CONSTRAINT "VISITANTE_PK" PRIMARY KEY ("NIF")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ZONA_ACTIVIDADES
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."ZONA_ACTIVIDADES" MODIFY ("ID_ZONA" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."ZONA_ACTIVIDADES" MODIFY ("COD_CARCEL" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."ZONA_ACTIVIDADES" MODIFY ("AFORO_MAX" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."ZONA_ACTIVIDADES" MODIFY ("TIPO" NOT NULL ENABLE);
+  ALTER TABLE "UBD3707"."ZONA_ACTIVIDADES" ADD CHECK ( tipo IN ( 'BIBLIOTECA', 'GIMNASIO', 'VISITA' ) ) ENABLE;
+  ALTER TABLE "UBD3707"."ZONA_ACTIVIDADES" ADD CONSTRAINT "ZONA_ACTIVIDADES_PK" PRIMARY KEY ("ID_ZONA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TS_ALUMNOS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table CELDA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."CELDA" ADD CONSTRAINT "CELDA_MODULO_FK" FOREIGN KEY ("ID_MODULO")
+	  REFERENCES "UBD3707"."MODULO" ("ID_MODULO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table COCINERO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."COCINERO" ADD CONSTRAINT "COCINERO_SUB_EMPLEADO_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."SUBCONTRATA_VOLUNTARIO" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table COMPRA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."COMPRA" ADD CONSTRAINT "COMPRA_PRODUCTO_FK" FOREIGN KEY ("ID_PRODUCTO")
+	  REFERENCES "UBD3707"."PRODUCTO" ("ID_PRODUCTO") ENABLE;
+  ALTER TABLE "UBD3707"."COMPRA" ADD CONSTRAINT "COMPRA_RECLUSO_FK" FOREIGN KEY ("RECLUSO_NIF")
+	  REFERENCES "UBD3707"."RECLUSO" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DELITOS
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."DELITOS" ADD CONSTRAINT "DELITOS_REC_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."RECLUSO" ("NIF") ENABLE;
+  ALTER TABLE "UBD3707"."DELITOS" ADD CONSTRAINT "DELITOS_TIPO_DEL_FK" FOREIGN KEY ("TIPO_DELITO")
+	  REFERENCES "UBD3707"."TIPO_DELITO" ("ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ECONOMATO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."ECONOMATO" ADD CONSTRAINT "ECONOMATO_CARCEL_FK" FOREIGN KEY ("COD_CARCEL")
+	  REFERENCES "UBD3707"."CARCEL" ("COD_CARCEL") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EMPLEADO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."EMPLEADO" ADD CONSTRAINT "EMPLEADO_CARCEL_FK" FOREIGN KEY ("CARCEL_COD_CARCEL")
+	  REFERENCES "UBD3707"."CARCEL" ("COD_CARCEL") ENABLE;
+  ALTER TABLE "UBD3707"."EMPLEADO" ADD CONSTRAINT "EMPLEADO_EMPLEADO_FK" FOREIGN KEY ("DIRIGIDO_POR")
+	  REFERENCES "UBD3707"."EMPLEADO" ("NIF") ENABLE;
+  ALTER TABLE "UBD3707"."EMPLEADO" ADD CONSTRAINT "EMPLEADO_PERSONA_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."PERSONA" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table GUARDIA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."GUARDIA" ADD CONSTRAINT "GUARDIA_EMPLEADO_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."EMPLEADO" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table INGRESO_EGRESO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."INGRESO_EGRESO" ADD CONSTRAINT "ING_EGR_CARCEL_FK" FOREIGN KEY ("COD_CARCEL")
+	  REFERENCES "UBD3707"."CARCEL" ("COD_CARCEL") ENABLE;
+  ALTER TABLE "UBD3707"."INGRESO_EGRESO" ADD CONSTRAINT "ING_EGR_RECLUSO_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."RECLUSO" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table LIMPIADOR
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."LIMPIADOR" ADD CONSTRAINT "LIMPIADOR_SUB_EMPLEADO_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."SUBCONTRATA_VOLUNTARIO" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MEDICO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."MEDICO" ADD CONSTRAINT "MEDICO_EMPLEADO_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."EMPLEADO" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MODULO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."MODULO" ADD CONSTRAINT "MODULO_CARCEL_FK" FOREIGN KEY ("COD_CARCEL")
+	  REFERENCES "UBD3707"."CARCEL" ("COD_CARCEL") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PRODUCTO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."PRODUCTO" ADD CONSTRAINT "PRODUCTO_ECONOMATO_FK" FOREIGN KEY ("ID_ECONOMATO")
+	  REFERENCES "UBD3707"."ECONOMATO" ("COD_CARCEL") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PROVEE_ECONOMATO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."PROVEE_ECONOMATO" ADD CONSTRAINT "PROVEE_ECONOMATO_ECONOMATO_FK" FOREIGN KEY ("ID_ECONOMATO")
+	  REFERENCES "UBD3707"."ECONOMATO" ("COD_CARCEL") ENABLE;
+  ALTER TABLE "UBD3707"."PROVEE_ECONOMATO" ADD CONSTRAINT "PROVE_ECON_EMP_EXTERNA_FK" FOREIGN KEY ("CIF")
+	  REFERENCES "UBD3707"."EMPRESA_EXTERNA" ("CIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RECLUSO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."RECLUSO" ADD CONSTRAINT "RECLUSO_CELDA_FK" FOREIGN KEY ("ID_CELDA")
+	  REFERENCES "UBD3707"."CELDA" ("ID_CELDA") ENABLE;
+  ALTER TABLE "UBD3707"."RECLUSO" ADD CONSTRAINT "RECLUSO_PERSONA_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."PERSONA" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RECLUSO_PERMISO_ZONA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."RECLUSO_PERMISO_ZONA" ADD CONSTRAINT "RECL_PERM_ZONA_ACTIV_FK" FOREIGN KEY ("ID_ZONA")
+	  REFERENCES "UBD3707"."ZONA_ACTIVIDADES" ("ID_ZONA") ENABLE;
+  ALTER TABLE "UBD3707"."RECLUSO_PERMISO_ZONA" ADD CONSTRAINT "RECL_PERM_ZONA_RECL_FK" FOREIGN KEY ("RECLUSO_NIF")
+	  REFERENCES "UBD3707"."RECLUSO" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SUBCONTRATA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."SUBCONTRATA" ADD CONSTRAINT "SUBCONTRATA_EMPLEADO_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."EMPLEADO" ("NIF") ENABLE;
+  ALTER TABLE "UBD3707"."SUBCONTRATA" ADD CONSTRAINT "SUBCONTRATA_EMPRESA_EXTERNA_FK" FOREIGN KEY ("CIF_EMPRESA_EXTERNA")
+	  REFERENCES "UBD3707"."EMPRESA_EXTERNA" ("CIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TURNO
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."TURNO" ADD CONSTRAINT "TURNO_EMPLEADO_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."EMPLEADO" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VISITA
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."VISITA" ADD CONSTRAINT "VISITA_RECLUSO_FK" FOREIGN KEY ("NIF_RECLUSO")
+	  REFERENCES "UBD3707"."RECLUSO" ("NIF") ENABLE;
+  ALTER TABLE "UBD3707"."VISITA" ADD CONSTRAINT "VISITA_VISITANTE_FK" FOREIGN KEY ("NIF_VISITANTE")
+	  REFERENCES "UBD3707"."VISITANTE" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VISITANTE
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."VISITANTE" ADD CONSTRAINT "VISITANTE_PERSONA_FK" FOREIGN KEY ("NIF")
+	  REFERENCES "UBD3707"."PERSONA" ("NIF") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ZONA_ACTIVIDADES
+--------------------------------------------------------
+
+  ALTER TABLE "UBD3707"."ZONA_ACTIVIDADES" ADD CONSTRAINT "ZONA_ACTIVIDADES_CARCEL_FK" FOREIGN KEY ("COD_CARCEL")
+	  REFERENCES "UBD3707"."CARCEL" ("COD_CARCEL") ENABLE;

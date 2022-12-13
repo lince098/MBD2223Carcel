@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="MEDICO" directorySegmentName="seg_0" id="CEC26E02-0170-F718-A9E7-5FDAE9ABF123">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>AEE000DC-CDB6-3B21-3A52-2F1ABD79CB26</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NUM_COLEGIADO_MEDICO" id="06A24EDA-7D78-5877-526C-B0186EDB1A42">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NIF" id="2C9ECB78-0485-AE5B-5568-B46558A36A26">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="MEDICO_PK" id="3BEA6986-587E-23E7-16AF-A8519427CE3D">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="MEDICO__IDX" id="AFD34077-F2F0-4B65-F011-1098B2F5F04F">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="MEDICO_EMPLEADO_FK" id="87EB94AF-B2CB-49AC-2FC6-061EFFE04D06">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="MEDICO_PK" id="9F46B533-82D9-B260-6A57-60DC892EEBE4">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+<existingIndex>3BEA6986-587E-23E7-16AF-A8519427CE3D</existingIndex>
+<indexSegment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CEC26E02-0170-F718-A9E7-5FDAE9ABF123" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="MEDICO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>MEDICO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NUM_COLEGIADO_MEDICO" id="06A24EDA-7D78-5877-526C-B0186EDB1A42">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>MEDICO</sourceObjSchema>
+<sourceObjName>NUM_COLEGIADO_MEDICO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NIF" id="2C9ECB78-0485-AE5B-5568-B46558A36A26">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>MEDICO</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F632C6CE-A314-AC85-1606-1A5332CE72F8" referredColumn="D5CC6C06-9813-3050-E19F-98F319B1CC0F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9F46B533-82D9-B260-6A57-60DC892EEBE4" name="MEDICO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>MEDICO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06A24EDA-7D78-5877-526C-B0186EDB1A42"/>
+<colUsage columnID="2C9ECB78-0485-AE5B-5568-B46558A36A26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFD34077-F2F0-4B65-F011-1098B2F5F04F" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="MEDICO__IDX">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>MEDICO__IDX</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C9ECB78-0485-AE5B-5568-B46558A36A26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3BEA6986-587E-23E7-16AF-A8519427CE3D" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="MEDICO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>MEDICO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06A24EDA-7D78-5877-526C-B0186EDB1A42"/>
+<colUsage columnID="2C9ECB78-0485-AE5B-5568-B46558A36A26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="87EB94AF-B2CB-49AC-2FC6-061EFFE04D06" name="MEDICO_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C9ECB78-0485-AE5B-5568-B46558A36A26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E96D83C3-2881-5937-66FF-8FFB68FD7326" containerWithKeyObject="3F566A80-4588-EA4F-B52D-818FED0F7FDF" localFKIndex="BB355225-42F4-739D-323A-ABE42FCEE2EE" name="COMPRA_RECLUSO_FK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>COMPRA_RECLUSO_FK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<referredTableLongName>UBD3707.RECLUSO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>95E00401-D427-F9A3-91C6-AE15931B1AFF</referredTableID>
+<keyObject>99C06DEE-239C-9625-4A09-E3FDDF9BE0C1</keyObject>
+<referredKeyID>99C06DEE-239C-9625-4A09-E3FDDF9BE0C1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>NIF</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

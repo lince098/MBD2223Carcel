@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="735D8F5D-D0D5-A8FD-0315-2C5F949A5AC4" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="GUARDIA">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>GUARDIA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="40A6EE32-59A6-F037-AB35-FCD597530722">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>GUARDIA</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9863E20B-5998-0718-993A-7E66482F94C7" referredColumn="D5CC6C06-9813-3050-E19F-98F319B1CC0F"/>
+</associations>
+</Column>
+<Column name="NUM_PLACA" id="04CD0E04-B967-5444-A7A3-A7FB0401DC62">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>GUARDIA</sourceObjSchema>
+<sourceObjName>NUM_PLACA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3C210A79-8345-7E62-AD50-509237AF984C" name="GUARDIA_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>GUARDIA_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40A6EE32-59A6-F037-AB35-FCD597530722"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="096154D9-1A34-99FB-D294-6D4C25D6FD8A" name="GUARDIA_NUM_PLACA_UK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>GUARDIA_NUM_PLACA_UK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04CD0E04-B967-5444-A7A3-A7FB0401DC62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3798515-688A-B88C-4CE0-4FBC5E47F9F7" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="GUARDIA_NUM_PLACA_UK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>GUARDIA_NUM_PLACA_UK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04CD0E04-B967-5444-A7A3-A7FB0401DC62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFD35736-FB6F-AD39-B896-66531D6972CE" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="GUARDIA_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>GUARDIA_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40A6EE32-59A6-F037-AB35-FCD597530722"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C3A25FB3-06A7-6402-18CC-A4B08F1C8739" name="GUARDIA_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40A6EE32-59A6-F037-AB35-FCD597530722"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

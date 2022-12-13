@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="954A143D-57D3-16C6-5657-559682177532" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="RECLUSO_PERMISO_ZONA">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECLUSO_PERMISO_ZONA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RECLUSO_NIF" id="42A98D93-4517-1445-B484-94DBF28DCB98">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>RECLUSO_PERMISO_ZONA</sourceObjSchema>
+<sourceObjName>RECLUSO_NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="63122207-2DDF-057C-2778-16D926B442DF" referredColumn="2842BD63-7459-D8EA-5FFB-A01C889346DE"/>
+</associations>
+</Column>
+<Column name="ID_ZONA" id="9EEAAF56-B7EC-2A52-8AC0-60C586891712">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>RECLUSO_PERMISO_ZONA</sourceObjSchema>
+<sourceObjName>ID_ZONA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9CAA1A80-E05C-5651-9CE6-CB16691A316C" referredColumn="BE432561-B15C-D89F-D24A-2CDC5AD1C041"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DA0293D8-D74F-D76A-B9B5-9EDE56C748DB" name="RECLUSO_PERMISO_ZONA_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECLUSO_PERMISO_ZONA_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="42A98D93-4517-1445-B484-94DBF28DCB98"/>
+<colUsage columnID="9EEAAF56-B7EC-2A52-8AC0-60C586891712"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECF0307D-052F-F757-579C-3D6CB1A64A28" schemaObject="D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16" name="RECLUSO_PERMISO_ZONA_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECLUSO_PERMISO_ZONA_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="42A98D93-4517-1445-B484-94DBF28DCB98"/>
+<colUsage columnID="9EEAAF56-B7EC-2A52-8AC0-60C586891712"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3B56D30A-492D-9C27-94A1-E21E1D5A5524" name="RECL_PERM_ZONA_ACTIV_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9EEAAF56-B7EC-2A52-8AC0-60C586891712"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1AC0BD51-8F75-FF77-CD92-2DB94AE69BEB" name="RECL_PERM_ZONA_RECL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:10 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="42A98D93-4517-1445-B484-94DBF28DCB98"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

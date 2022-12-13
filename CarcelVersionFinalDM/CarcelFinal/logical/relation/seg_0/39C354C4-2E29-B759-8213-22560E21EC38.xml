@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SUBCONTRATA_EMPLEADO_FK" directorySegmentName="seg_0" id="39C354C4-2E29-B759-8213-22560E21EC38">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>60FC2D0E-4EA6-51C3-776F-A722A5BEAB74</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<sourcePk>E8D5109E-CF43-CE83-AC5C-BA329735272C</sourcePk>
+<dominantRole>7E792934-E2C9-62C3-422C-58478FABDDD1</dominantRole>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7E792934-E2C9-62C3-422C-58478FABDDD1</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>B3C8A208-214E-031E-A12D-D49506DEE455</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

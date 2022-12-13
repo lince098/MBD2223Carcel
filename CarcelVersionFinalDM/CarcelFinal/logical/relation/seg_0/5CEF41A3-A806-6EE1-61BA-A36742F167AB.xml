@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PRODUCTO_ECONOMATO_FK" directorySegmentName="seg_0" id="5CEF41A3-A806-6EE1-61BA-A36742F167AB">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>A54A3E23-0B10-386E-D0D5-C5B22E49317F</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<sourcePk>1BBB1E6E-7F08-2638-B551-DD31EBAC0890</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>830EB6A2-E06D-6F54-4DDB-6F28B1C41EE4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7E199AA3-0F1A-E657-E5B2-D0E02FDE07DF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

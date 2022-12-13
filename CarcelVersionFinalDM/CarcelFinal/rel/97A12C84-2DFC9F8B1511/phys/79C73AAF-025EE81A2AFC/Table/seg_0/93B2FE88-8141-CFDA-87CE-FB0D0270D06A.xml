@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="TIPO_DELITO" directorySegmentName="seg_0" id="93B2FE88-8141-CFDA-87CE-FB0D0270D06A">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:03 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>AEE000DC-CDB6-3B21-3A52-2F1ABD79CB26</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOMBRE" id="39C0DFDF-61F5-A451-9B46-D4303C17A0AE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="93C00E74-622C-32C2-DC4B-C67ADDC719D2">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:04 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<autoIncrementDDL>TRIGGER</autoIncrementDDL>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="TIPO_DELITO_PK" id="1B9D6BF9-8B71-071B-F57C-57EC6718C287">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:05 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>D62DCBAF-BBF8-D50C-AF0A-1CFFDC942F16</schemaObject>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TIPO_DELITO_PK" id="C7E4461A-59A0-5260-B10B-8B1791C09E1F">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:06 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<segment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</segment>
+<tableSpace>39047FA5-FF99-AAFF-C65B-CD7B5F738507</tableSpace>
+<existingIndex>1B9D6BF9-8B71-071B-F57C-57EC6718C287</existingIndex>
+<indexSegment>BDF5FFF2-64E0-353A-3DDC-DE7DBA1AE1D3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

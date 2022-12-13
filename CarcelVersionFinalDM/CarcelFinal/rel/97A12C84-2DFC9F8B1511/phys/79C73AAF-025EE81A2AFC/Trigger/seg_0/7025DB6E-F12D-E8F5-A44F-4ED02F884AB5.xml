@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="REGISTRO_AUDIT_COMPRA" directorySegmentName="seg_0" id="7025DB6E-F12D-E8F5-A44F-4ED02F884AB5">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>REGISTRO_AUDIT_COMPRA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:48:08 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<actions>INSERT, UPDATE, DELETE</actions>
+<body><![CDATA[declare table_name varchar(30) := 'COMPRA';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;]]></body>
+<triggerTime>AFTER</triggerTime>
+<owner>8965409D-CED0-A7E7-7C5C-ECB5633D9A09</owner>
+<scope>FOR EACH STATEMENT</scope>
+<table>3F566A80-4588-EA4F-B52D-818FED0F7FDF</table>
+</TriggerOraclev10g>

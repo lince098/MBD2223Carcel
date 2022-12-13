@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="CarcelFinal" id="A9598566-FA21-4E5C-35B0-34AA6A212773" version="3.5">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:43:44 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>A9598566-FA21-4E5C-35B0-34AA6A212773</designId>
+</OSDM_Design>

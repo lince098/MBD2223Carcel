@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="DELITOS_TIPO_DEL_FK" directorySegmentName="seg_0" id="24CB4482-591C-1FC5-6F75-E85C5B4F2042">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>D3779BA5-CF98-8D72-CE8E-81D52ACE9691</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<sourcePk>11B0E0E9-DAE4-2DEC-B4D9-64C3F6DA15D0</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7F3B1A46-D6FD-4B22-F5C2-064B70621265</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0ED4A0DB-CD57-3A3C-4A7E-4D2C5448473A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

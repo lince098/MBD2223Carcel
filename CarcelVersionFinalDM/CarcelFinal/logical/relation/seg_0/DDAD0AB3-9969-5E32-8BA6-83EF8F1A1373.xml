@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EMPLEADO_CARCEL_FK" directorySegmentName="seg_0" id="DDAD0AB3-9969-5E32-8BA6-83EF8F1A1373">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2022-12-13 18:51:33 UTC</createdTime>
+<generatorID>86DED000-EB28-0689-FE35-EB7404D0FE5A</generatorID>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<engineerTo>
+<item key="97A12C84-9359-BD47-EFD1-2DFC9F8B1511" value="true"/>
+</engineerTo>
+<sourcePk>4B53ED42-D449-1DFD-067E-2276583DBDC1</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A6882871-4441-238F-E377-9D6B2E7DD035</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7E792934-E2C9-62C3-422C-58478FABDDD1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
