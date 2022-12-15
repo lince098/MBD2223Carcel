@@ -1,0 +1,14 @@
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (1, 1, 1, 3);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (1, 2, 1, 3);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (1, 3, 2, 3);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (1, 4, 3, 2);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (1, 5, 1, 2);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (1, 6, 1, 2);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (2, 7, 3, 2);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (2, 8, 3, 2);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (2, 9, 3, 2);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (5, 10, 2, 1);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (2, 11, 1, 2);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (4, 12, 2, 2);
+insert into CELDA (OCUPANTES_MAX, ID_CELDA, PLANTA, ID_MODULO) values (4, 13, 1, 1);
+
