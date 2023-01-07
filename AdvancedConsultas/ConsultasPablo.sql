@@ -31,16 +31,16 @@ inner join
 -- Lista de reclusos voluntarios y subcontratados distinguibles
 
 select p.nombre, p.apellidos, 'Recluso' "Empleado/Recluso" 
-from persona p
-inner join recluso r on p.nif = r.nif
-inner join subcontrata_voluntario sv on sv.nif = r.nif
+from subcontrata_voluntario sv 
+inner join recluso r on sv.nif = r.nif 
+inner join  persona p on p.nif = r.nif
 
 union
 
 select p.nombre, p.apellidos, 'Empleado' "Empleado/Recluso" 
-from persona p
-inner join empleado e on p.nif = e.nif
-inner join subcontrata_voluntario sv on sv.nif = e.nif
+from subcontrata_voluntario sv 
+inner join empleado e on sv.nif = e.nif
+inner join persona p on p.nif = e.nif
 ;
 
 -- Sueldos diciembre
@@ -66,3 +66,31 @@ where cast(to_char(t.entrada,'HH24') as integer) >= 8
 group by e.nif, e.euros_hora
 )
 group by nif;
+
+
+
+-----------
+
+-- parejas de delincuentes sin delitos comunes
+
+select p1.nombre "NOMBRE 1", p1.apellidos "APELLIDOS 1", p2.nombre "NOMBRE 2", p2.apellidos "APELLIDOS 2" from recluso r1 
+inner join persona p1 on r1.nif = p1.nif
+join recluso r2 on r1.nif < r2.nif
+inner join persona p2 on r2.nif = p2.nif
+where 
+    not exists(
+        select d1.tipo_delito from delitos d1 
+        where d1.nif = p1.nif
+        
+        intersect 
+        
+        select d2.tipo_delito from delitos d2
+        where d2.nif = p2.nif
+)
+order by p1.nombre, p1.apellidos, p2.nombre,p2.apellidos
+
+
+
+
+
+
