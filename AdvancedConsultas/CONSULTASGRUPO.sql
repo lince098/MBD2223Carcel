@@ -78,16 +78,16 @@ inner join
 -- 8 Mostrar la lista de reclusos voluntarios y subcontratados distinguibles
 
 select p.nombre, p.apellidos, 'Recluso' "Empleado/Recluso" 
-from subcontrata_voluntario sv 
-inner join recluso r on sv.nif = r.nif 
-inner join  persona p on p.nif = r.nif
+from UBD3707.subcontrata_voluntario sv 
+inner join UBD3707.recluso r on sv.nif = r.nif 
+inner join  UBD3707.persona p on p.nif = r.nif
 
 union
 
 select p.nombre, p.apellidos, 'Empleado' "Empleado/Recluso" 
-from subcontrata_voluntario sv 
-inner join empleado e on sv.nif = e.nif
-inner join persona p on p.nif = e.nif
+from UBD3707.subcontrata_voluntario sv 
+inner join UBD3707.empleado e on sv.nif = e.nif
+inner join UBD3707.persona p on p.nif = e.nif
 ;
 
 -- 9 Visualizar los sueldos del mes de diciembre de cada empleado y su NIF
