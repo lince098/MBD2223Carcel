@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B66EC141-5195-5BE1-FF6D-6D679D7DE906" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="AUDIT_TABLE">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>AUDIT_TABLE</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="70FD9666-6428-0A19-9986-FDAE2B98BACF">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>AUDIT_TABLE</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>AUDIT_TABLE_SEQ</autoIncrementSequenceName>
+<autoIncrementTriggerName>AUDIT_TABLE_TRG</autoIncrementTriggerName>
+</Column>
+<Column name="USUARIO" id="5C3642E4-2A74-6AB2-1B37-6E79432C1A26">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>AUDIT_TABLE</sourceObjSchema>
+<sourceObjName>USUARIO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO" id="A6E930EA-71A7-CF83-25D4-7421F4214A0A">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>AUDIT_TABLE</sourceObjSchema>
+<sourceObjName>TIPO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TABLA" id="6F239384-7368-0B01-01CF-32ED83299C7C">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>AUDIT_TABLE</sourceObjSchema>
+<sourceObjName>TABLA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="62076199-333A-2413-712D-459BDE6E6F19" name="TABLE1_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>TABLE1_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70FD9666-6428-0A19-9986-FDAE2B98BACF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="13926641-10CB-7D6B-AD5A-5CA88C1A5812" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="TABLE1_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>TABLE1_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70FD9666-6428-0A19-9986-FDAE2B98BACF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

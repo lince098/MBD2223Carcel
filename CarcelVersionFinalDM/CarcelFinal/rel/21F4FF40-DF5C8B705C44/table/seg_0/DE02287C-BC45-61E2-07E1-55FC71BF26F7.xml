@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DE02287C-BC45-61E2-07E1-55FC71BF26F7" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="LIMPIADOR">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>LIMPIADOR</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="B23A37FD-5AF1-0797-92ED-9728F301EED4">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>LIMPIADOR</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2F0F4BA0-9DB9-B6D5-DBAC-351CA9AC0503" referredColumn="88A23A0B-B1B7-0028-B819-E5834B65B792"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7CE34798-C221-DBB2-CFBA-3D5CB8CE2C61" name="LIMPIADOR_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>LIMPIADOR_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B23A37FD-5AF1-0797-92ED-9728F301EED4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E6C87A3D-7DF8-1A5A-1370-1BDBE71EA5AD" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="LIMPIADOR_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>LIMPIADOR_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B23A37FD-5AF1-0797-92ED-9728F301EED4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7775E38-513A-A94E-EDB5-DCBE6D13AD53" name="LIMPIADOR_SUB_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B23A37FD-5AF1-0797-92ED-9728F301EED4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

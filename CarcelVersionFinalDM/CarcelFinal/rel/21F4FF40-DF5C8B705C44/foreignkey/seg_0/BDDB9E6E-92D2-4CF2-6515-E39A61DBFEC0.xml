@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BDDB9E6E-92D2-4CF2-6515-E39A61DBFEC0" containerWithKeyObject="9C7E36E9-3804-1F56-779A-61812E8FE1EA" localFKIndex="11807BFE-796E-9DD4-B6B9-947A24E0C80E" name="PROVE_ECON_EMP_EXTERNA_FK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>PROVE_ECON_EMP_EXTERNA_FK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<referredTableLongName>UBD3707.EMPRESA_EXTERNA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CF49C045-5B84-00F2-1D67-3E7DDA908B8D</referredTableID>
+<keyObject>EF38D111-4AC6-85C8-BF26-B54199E13AD0</keyObject>
+<referredKeyID>EF38D111-4AC6-85C8-BF26-B54199E13AD0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CIF</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

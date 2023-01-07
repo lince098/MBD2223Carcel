@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="78BAA4BA-9BEF-A870-4EA1-6EFC90AE0970" containerWithKeyObject="C1878B33-FB06-DE2B-1094-B4522AB8FADE" localFKIndex="0AF172D6-7FC3-28BE-B44F-9650672DF302" name="COCINERO_SUB_EMPLEADO_FK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>COCINERO_SUB_EMPLEADO_FK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<referredTableLongName>UBD3707.SUBCONTRATA_VOLUNTARIO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B53FDBA6-997A-7FF8-B99E-BAEA77DCA7EB</referredTableID>
+<keyObject>31387CDA-CD2B-A7E6-D975-B1CB2A311997</keyObject>
+<referredKeyID>31387CDA-CD2B-A7E6-D975-B1CB2A311997</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>NIF</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

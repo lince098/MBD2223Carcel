@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B53FDBA6-997A-7FF8-B99E-BAEA77DCA7EB" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="SUBCONTRATA_VOLUNTARIO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>SUBCONTRATA_VOLUNTARIO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:24 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="88A23A0B-B1B7-0028-B819-E5834B65B792">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>SUBCONTRATA_VOLUNTARIO</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="31387CDA-CD2B-A7E6-D975-B1CB2A311997" name="SUBCONTRATA_VOLUNTARIO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>SUBCONTRATA_VOLUNTARIO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88A23A0B-B1B7-0028-B819-E5834B65B792"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F79623C8-3C17-9B6A-827E-8966B106EF50" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="SUBCONTRATA_EMPLEADO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>SUBCONTRATA_EMPLEADO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88A23A0B-B1B7-0028-B819-E5834B65B792"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

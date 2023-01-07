@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="DELITOS_TRG" directorySegmentName="seg_0" id="69327067-9F15-F1EA-5170-66DEC6705754">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>DELITOS_TRG</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:29 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<actions>INSERT</actions>
+<body><![CDATA[BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    NULL;
+  END COLUMN_SEQUENCES;
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<owner>A99E5859-3B33-A059-A0A7-7195B486DF68</owner>
+<table>4307EAEC-A8F8-EDC6-63DD-D20DA1BAC3B9</table>
+</TriggerOraclev10g>

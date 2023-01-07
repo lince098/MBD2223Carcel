@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <StructuredType class="oracle.dbtools.crest.model.design.datatypes.StructuredType" name="XMLTYPE" directorySegmentName="seg_0" id="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1">
 <createdBy>Zaloon098</createdBy>
-<createdTime>2022-12-13 18:43:45 UTC</createdTime>
+<createdTime>2023-01-07 09:02:39 UTC</createdTime>
 <ownerDesignName>CarcelFinal</ownerDesignName>
 <visible>false</visible>
 <predefined>true</predefined>

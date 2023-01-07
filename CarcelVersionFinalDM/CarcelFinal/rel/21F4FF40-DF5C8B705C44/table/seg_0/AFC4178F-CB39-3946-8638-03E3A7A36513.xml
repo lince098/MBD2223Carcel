@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AFC4178F-CB39-3946-8638-03E3A7A36513" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="PRODUCTO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>PRODUCTO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:24 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PRODUCTO" id="0BDD2796-63C9-07C2-240C-8F9EB8F7067B">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>ID_PRODUCTO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO" id="9DAA088C-90FC-42A6-8727-EDBA47A9D561">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>PRECIO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="104281FF-5A02-6E35-F9C4-539B1896ECCA">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>NOMBRE</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STOCK" id="CE956C0B-7B46-ECCB-FE8D-74079FA1D660">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>STOCK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_ECONOMATO" id="C87F5668-FD40-2267-7935-0399DD6AEC4B">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>ID_ECONOMATO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE6948DA-19A2-E046-4405-FC81447A34B2" referredColumn="E71006E6-0A84-6958-C128-30CDCF775C35"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3FDBA2F4-4861-EF82-3C09-E366BCE282D6" name="PRODUCTO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>PRODUCTO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BDD2796-63C9-07C2-240C-8F9EB8F7067B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="851247D4-B2B9-AD7B-837F-21B9526CAE8A" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="PRODUCTO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>PRODUCTO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BDD2796-63C9-07C2-240C-8F9EB8F7067B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1809B225-678C-2C03-230C-930E78DB4C47" name="PRODUCTO_ECONOMATO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C87F5668-FD40-2267-7935-0399DD6AEC4B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

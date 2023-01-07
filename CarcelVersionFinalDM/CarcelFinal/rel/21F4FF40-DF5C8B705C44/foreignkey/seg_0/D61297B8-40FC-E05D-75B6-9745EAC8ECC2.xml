@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D61297B8-40FC-E05D-75B6-9745EAC8ECC2" containerWithKeyObject="76E17E67-014C-23E6-98E7-006AE379CA00" localFKIndex="3059E1EE-1C99-CE28-CDD4-BAE575984534" name="RECL_PERM_ZONA_ACTIV_FK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECL_PERM_ZONA_ACTIV_FK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<referredTableLongName>UBD3707.ZONA_ACTIVIDADES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4D6759FC-5DD6-3A4B-C57A-82E8BE430652</referredTableID>
+<keyObject>D81AC074-B0FE-760E-2322-66A98E6E5DA7</keyObject>
+<referredKeyID>D81AC074-B0FE-760E-2322-66A98E6E5DA7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_ZONA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

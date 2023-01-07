@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FA6DF57A-CC85-389C-636D-965A2693CF13" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="MODULO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>MODULO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:24 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_MODULO" id="2C03FF41-45CF-D13B-EB32-B97E6789E1CE">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>MODULO</sourceObjSchema>
+<sourceObjName>ID_MODULO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COD_CARCEL" id="93E7F56E-5757-0871-3612-155AB3989665">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>MODULO</sourceObjSchema>
+<sourceObjName>COD_CARCEL</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="84C43910-AA2D-402D-B8EF-B403EC348892" referredColumn="6ED10ACE-1C16-F6AE-3C40-DC0642A0EDD3"/>
+</associations>
+</Column>
+<Column name="TIPO_MODULO" id="A90DA9BA-1798-E1B3-B480-06B79544AA5F">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>MODULO</sourceObjSchema>
+<sourceObjName>TIPO_MODULO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11 BYTE</dataTypeSize>
+<ownDataTypeParameters>11 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="035F248B-A2F4-A474-144D-2BFAF7E126D5" name="MODULO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>MODULO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C03FF41-45CF-D13B-EB32-B97E6789E1CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9CF6D4E3-85F5-3907-13D7-4164F4A7BB62" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="MODULO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>MODULO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C03FF41-45CF-D13B-EB32-B97E6789E1CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6770182A-1013-7F82-2E39-8764B1F7E23A" name="MODULO_CARCEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="93E7F56E-5757-0871-3612-155AB3989665"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="EMPRESA_EXTERNA" directorySegmentName="seg_0" id="CF49C045-5B84-00F2-1D67-3E7DDA908B8D">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:24 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>3E8F0D20-E821-FAAC-492E-E7E581CA4A8C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>D991BD49-1E9E-C7A2-1E8C-469366376174</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CIF" id="8935005D-7354-A374-0D9A-B98427F7AB01">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DIRECCION_FISICA" id="8C46D1AA-5244-71A8-5766-E9B839BAAA83">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOMBRE" id="FE8143FE-95E0-4C93-A471-B310E24CADAE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EMPRESA_EXTERNA_PK" id="BE432CD1-6F42-945C-68AD-EDEDFD994829">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>3E8F0D20-E821-FAAC-492E-E7E581CA4A8C</schemaObject>
+<segment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="EMPRESA_EXTERNA_PK" id="EF38D111-4AC6-85C8-BF26-B54199E13AD0">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<segment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+<existingIndex>BE432CD1-6F42-945C-68AD-EDEDFD994829</existingIndex>
+<indexSegment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

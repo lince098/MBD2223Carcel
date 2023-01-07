@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="936BA15D-BCE8-2EB1-1549-9F8580A25C3A" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="INGRESO_EGRESO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>INGRESO_EGRESO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:24 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="46228928-9837-FC1A-9631-25A1F7AF7007">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>INGRESO_EGRESO</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CCE3275B-BD06-1929-04E2-8467B10B7E90" referredColumn="01548C70-08AF-97A9-CB35-C85E23287348"/>
+</associations>
+</Column>
+<Column name="COD_CARCEL" id="292AD57F-0EB0-52D0-85C1-B621CA3327E6">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>INGRESO_EGRESO</sourceObjSchema>
+<sourceObjName>COD_CARCEL</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F6D97FCF-01BA-96E7-3AF1-A69B5987B99A" referredColumn="6ED10ACE-1C16-F6AE-3C40-DC0642A0EDD3"/>
+</associations>
+</Column>
+<Column name="FECHA_ENTRADA" id="C2B15900-3E18-1967-8076-2E78E31CB1A0">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>INGRESO_EGRESO</sourceObjSchema>
+<sourceObjName>FECHA_ENTRADA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_SALIDA" id="AA41FC53-7B17-CBF7-4B81-EB8018C60121">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>INGRESO_EGRESO</sourceObjSchema>
+<sourceObjName>FECHA_SALIDA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="87D20BF9-C539-359F-F075-D40F85E534CC" name="INGRESO_EGRESO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>INGRESO_EGRESO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46228928-9837-FC1A-9631-25A1F7AF7007"/>
+<colUsage columnID="292AD57F-0EB0-52D0-85C1-B621CA3327E6"/>
+<colUsage columnID="C2B15900-3E18-1967-8076-2E78E31CB1A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3B41863D-1DB9-2686-4FC1-5E2AABFD674B" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="INGRESO_EGRESO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>INGRESO_EGRESO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46228928-9837-FC1A-9631-25A1F7AF7007"/>
+<colUsage columnID="292AD57F-0EB0-52D0-85C1-B621CA3327E6"/>
+<colUsage columnID="C2B15900-3E18-1967-8076-2E78E31CB1A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DAD713DF-08B7-47BA-06BB-1C9ADCE39E49" name="ING_EGR_CARCEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="292AD57F-0EB0-52D0-85C1-B621CA3327E6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C453ABF5-1A76-1191-6E71-E3FED0D69C21" name="ING_EGR_RECLUSO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46228928-9837-FC1A-9631-25A1F7AF7007"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

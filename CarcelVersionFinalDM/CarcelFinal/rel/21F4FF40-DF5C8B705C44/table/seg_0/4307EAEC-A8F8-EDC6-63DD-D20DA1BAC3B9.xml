@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4307EAEC-A8F8-EDC6-63DD-D20DA1BAC3B9" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="DELITOS">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>DELITOS</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:24 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="EF587C05-5BAB-E7D2-7F92-610D32FCAA4A">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>DELITOS</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9F24B711-D08F-8E11-418F-9BABCF28C3C9" referredColumn="01548C70-08AF-97A9-CB35-C85E23287348"/>
+</associations>
+</Column>
+<Column name="TIPO_DELITO" id="236DF8A4-DFC0-9FC7-DE50-93D82740C195">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>DELITOS</sourceObjSchema>
+<sourceObjName>TIPO_DELITO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="431D41E8-88D8-6AF7-F110-EE833C3D2B86" referredColumn="F9A2DE40-1A09-260E-5C4D-EF48B97835DF"/>
+</associations>
+</Column>
+<Column name="ID" id="1C26C086-6AFA-6E19-FD5E-B0C056377FF3">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>DELITOS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_DELITO" id="3248AC26-DAD5-1103-7CB7-9F8B336A1130">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>DELITOS</sourceObjSchema>
+<sourceObjName>FECHA_DELITO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED84648C-457F-E95F-D592-9D9924C93654" name="DELITOS_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>DELITOS_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF587C05-5BAB-E7D2-7F92-610D32FCAA4A"/>
+<colUsage columnID="236DF8A4-DFC0-9FC7-DE50-93D82740C195"/>
+<colUsage columnID="1C26C086-6AFA-6E19-FD5E-B0C056377FF3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="06976611-9B86-6E08-1934-0EF6E10725A0" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="DELITOS_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>DELITOS_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF587C05-5BAB-E7D2-7F92-610D32FCAA4A"/>
+<colUsage columnID="236DF8A4-DFC0-9FC7-DE50-93D82740C195"/>
+<colUsage columnID="1C26C086-6AFA-6E19-FD5E-B0C056377FF3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A9012CF8-3799-01F2-96E8-8AD9C711E057" name="DELITOS_REC_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF587C05-5BAB-E7D2-7F92-610D32FCAA4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08331693-2449-3F48-BBE9-9640FD119A2E" name="DELITOS_TIPO_DEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="236DF8A4-DFC0-9FC7-DE50-93D82740C195"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="CARCEL" directorySegmentName="seg_0" id="141AAEA4-5F3C-DFF3-EFD7-CE852428345E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:24 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>3E8F0D20-E821-FAAC-492E-E7E581CA4A8C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>D991BD49-1E9E-C7A2-1E8C-469366376174</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOMBRE" id="48509A5D-65C9-4FE0-B84F-9560E3BA37E2">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COD_CARCEL" id="6ED10ACE-1C16-F6AE-3C40-DC0642A0EDD3">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TELEFONO" id="B41720DF-622A-5622-2830-09CCC140571E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DIRECCION" id="F99ADB7F-47B2-2CAD-0F40-88DC5F2DB901">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL" id="FFD631BE-C7AC-E206-27BD-D594116EC083">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="CARCEL_PK" id="36337710-6CE9-0CD6-BD54-8F96462685E1">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>3E8F0D20-E821-FAAC-492E-E7E581CA4A8C</schemaObject>
+<segment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CARCEL_PK" id="E9943365-EFDC-34D6-6B4A-9E94B015E83A">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<segment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+<existingIndex>36337710-6CE9-0CD6-BD54-8F96462685E1</existingIndex>
+<indexSegment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

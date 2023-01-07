@@ -1,0 +1,183 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9167E4F1-79A0-4B6F-D97E-939C7A7AFF20" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="EMPLEADO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>EMPLEADO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TELEFONO" id="F7E3D06F-F804-DEFA-3B43-A5D04C4C0522">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>EMPLEADO</sourceObjSchema>
+<sourceObjName>TELEFONO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EUROS_HORA" id="62EC325C-5D45-97EF-652F-1A28D5DA882A">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>EMPLEADO</sourceObjSchema>
+<sourceObjName>EUROS_HORA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EUROS_HORAS_NOCHE" id="D86E3C8D-57DA-DFA9-7B42-A7CD3F78B94B">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>EMPLEADO</sourceObjSchema>
+<sourceObjName>EUROS_HORAS_NOCHE</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COD_CARCEL" id="68BBD8F1-C59C-BECB-036F-60F56BD3B5B8">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>EMPLEADO</sourceObjSchema>
+<sourceObjName>COD_CARCEL</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="20DEB97F-C44B-6147-9D91-7D6F11FA81D9" referredColumn="6ED10ACE-1C16-F6AE-3C40-DC0642A0EDD3"/>
+</associations>
+</Column>
+<Column name="FECHA_CONTRATACION" id="4487CD0D-1F79-0B65-E9EB-8DAF2A1CA9EE">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>EMPLEADO</sourceObjSchema>
+<sourceObjName>FECHA_CONTRATACION</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NIF" id="D0638BCA-9ED1-8205-3A66-D352B56031D0">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>EMPLEADO</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60ED95D2-A2CA-D7DA-5809-6E2991C26F1F" referredColumn="30BB8A6F-812B-338D-CCD3-E9380F375853"/>
+</associations>
+</Column>
+<Column name="DIRIGIDO_POR" id="8F1C72E1-386E-2D38-E3BB-ACA7A4EA4269">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>EMPLEADO</sourceObjSchema>
+<sourceObjName>DIRIGIDO_POR</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="80ECAB65-6313-C999-F759-37C45494A778" referredColumn="D0638BCA-9ED1-8205-3A66-D352B56031D0"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C2328D85-06AD-4C42-8CA3-9609F5610A97" name="EMPLEADO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>EMPLEADO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0638BCA-9ED1-8205-3A66-D352B56031D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="68DC8510-4290-C92B-2193-44D844E134F1" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="EMPLEADO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>EMPLEADO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0638BCA-9ED1-8205-3A66-D352B56031D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B579A266-3D8F-7697-7AE5-CB8B666DED8E" name="EMPLEADO_CARCEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68BBD8F1-C59C-BECB-036F-60F56BD3B5B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B7E264A2-DED6-4E93-EDE2-7826CAAD2950" name="EMPLEADO_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F1C72E1-386E-2D38-E3BB-ACA7A4EA4269"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5D60FC94-E45D-B75B-4404-821C813A45A5" name="EMPLEADO_PERSONA_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0638BCA-9ED1-8205-3A66-D352B56031D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C1878B33-FB06-DE2B-1094-B4522AB8FADE" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="COCINERO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>COCINERO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="B06BD36F-68BE-058B-7D4A-7562DCFC659A">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>COCINERO</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78BAA4BA-9BEF-A870-4EA1-6EFC90AE0970" referredColumn="88A23A0B-B1B7-0028-B819-E5834B65B792"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="76AA75F0-BACD-7F17-A5C8-E326D4D210C6" name="COCINERO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>COCINERO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B06BD36F-68BE-058B-7D4A-7562DCFC659A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93383DD0-CE84-5B55-DDF2-CCDE70B73E6F" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="COCINERO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>COCINERO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B06BD36F-68BE-058B-7D4A-7562DCFC659A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0AF172D6-7FC3-28BE-B44F-9650672DF302" name="COCINERO_SUB_EMPLEADO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B06BD36F-68BE-058B-7D4A-7562DCFC659A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

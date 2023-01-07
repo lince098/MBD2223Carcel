@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D104F0E3-14EF-5B5A-BB3C-AE0E53142E18" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="RECLUSO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECLUSO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF" id="01548C70-08AF-97A9-CB35-C85E23287348">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>RECLUSO</sourceObjSchema>
+<sourceObjName>NIF</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="354986A5-4214-AED9-1EAA-472E86B6C920" referredColumn="30BB8A6F-812B-338D-CCD3-E9380F375853"/>
+</associations>
+</Column>
+<Column name="NIS" id="519EA46A-C1D1-8DEF-0584-EB389BEFAC68">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>RECLUSO</sourceObjSchema>
+<sourceObjName>NIS</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_CELDA" id="C34C25A0-58F7-0437-8E5F-892A8F5F8FC0">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>RECLUSO</sourceObjSchema>
+<sourceObjName>ID_CELDA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A98970A6-0D09-85EB-EC41-2325DDE0E48D" referredColumn="B95AE073-D9A9-1D92-6E86-B37C744F1890"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="668177DB-C0F8-883A-97EE-5E9A7A42D0F9" name="RECLUSO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECLUSO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01548C70-08AF-97A9-CB35-C85E23287348"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD63B4D0-9E8D-C53B-07A8-AC9505C82592" name="RECLUSO_NIS_UN">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECLUSO_NIS_UN</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="519EA46A-C1D1-8DEF-0584-EB389BEFAC68"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="41803EA4-FB3F-C398-60D8-F510E67203DB" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="RECLUSO_NIS_UN">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECLUSO_NIS_UN</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="519EA46A-C1D1-8DEF-0584-EB389BEFAC68"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="62499CA1-F185-FEE8-6903-079B63377A86" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="RECLUSO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>RECLUSO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01548C70-08AF-97A9-CB35-C85E23287348"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8EBA8364-275C-C95B-D2EE-4293A324B4A9" name="RECLUSO_CELDA_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C34C25A0-58F7-0437-8E5F-892A8F5F8FC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DBE231B-B541-747C-2F82-7EC8EB401139" name="RECLUSO_PERSONA_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01548C70-08AF-97A9-CB35-C85E23287348"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

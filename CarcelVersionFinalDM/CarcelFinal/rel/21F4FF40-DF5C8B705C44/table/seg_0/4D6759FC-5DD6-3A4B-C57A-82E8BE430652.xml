@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4D6759FC-5DD6-3A4B-C57A-82E8BE430652" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="ZONA_ACTIVIDADES">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>ZONA_ACTIVIDADES</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ZONA" id="EFE3E074-629B-5623-CDCF-1F1E0CD4EACF">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>ZONA_ACTIVIDADES</sourceObjSchema>
+<sourceObjName>ID_ZONA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COD_CARCEL" id="A8F389EF-A9FE-F6D7-8BDB-0086C03CB243">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>ZONA_ACTIVIDADES</sourceObjSchema>
+<sourceObjName>COD_CARCEL</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78F41F05-A419-2B74-119A-1A7859BDB129" referredColumn="6ED10ACE-1C16-F6AE-3C40-DC0642A0EDD3"/>
+</associations>
+</Column>
+<Column name="AFORO_MAX" id="73D5B143-6801-D36A-38F3-844EDF9F5CD8">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>ZONA_ACTIVIDADES</sourceObjSchema>
+<sourceObjName>AFORO_MAX</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO" id="3B23F0F5-EFFC-2A5F-D532-D3E0824E785C">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>ZONA_ACTIVIDADES</sourceObjSchema>
+<sourceObjName>TIPO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D81AC074-B0FE-760E-2322-66A98E6E5DA7" name="ZONA_ACTIVIDADES_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>ZONA_ACTIVIDADES_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EFE3E074-629B-5623-CDCF-1F1E0CD4EACF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B4BE4DAB-995E-BF93-EE53-053B2408354B" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="ZONA_ACTIVIDADES_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>ZONA_ACTIVIDADES_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EFE3E074-629B-5623-CDCF-1F1E0CD4EACF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5B8C86F0-C532-4859-CA53-586BD17DEBF7" name="ZONA_ACTIVIDADES_CARCEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8F389EF-A9FE-F6D7-8BDB-0086C03CB243"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

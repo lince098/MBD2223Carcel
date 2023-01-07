@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="REGISTRO_AUDIT_DELITOS" directorySegmentName="seg_0" id="E76C9DC4-F64F-FFEB-5192-6DB72ED26E3A">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>REGISTRO_AUDIT_DELITOS</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:29 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<actions>INSERT, UPDATE, DELETE</actions>
+<body><![CDATA[declare table_name varchar(30) := 'DELITOS';
+BEGIN
+  IF INSERTING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'INSERT', table_name);
+    
+  ELSIF DELETING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'DELETE', table_name);
+    
+  ELSIF UPDATING THEN
+    INSERT INTO AUDIT_TABLE (USUARIO,TIPO,TABLA) VALUES (USER,'UPDATE',  table_name);
+  END IF;
+END;]]></body>
+<triggerTime>AFTER</triggerTime>
+<owner>A99E5859-3B33-A059-A0A7-7195B486DF68</owner>
+<scope>FOR EACH STATEMENT</scope>
+<table>4307EAEC-A8F8-EDC6-63DD-D20DA1BAC3B9</table>
+</TriggerOraclev10g>

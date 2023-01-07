@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="503C4396-3BF9-CBC0-16BE-E5C298F7EFD1" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="TIPO_DELITO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>TIPO_DELITO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="F9A2DE40-1A09-260E-5C4D-EF48B97835DF">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>TIPO_DELITO</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>TIPO_DELITO_SEQ</autoIncrementSequenceName>
+<autoIncrementTriggerName>TIPO_DELITO_TRG</autoIncrementTriggerName>
+</Column>
+<Column name="NOMBRE" id="8FF3A776-3425-F4B7-B9EE-69C535C80075">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>TIPO_DELITO</sourceObjSchema>
+<sourceObjName>NOMBRE</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="614F22EA-94A9-A93E-A05E-8907D036F179" name="TIPO_DELITO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>TIPO_DELITO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F9A2DE40-1A09-260E-5C4D-EF48B97835DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="491B0655-00FD-0B29-BCAE-24102E4795DE" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="TIPO_DELITO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>TIPO_DELITO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F9A2DE40-1A09-260E-5C4D-EF48B97835DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

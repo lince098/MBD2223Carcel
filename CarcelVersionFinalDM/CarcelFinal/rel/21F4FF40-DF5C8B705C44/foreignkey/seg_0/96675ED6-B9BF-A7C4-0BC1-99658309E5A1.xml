@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="96675ED6-B9BF-A7C4-0BC1-99658309E5A1" containerWithKeyObject="33150DD0-F015-7C12-00C8-412D962DFDEE" localFKIndex="8DBE1AE5-7EF7-3DA9-8DC7-C56391C678DE" name="COMPRA_PRODUCTO_FK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>COMPRA_PRODUCTO_FK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<referredTableLongName>UBD3707.PRODUCTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AFC4178F-CB39-3946-8638-03E3A7A36513</referredTableID>
+<keyObject>3FDBA2F4-4861-EF82-3C09-E366BCE282D6</keyObject>
+<referredKeyID>3FDBA2F4-4861-EF82-3C09-E366BCE282D6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_PRODUCTO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

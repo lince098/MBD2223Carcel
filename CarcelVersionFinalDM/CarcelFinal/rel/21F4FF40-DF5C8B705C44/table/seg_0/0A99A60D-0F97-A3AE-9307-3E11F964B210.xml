@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0A99A60D-0F97-A3AE-9307-3E11F964B210" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="VISITA">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>VISITA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NIF_RECLUSO" id="C6C68548-F9C0-747A-308E-71590251F821">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>VISITA</sourceObjSchema>
+<sourceObjName>NIF_RECLUSO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="739D676E-87FA-1587-7F20-8391D3627A93" referredColumn="01548C70-08AF-97A9-CB35-C85E23287348"/>
+</associations>
+</Column>
+<Column name="NIF_VISITANTE" id="36E81095-651A-3E66-767F-163508120AA8">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>VISITA</sourceObjSchema>
+<sourceObjName>NIF_VISITANTE</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FC017CF2-629F-161D-2173-1813BA2278B1" referredColumn="87D8C379-62D4-7188-1FDB-23921A984597"/>
+</associations>
+</Column>
+<Column name="FECHA_HORA_VISITA" id="C1753283-599D-FCDF-6166-E4B3F01DD73E">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>VISITA</sourceObjSchema>
+<sourceObjName>FECHA_HORA_VISITA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="54F2B05B-8382-C5F4-9654-FC7D2D50ABF1" name="VISITA_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>VISITA_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6C68548-F9C0-747A-308E-71590251F821"/>
+<colUsage columnID="36E81095-651A-3E66-767F-163508120AA8"/>
+<colUsage columnID="C1753283-599D-FCDF-6166-E4B3F01DD73E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CDAA93CC-94BF-D48F-D242-99DC756C0E77" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="VISITA_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>VISITA_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6C68548-F9C0-747A-308E-71590251F821"/>
+<colUsage columnID="36E81095-651A-3E66-767F-163508120AA8"/>
+<colUsage columnID="C1753283-599D-FCDF-6166-E4B3F01DD73E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1EC9EA69-BA1D-E71A-A77D-B87435415E10" name="VISITA_RECLUSO_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6C68548-F9C0-747A-308E-71590251F821"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E610319B-9199-ABED-A664-C4019A59B0C1" name="VISITA_VISITANTE_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36E81095-651A-3E66-767F-163508120AA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

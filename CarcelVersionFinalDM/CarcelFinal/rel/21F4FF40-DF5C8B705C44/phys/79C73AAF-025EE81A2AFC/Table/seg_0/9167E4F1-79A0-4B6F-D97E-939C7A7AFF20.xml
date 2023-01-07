@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="EMPLEADO" directorySegmentName="seg_0" id="9167E4F1-79A0-4B6F-D97E-939C7A7AFF20">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>3E8F0D20-E821-FAAC-492E-E7E581CA4A8C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>D991BD49-1E9E-C7A2-1E8C-469366376174</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="FECHA_CONTRATACION" id="4487CD0D-1F79-0B65-E9EB-8DAF2A1CA9EE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EUROS_HORA" id="62EC325C-5D45-97EF-652F-1A28D5DA882A">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COD_CARCEL" id="68BBD8F1-C59C-BECB-036F-60F56BD3B5B8">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DIRIGIDO_POR" id="8F1C72E1-386E-2D38-E3BB-ACA7A4EA4269">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NIF" id="D0638BCA-9ED1-8205-3A66-D352B56031D0">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EUROS_HORAS_NOCHE" id="D86E3C8D-57DA-DFA9-7B42-A7CD3F78B94B">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TELEFONO" id="F7E3D06F-F804-DEFA-3B43-A5D04C4C0522">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EMPLEADO_PK" id="68DC8510-4290-C92B-2193-44D844E134F1">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<schemaObject>3E8F0D20-E821-FAAC-492E-E7E581CA4A8C</schemaObject>
+<segment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="EMPLEADO_PERSONA_FK" id="5D60FC94-E45D-B75B-4404-821C813A45A5">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="EMPLEADO_CARCEL_FK" id="B579A266-3D8F-7697-7AE5-CB8B666DED8E">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="EMPLEADO_EMPLEADO_FK" id="B7E264A2-DED6-4E93-EDE2-7826CAAD2950">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="EMPLEADO_PK" id="C2328D85-06AD-4C42-8CA3-9609F5610A97">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<segment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</segment>
+<tableSpace>27AA2570-5C08-77DD-CE1D-005852617FE9</tableSpace>
+<existingIndex>68DC8510-4290-C92B-2193-44D844E134F1</existingIndex>
+<indexSegment>8C9A1F3D-BF06-61B7-E360-28A5C60363DF</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

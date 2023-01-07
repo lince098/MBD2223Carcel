@@ -1,0 +1,185 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<RoleOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.RoleOraclev10g" name="UBD3716" directorySegmentName="seg_0" id="6F340CB6-EEA3-BC41-BED7-98A5A3A43877">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjName>UBD3716</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<permissions>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions27" id="1F7BC368-9CD8-43ED-32C3-AE2144EBC04D">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>B66EC141-5195-5BE1-FF6D-6D679D7DE906</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions28" id="EB2A1C68-080A-7067-992D-D0E1F41700BE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>141AAEA4-5F3C-DFF3-EFD7-CE852428345E</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions29" id="9A405090-DDA3-0BB8-4C61-90D5F77B6746">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>68B0B04A-E305-B346-9EA1-6940A4E6D8C9</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions30" id="55360A94-15AF-BF3A-782E-878AF449BC4C">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>C1878B33-FB06-DE2B-1094-B4522AB8FADE</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions31" id="1AFD9F9F-C025-69B8-266E-CBE75E024345">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>33150DD0-F015-7C12-00C8-412D962DFDEE</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions32" id="6880695D-A89D-DE93-D76D-985FF2B19889">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>4307EAEC-A8F8-EDC6-63DD-D20DA1BAC3B9</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions33" id="00CE187D-1A3E-1813-529A-99D999652A0C">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>C3BFBC0E-420B-0722-5C25-E8B14B903011</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions34" id="305D6B9E-BDAD-7682-2E75-4EB6F96E41AE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>9167E4F1-79A0-4B6F-D97E-939C7A7AFF20</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions35" id="50FC2808-B363-1C93-81BA-B566807E9138">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>CF49C045-5B84-00F2-1D67-3E7DDA908B8D</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions36" id="0F703151-D616-CE0D-952C-F142C9702555">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>C7DDBA61-E4C3-1A6F-7663-93897AC5264F</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions37" id="49E0786B-75D4-8EE4-4BDC-8AB43B7C9E18">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>936BA15D-BCE8-2EB1-1549-9F8580A25C3A</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions38" id="18B27C3A-DDD4-B945-96E8-57AB400EA2BB">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>DE02287C-BC45-61E2-07E1-55FC71BF26F7</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions39" id="448B0E90-F530-7985-881B-402C6FC74719">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>5CE6D8DD-C371-AECC-40F0-B75F67487E91</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions40" id="3734FD9C-541D-D36C-CC4F-7E6ED0C4DFD5">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>FA6DF57A-CC85-389C-636D-965A2693CF13</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions41" id="A42C08DF-456C-EF34-F612-FB2264D6D990">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>2F6CF5DB-6A57-A9BF-25EE-AFC081C50E28</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions42" id="BEF1C83F-CBD2-F4DA-A46F-D32CC866F758">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>AFC4178F-CB39-3946-8638-03E3A7A36513</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions43" id="698948B3-E063-2B5C-9CAB-02F36F862118">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>9C7E36E9-3804-1F56-779A-61812E8FE1EA</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions44" id="B5F411B7-7DE3-6D8B-16CD-CA01109CC657">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>D104F0E3-14EF-5B5A-BB3C-AE0E53142E18</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions45" id="FE86FBD9-16FA-AEDF-D935-38295C9EDC22">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>76E17E67-014C-23E6-98E7-006AE379CA00</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions46" id="C94F0A1F-156B-A99A-CF13-DBD91A2A64FE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>9AF99933-75CC-5416-D4C4-ED3A8E8A7728</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions47" id="08D0F12B-99C7-DC9E-094F-9005D7A5EF64">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>B53FDBA6-997A-7FF8-B99E-BAEA77DCA7EB</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions48" id="888D29BF-9A83-3A59-5E85-98DCE81836FF">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>503C4396-3BF9-CBC0-16BE-E5C298F7EFD1</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions49" id="4334E815-C70B-21A3-CBC9-2A5EC783A3BE">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>A5D32344-3F57-3727-9C75-2B8590FB23AB</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions50" id="7EBDC6AC-E248-FA30-5D74-DCB47CA46CB5">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>0A99A60D-0F97-A3AE-9307-3E11F964B210</table>
+</Permission>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions51" id="6D594A15-D31E-3726-6167-AD46F8EEB586">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:32 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<privileges>DELETE, INSERT, SELECT, UPDATE</privileges>
+<table>DFD6A89A-34AD-D608-9FF1-05790FBA8654</table>
+</Permission>
+</permissions>
+</RoleOraclev10g>

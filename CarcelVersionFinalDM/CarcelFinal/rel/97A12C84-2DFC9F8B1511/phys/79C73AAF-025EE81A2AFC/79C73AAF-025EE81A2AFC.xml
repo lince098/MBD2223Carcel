@@ -1,6 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<StorageDesignOraclev12cR2 class="oracle.dbtools.crest.model.design.storage.oracle.v12cr2.StorageDesignOraclev12cR2" name="Oracle Database 12cR2" id="CC15DE09-759B-6505-AF96-65313369C2F6" siteID="79C73AAF-E1A7-E669-7DF0-025EE81A2AFC" siteName="Oracle Database 12cR2" siteType="14">
-<createdBy>Zaloon098</createdBy>
-<createdTime>2022-12-13 18:46:37 UTC</createdTime>
-<ownerDesignName>CarcelFinal</ownerDesignName>
-</StorageDesignOraclev12cR2>

@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C3BFBC0E-420B-0722-5C25-E8B14B903011" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="ECONOMATO">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>ECONOMATO</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COD_CARCEL" id="E71006E6-0A84-6958-C128-30CDCF775C35">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>ECONOMATO</sourceObjSchema>
+<sourceObjName>COD_CARCEL</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30E0066A-BACA-6457-1156-562512587213" referredColumn="6ED10ACE-1C16-F6AE-3C40-DC0642A0EDD3"/>
+</associations>
+</Column>
+<Column name="HORA_APERTURA" id="D4983A32-9EEA-8055-0E23-200B0711EC6F">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>ECONOMATO</sourceObjSchema>
+<sourceObjName>HORA_APERTURA</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HORA_CIERRE" id="440427D5-208B-8674-DFBC-242A4C708C10">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>ECONOMATO</sourceObjSchema>
+<sourceObjName>HORA_CIERRE</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:25 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9F74C230-FCA9-678A-34EE-46907B541062" name="ECONOMATO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>ECONOMATO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:27 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E71006E6-0A84-6958-C128-30CDCF775C35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="824543A9-C0C0-E0C1-466C-33B82AD431AF" schemaObject="3E8F0D20-E821-FAAC-492E-E7E581CA4A8C" name="ECONOMATO_PK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>ECONOMATO_PK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:26 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E71006E6-0A84-6958-C128-30CDCF775C35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="424DCC91-085A-F307-CDEE-767EFA2B49D6" name="ECONOMATO_CARCEL_FK">
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E71006E6-0A84-6958-C128-30CDCF775C35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

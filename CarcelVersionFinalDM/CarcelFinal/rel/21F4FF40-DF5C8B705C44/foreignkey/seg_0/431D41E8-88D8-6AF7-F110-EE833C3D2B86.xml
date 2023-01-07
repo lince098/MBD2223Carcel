@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="431D41E8-88D8-6AF7-F110-EE833C3D2B86" containerWithKeyObject="4307EAEC-A8F8-EDC6-63DD-D20DA1BAC3B9" localFKIndex="08331693-2449-3F48-BBE9-9640FD119A2E" name="DELITOS_TIPO_DEL_FK">
+<sourceConnName>MBD2223</sourceConnName>
+<sourceObjSchema>UBD3707</sourceObjSchema>
+<sourceObjName>DELITOS_TIPO_DEL_FK</sourceObjName>
+<createdBy>Zaloon098</createdBy>
+<createdTime>2023-01-07 09:03:31 UTC</createdTime>
+<ownerDesignName>CarcelFinal</ownerDesignName>
+<referredTableLongName>UBD3707.TIPO_DELITO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>503C4396-3BF9-CBC0-16BE-E5C298F7EFD1</referredTableID>
+<keyObject>614F22EA-94A9-A93E-A05E-8907D036F179</keyObject>
+<referredKeyID>614F22EA-94A9-A93E-A05E-8907D036F179</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
