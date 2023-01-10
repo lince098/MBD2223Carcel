@@ -36,12 +36,7 @@ FROM UBD3707.RECLUSO R INNER JOIN UBD3707.PERSONA P ON P.NIF=R.NIF
 WHERE R.NIF NOT IN (
     SELECT C.RECLUSO_NIF
     FROM UBD3707.COMPRA C
-    WHERE C.ID_PRODUCTO = 1
-    GROUP BY C.RECLUSO_NIF
-) AND R.NIF NOT IN (
-    SELECT C.RECLUSO_NIF
-    FROM UBD3707.COMPRA C
-    WHERE C.ID_PRODUCTO = 2
+    WHERE C.ID_PRODUCTO IN (1,2)
     GROUP BY C.RECLUSO_NIF);
 
 -- 5 Mostrar los reclusos recluidos en el mismo año que otro con el nombre de ambos.
@@ -76,18 +71,17 @@ inner join
 
 
 -- 8 Mostrar la lista de reclusos voluntarios y subcontratados distinguibles
-
 select p.nombre, p.apellidos, 'Recluso' "Empleado/Recluso" 
-from UBD3707.subcontrata_voluntario sv 
-inner join UBD3707.recluso r on sv.nif = r.nif 
-inner join  UBD3707.persona p on p.nif = r.nif
+from UBD3707.persona p
+inner join UBD3707.recluso r on p.nif = r.nif
+inner join UBD3707.subcontrata_voluntario sv on sv.nif = r.nif
 
 union
 
 select p.nombre, p.apellidos, 'Empleado' "Empleado/Recluso" 
-from UBD3707.subcontrata_voluntario sv 
-inner join UBD3707.empleado e on sv.nif = e.nif
-inner join UBD3707.persona p on p.nif = e.nif
+from UBD3707.persona p
+inner join UBD3707.empleado e on p.nif = e.nif
+inner join UBD3707.subcontrata_voluntario sv on sv.nif = e.nif
 ;
 
 -- 9 Visualizar los sueldos del mes de diciembre de cada empleado y su NIF
